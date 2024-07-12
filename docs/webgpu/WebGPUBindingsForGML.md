@@ -3,7 +3,6 @@
 ## Table of Contents
 
 * [About this document](#about-this-document)
-* [Sample code](#sample-code)
 * [Structs](#structs)
   * [GPU](#gpu)
     * [GPU.getCurrentTextureView](#gpugetcurrenttextureview)
@@ -33,6 +32,7 @@
   * [GPUBindGroupLayout](#gpubindgrouplayout)
   * [GPUBufferDescriptor](#gpubufferdescriptor)
   * [GPUBuffer](#gpubuffer)
+    * [GPUBuffer.destroy](#gpubufferdestroy)
   * [GPUCommandBufferDescriptor](#gpucommandbufferdescriptor)
   * [GPUCommandBuffer](#gpucommandbuffer)
   * [GPUCommandEncoderDescriptor](#gpucommandencoderdescriptor)
@@ -57,6 +57,8 @@
   * [GPUShaderModule](#gpushadermodule)
   * [GPUTextureDescriptor](#gputexturedescriptor)
   * [GPUTexture](#gputexture)
+    * [GPUTexture.createView](#gputexturecreateview)
+    * [GPUTexture.destroy](#gputexturedestroy)
   * [GPUTextureViewDescriptor](#gputextureviewdescriptor)
   * [GPUTextureView](#gputextureview)
   * [GPUQueue](#gpuqueue)
@@ -474,6 +476,20 @@ A struct containing a buffer. Created with [GPUDevice.createBuffer](#gpudevicecr
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer>
 
+#### GPUBuffer.destroy
+
+A method of struct [GPUBuffer](#gpubuffer). Destroys the buffer. You should always use this function when the buffer is no longer needed to avoid memory leaks!
+
+**Syntax:**
+
+```syntax
+destroy()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/destroy>
+
 ### GPUCommandBufferDescriptor
 
 A struct used in [GPUCommandEncoder.finish](#gpucommandencoderfinish) to create a new [GPUCommandBuffer](#gpucommandbuffer).
@@ -751,6 +767,20 @@ Name | Type | Optional | Description
 **Returns:** [GPUTextureView](#gputextureview)
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/createView>
+
+#### GPUTexture.destroy
+
+A method of struct [GPUTexture](#gputexture). Destroys the texture. You should always use this function when the texture is no longer needed to avoid memory leaks!
+
+**Syntax:**
+
+```syntax
+destroy()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/destroy>
 
 ### GPUTextureViewDescriptor
 
