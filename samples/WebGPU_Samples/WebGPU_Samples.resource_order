@@ -1,0 +1,13 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"objHelloTriangle","order":1,"path":"objects/objHelloTriangle/objHelloTriangle.yy",},
+    {"name":"objHelloTriangleMSAA","order":4,"path":"objects/objHelloTriangleMSAA/objHelloTriangleMSAA.yy",},
+    {"name":"objMain","order":2,"path":"objects/objMain/objMain.yy",},
+    {"name":"objRotatingCube","order":5,"path":"objects/objRotatingCube/objRotatingCube.yy",},
+    {"name":"objSample","order":3,"path":"objects/objSample/objSample.yy",},
+    {"name":"objTexturedCube","order":7,"path":"objects/objTexturedCube/objTexturedCube.yy",},
+    {"name":"objTwoCubes","order":6,"path":"objects/objTwoCubes/objTwoCubes.yy",},
+    {"name":"sprDi3d","order":8,"path":"sprites/sprDi3d/sprDi3d.yy",},
+  ],
+}
