@@ -264,6 +264,8 @@ It is already possible to compile and debug your game using Visual Studio, albei
   ![](16.png)\
   This will tell GMRT to build your application using visual studio as opposed to the default.
 
+- Ensure you have Script Execution set to "Native"
+
 - Inside your project directory you will find a _"Build"_ folder has been added after building from within GameMaker
 
 - Inside this folder is another _"build"_ folder containing the generated VS project
