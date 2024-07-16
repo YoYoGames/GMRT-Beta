@@ -7,6 +7,7 @@
   * [GPU](#gpu)
     * [GPU.getCurrentTextureView](#gpugetcurrenttextureview)
     * [GPU.getPreferredCanvasFormat](#gpugetpreferredcanvasformat)
+    * [GPU.getResourceTexture](#gpugetresourcetexture)
     * [GPU.getResourceTextureView](#gpugetresourcetextureview)
     * [GPU.requestAdapter](#gpurequestadapter)
     * [GPU.requestAnimationFrame](#gpurequestanimationframe)
@@ -38,7 +39,10 @@
   * [GPUCommandEncoderDescriptor](#gpucommandencoderdescriptor)
   * [GPUCommandEncoder](#gpucommandencoder)
     * [GPUCommandEncoder.beginRenderPass](#gpucommandencoderbeginrenderpass)
+    * [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture)
     * [GPUCommandEncoder.finish](#gpucommandencoderfinish)
+  * [GPUExtent3D](#gpuextent3d)
+  * [GPUImageCopyTexture](#gpuimagecopytexture)
   * [GPUPipelineLayoutDescriptor](#gpupipelinelayoutdescriptor)
   * [GPUPipelineLayout](#gpupipelinelayout)
   * [GPURenderPassDescriptor](#gpurenderpassdescriptor)
@@ -146,6 +150,24 @@ getPreferredCanvasFormat()
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPU/getPreferredCanvasFormat>
 
+#### GPU.getResourceTexture
+
+A static method of struct [GPU](#gpu). **This function is specific to GameMaker** and is used to retrieve a [GPUTexture](#gputexture) for a texture returned by one of the `*_get_texture` functions (e.g. `sprite_get_texture`, `surface_get_texture`).
+
+**Syntax:**
+
+```gml
+getResourceTexture(texture)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+`texture` | Pointer.Texture | `false` | The texture to retrieve a `GPUTexture` for.
+
+**Returns:** [GPUTexture](#gputexture)
+
 #### GPU.getResourceTextureView
 
 A static method of struct [GPU](#gpu). **This function is specific to GameMaker** and is used to retrieve a [GPUTextureView](#gputextureview) for a texture returned by one of the `*_get_texture` functions (e.g. `sprite_get_texture`, `surface_get_texture`).
@@ -163,6 +185,10 @@ Name | Type | Optional | Description
 `texture` | Pointer.Texture | `false` | The texture to retrieve a `GPUTextureView` for.
 
 **Returns:** [GPUTextureView](#gputextureview)
+
+**Note:**
+
+This is the same as `GPU.getResourceTexture(texture).createView()`, except it returns an existing `GPUTextureView` instead of creating a new one.
 
 #### GPU.requestAdapter
 
@@ -514,11 +540,33 @@ A struct used to create GPU commands. Created with [GPUDevice.createCommandEncod
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder>
 
-#### GPUCommandEncoder.beginRenderPass
+#### GPUCommandEncoder.copyTextureToTexture
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Copies contents of one [GPUTexture](#gputexture) to another.
 
 **Syntax:**
 
+```gml
+copyTextureToTexture(source, destination, copySize)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+`source` | [GPUImageCopyTexture](#gpuimagecopytexture) | `false` | The texture to copy from.
+`destination` | [GPUImageCopyTexture](#gpuimagecopytexture) | `false` | The texture to copy to.
+`copySize` | [GPUExtent3D](#gpuextent3d) | `false` | The width, height, and depth/array layer count to be copied.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToTexture>
+
+#### GPUCommandEncoder.beginRenderPass
+
 A method of struct [GPUCommandEncoder](#gpucommandencoder). Begins a new render pass and returns a [GPURenderPassEncoder](#gpurenderpassencoder), using which you can define the commands execute during given render pass.
+
+**Syntax:**
 
 ```gml
 beginRenderPass([descriptor])
@@ -553,6 +601,20 @@ Name | Type | Optional | Description
 **Returns:** [GPUCommandBuffer](#gpucommandbuffer)
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/finish>
+
+### GPUExtent3D
+
+A struct or an array containing width, height and depth/array layers. used for example in [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture) for copying data from one [GPUTexture](#gputexture) to another.
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToTexture#copysize>
+
+### GPUImageCopyTexture
+
+A struct defining source or destination texture in a texture copy operation.
+
+**See also:** [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToTexture#copy_texture_object_structure>
 
 ### GPUPipelineLayoutDescriptor
 
