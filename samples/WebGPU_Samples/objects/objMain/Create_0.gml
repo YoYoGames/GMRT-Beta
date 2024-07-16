@@ -1,9 +1,17 @@
-samples = [
-  objHelloTriangle,
-  objHelloTriangleMSAA,
-  objRotatingCube,
-  objTwoCubes,
-  objTexturedCube,
+sections = [
+  {
+    title: "Basic Graphics",
+    samples: [
+      objHelloTriangle,
+      objHelloTriangleMSAA,
+      objRotatingCube,
+      objTwoCubes,
+      objTexturedCube,
+      objInstancedCube,
+      objFractalCube,
+      objCubemap,
+    ],
+  },
 ];
 
 createSample = function (sample) {
@@ -11,4 +19,6 @@ createSample = function (sample) {
   instance_create_layer(0, 0, layer, sample);
 };
 
-createSample(samples[0]);
+createSample(sections[0].samples[0]);
+
+textScroll = 0;

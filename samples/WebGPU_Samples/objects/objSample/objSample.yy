@@ -6,8 +6,8 @@
   "name":"objSample",
   "overriddenProperties":[],
   "parent":{
-    "name":"WebGPU_Samples",
-    "path":"WebGPU_Samples.yyp",
+    "name":"BasicGraphics",
+    "path":"folders/BasicGraphics.yy",
   },
   "parentObjectId":null,
   "persistent":false,
