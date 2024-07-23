@@ -1205,7 +1205,7 @@ A struct defining source or destination texture in a copy operation.
 
 ### GPUMappedRange
 
-A struct **specific to GameMaker**, that currently serves as a replacement for JS's `ArrayBuffer` and `TypedArray`. Retrieved with [GPUBuffer.getMappedRange](#gpubuffergetmappedrange). Used to read/write data from/to mapped [GPUBuffer](#gpubuffer)s. **Assumed to contain only 32-bit floats! Other data types are not supported!**
+A struct **specific to GameMaker**, that currently serves as a replacement for JS's `ArrayBuffer` and `TypedArray`. Retrieved with [GPUBuffer.getMappedRange](#gpubuffergetmappedrange). Used to read/write data from/to mapped [GPUBuffer](#gpubuffer)s.
 
 **See also:** [GPUBuffer.mapAsync](#gpubuffermapasync)
 
@@ -1227,6 +1227,27 @@ index | `Real` | ❌ | The index to read a value at.
 
 **Returns:** `Real`
 
+#### GPUMappedRange.fromBuffer
+
+A method of struct [GPUMappedRange](#gpumappedrange). Copies data from a buffer to the mapped range.
+
+**Syntax:**
+
+```gml
+fromBuffer(buffer, bufferOffset, size, offset)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+buffer | `Id.Buffer` | ❌ | The buffer to copy data from.
+bufferOffset | `Real` | ❌ | The offset from the beginning of the buffer to start copying data from, in bytes.
+size | `Real` | ❌ | The size of the data to copy, in bytes.
+offset | `Real` | ❌ | The offset from the beginning of the mapped range to start copying data to, in bytes.
+
+**Returns:** N/A
+
 #### GPUMappedRange.set
 
 A method of struct [GPUMappedRange](#gpumappedrange). Writes an array of 32-bit floats into a mapped range, retrieved with [GPUBuffer.getMappedRange](#gpubuffergetmappedrange).
@@ -1243,6 +1264,27 @@ Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
 array | `Array<Real>` | ❌ | Values to write into the mapped range.
 targetOffset | `Real` | ✅ | Index within the mapped range to start writing the values at. Defaults to 0.
+
+**Returns:** N/A
+
+#### GPUMappedRange.toBuffer
+
+A method of struct [GPUMappedRange](#gpumappedrange). Copies data from the mapped range to a buffer.
+
+**Syntax:**
+
+```gml
+toBuffer(buffer, bufferOffset, size, offset)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+buffer | `Id.Buffer` | ❌ | The buffer to copy data to.
+bufferOffset | `Real` | ❌ | The offset from the beginning of the buffer to start copying data to, in bytes.
+size | `Real` | ❌ | The size of the data to copy, in bytes.
+offset | `Real` | ❌ | The offset from the beginning of the mapped range to start copying data from, in bytes.
 
 **Returns:** N/A
 
@@ -1342,7 +1384,7 @@ commandBuffers | `Array<`[GPUCommandBuffer](#gpucommandbuffer)`>` | ❌ | An arr
 
 #### GPUQueue.writeBuffer
 
-A method of struct [GPUQueue](#gpuqueue). Writes 32-bit floats into a [GPUBuffer](#gpubuffer). **Other data types are currently not supported!**
+A method of struct [GPUQueue](#gpuqueue). Writes data into a [GPUBuffer](#gpubuffer).
 
 **Syntax:**
 
@@ -1356,9 +1398,9 @@ Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
 buffer | [GPUBuffer](#gpubuffer) | ❌ | The buffer to write the data into. Must be created with the `GPUBufferUsage.COPY_DST` usage!
 bufferOffset | `Real` | ❌ | The offset, in bytes, to start writing into the buffer at.
-data | `Array<Real>` | ❌ | An array of 32-bit floats to write into the buffer.
-dataOffset | `Real` | ❌ | An offset, in array elements, to start reading the data from. Defaults to 0.
-size | `Real` | ❌ | The number of array elements to write. Defaults to the size of the array minus offset.
+data | `Array<Real>`, `Id.Buffer` | ❌ | An array of 32-bit floats or a buffer containing any of the supported data types.
+dataOffset | `Real` | ❌ | An offset (in array elements or bytes, depending on whether `data` is an array or a buffer) to start reading the data from. Defaults to 0.
+size | `Real` | ❌ | The size of the data to write (in array elements or bytes, depending on whether `data` is an array or a buffer). Defaults to the size of the array/buffer minus offset.
 
 **Returns:** N/A
 
@@ -1366,7 +1408,7 @@ size | `Real` | ❌ | The number of array elements to write. Defaults to the siz
 
 #### GPUQueue.writeTexture
 
-A method of [GPUQueue](#gpuqueue). Writes 32-bit unsigned integers into a [GPUTexture](#gputexture). **Other data types are currently not supported!**
+A method of [GPUQueue](#gpuqueue). Writes data into a [GPUTexture](#gputexture).
 
 **Syntax:**
 
@@ -1379,7 +1421,7 @@ writeTexture(destination, data, dataLayout, size)
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
 destination | [GPUImageCopyTexture](#gpuimagecopytexture) | ❌ | A struct defining the destination texture.
-data | `Array<Real>` | ❌ | An array of 32-bit unsigned integers to write into the texture.
+data | `Array<Real>`, `Id.Buffer` | ❌ | An array of 32-bit unsigned integers or a buffer containing any of the supported data types.
 dataOffset | [GPUTextureDataLayout](#gputexturedatalayout) | ❌ | A struct defining the layout of given data.
 size | [GPUExtent3D](#gpuextent3d) | ❌ | A struct defining the width, height and depth/layer count of the data to be copied.
 
