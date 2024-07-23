@@ -31,4 +31,5 @@ for (var i = 0; i < array_length(sections); ++i) {
     drawTextShadow(textX, textY, text);
     textY += textHeight;
   }
+  textY += floor(textHeight * 0.5);
 }

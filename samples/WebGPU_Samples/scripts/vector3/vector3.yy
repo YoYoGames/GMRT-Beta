@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"vector3",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vector3",
+  "parent":{
+    "name":"WebGPU_Samples",
+    "path":"WebGPU_Samples.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

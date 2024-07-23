@@ -11,6 +11,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"BasicGraphics","folderPath":"folders/BasicGraphics.yy","name":"BasicGraphics","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"GPGPUDemos","folderPath":"folders/GPGPUDemos.yy","name":"GPGPUDemos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[],
@@ -21,6 +22,7 @@
   },
   "name":"WebGPU_Samples",
   "resources":[
+    {"id":{"name":"objComputeBoids","path":"objects/objComputeBoids/objComputeBoids.yy",},},
     {"id":{"name":"objCubemap","path":"objects/objCubemap/objCubemap.yy",},},
     {"id":{"name":"objFractalCube","path":"objects/objFractalCube/objFractalCube.yy",},},
     {"id":{"name":"objHelloTriangle","path":"objects/objHelloTriangle/objHelloTriangle.yy",},},
@@ -32,6 +34,7 @@
     {"id":{"name":"objTexturedCube","path":"objects/objTexturedCube/objTexturedCube.yy",},},
     {"id":{"name":"objTwoCubes","path":"objects/objTwoCubes/objTwoCubes.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"vector3","path":"scripts/vector3/vector3.yy",},},
     {"id":{"name":"sprDi3d","path":"sprites/sprDi3d/sprDi3d.yy",},},
     {"id":{"name":"sprNegX","path":"sprites/sprNegX/sprNegX.yy",},},
     {"id":{"name":"sprNegY","path":"sprites/sprNegY/sprNegY.yy",},},

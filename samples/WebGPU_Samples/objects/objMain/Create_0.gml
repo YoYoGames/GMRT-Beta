@@ -12,6 +12,12 @@ sections = [
       objCubemap,
     ],
   },
+  {
+    title: "GPGPU Demos",
+    samples: [
+      objComputeBoids,
+    ],
+  },
 ];
 
 createSample = function (sample) {

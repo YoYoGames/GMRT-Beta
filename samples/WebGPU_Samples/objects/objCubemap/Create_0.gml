@@ -101,17 +101,13 @@ adapter = GPU.requestAdapter();
 device = adapter.requestDevice();
 var presentationFormat = GPU.getPreferredCanvasFormat();
 
-// Mapped buffers are not yet supported, so here we're going to use the
-// writeBuffer function instead!
 verticesBuffer = device.createBuffer({
   size: array_length(cubeVertexArray) * 4, // 4 bytes per float
-  usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST, // COPY_DST required by writeBuffer
-  //mappedAtCreation: true,
+  usage: GPUBufferUsage.VERTEX,
+  mappedAtCreation: true,
 });
-//new Float32Array(verticesBuffer.getMappedRange()).set(cubeVertexArray);
-//verticesBuffer.unmap();
-device.queue.writeBuffer(verticesBuffer, 0, cubeVertexArray);
-//device.queue.submit([]);
+verticesBuffer.getMappedRange().set(cubeVertexArray);
+verticesBuffer.unmap();
 
 pipeline = device.createRenderPipeline({
   layout: "auto",

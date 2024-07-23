@@ -1,7 +1,8 @@
 {
   "FolderOrderSettings":[
-    {"name":"BasicGraphics","order":12,"path":"folders/BasicGraphics.yy",},
-    {"name":"Sprites","order":13,"path":"folders/Sprites.yy",},
+    {"name":"BasicGraphics","order":2,"path":"folders/BasicGraphics.yy",},
+    {"name":"GPGPUDemos","order":9,"path":"folders/GPGPUDemos.yy",},
+    {"name":"Sprites","order":3,"path":"folders/Sprites.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"objCubemap","order":4,"path":"objects/objCubemap/objCubemap.yy",},
@@ -9,10 +10,11 @@
     {"name":"objHelloTriangle","order":6,"path":"objects/objHelloTriangle/objHelloTriangle.yy",},
     {"name":"objHelloTriangleMSAA","order":7,"path":"objects/objHelloTriangleMSAA/objHelloTriangleMSAA.yy",},
     {"name":"objInstancedCube","order":8,"path":"objects/objInstancedCube/objInstancedCube.yy",},
-    {"name":"objMain","order":2,"path":"objects/objMain/objMain.yy",},
-    {"name":"objSample","order":1,"path":"objects/objSample/objSample.yy",},
+    {"name":"objMain","order":1,"path":"objects/objMain/objMain.yy",},
+    {"name":"objSample","order":5,"path":"objects/objSample/objSample.yy",},
     {"name":"objTexturedCube","order":2,"path":"objects/objTexturedCube/objTexturedCube.yy",},
     {"name":"objTwoCubes","order":3,"path":"objects/objTwoCubes/objTwoCubes.yy",},
+    {"name":"vector3","order":8,"path":"scripts/vector3/vector3.yy",},
     {"name":"sprNegX","order":2,"path":"sprites/sprNegX/sprNegX.yy",},
     {"name":"sprNegY","order":3,"path":"sprites/sprNegY/sprNegY.yy",},
     {"name":"sprNegZ","order":4,"path":"sprites/sprNegZ/sprNegZ.yy",},
