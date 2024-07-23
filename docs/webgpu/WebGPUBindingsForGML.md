@@ -52,6 +52,7 @@
     * [GPUComputePassEncoder.setBindGroup](#gpucomputepassencodersetbindgroup)
     * [GPUComputePassEncoder.setPipeline](#gpucomputepassencodersetpipeline)
   * [GPUComputePipeline](#gpucomputepipeline)
+    * [GPUComputePipeline.getBindGroupLayout](#gpucomputepipelinegetbindgrouplayout)
   * [GPUComputePipelineDescriptor](#gpucomputepipelinedescriptor)
   * [GPUDevice](#gpudevice)
     * [GPUDevice.createBindGroup](#gpudevicecreatebindgroup)
@@ -920,6 +921,26 @@ pipeline | [GPUComputePipeline](#gpucomputepipeline) | ❌ | The compute pipelin
 A struct that defines a compute pipeline stage, used in [GPUComputePassEncoder.setPipeline](#gpucomputepassencodersetpipeline). Created with [GPUDevice.createComputePipeline](#gpudevicecreatecomputepipeline).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline>
+
+#### GPUComputePipeline.getBindGroupLayout
+
+A method of struct [GPUComputePipeline](#gpucomputepipeline). Returns the pipeline's bind group layout at given index. Useful when given pipeline is created with `layout: "auto"`.
+
+`**Syntax:**
+
+```gml
+getBindGroupLayout(index)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+index | `Real` | ❌ | The index of the bind group layout.
+
+**Returns:** [GPUBindGroupLayout](#gpubindgrouplayout)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline/getBindGroupLayout>
 
 ### GPUComputePipelineDescriptor
 
