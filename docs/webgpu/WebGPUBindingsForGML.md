@@ -12,62 +12,131 @@
     * [GPU.requestAdapter](#gpurequestadapter)
     * [GPU.requestAnimationFrame](#gpurequestanimationframe)
     * [GPU.wgslLanguageFeatures](#gpuwgsllanguagefeatures)
-  * [GPURequestAdapterOptions](#gpurequestadapteroptions)
   * [GPUAdapter](#gpuadapter)
     * [GPUAdapter.requestDevice](#gpuadapterrequestdevice)
-  * [GPUDeviceDescriptor](#gpudevicedescriptor)
+  * [GPUBindGroup](#gpubindgroup)
+  * [GPUBindGroupDescriptor](#gpubindgroupdescriptor)
+  * [GPUBindGroupLayout](#gpubindgrouplayout)
+  * [GPUBindGroupLayoutDescriptor](#gpubindgrouplayoutdescriptor)
+  * [GPUBuffer](#gpubuffer)
+    * [GPUBuffer.destroy](#gpubufferdestroy)
+    * [GPUBuffer.getMappedRange](#gpubuffergetmappedrange)
+    * [GPUBuffer.mapAsync](#gpubuffermapasync)
+    * [GPUBuffer.unmap](#gpubufferunmap)
+  * [GPUBufferDescriptor](#gpubufferdescriptor)
+  * [GPUColor](#gpucolor)
+  * [GPUCommandBuffer](#gpucommandbuffer)
+  * [GPUCommandBufferDescriptor](#gpucommandbufferdescriptor)
+  * [GPUCommandEncoder](#gpucommandencoder)
+    * [GPUCommandEncoder.beginComputePass](#gpucommandencoderbegincomputepass)
+    * [GPUCommandEncoder.beginRenderPass](#gpucommandencoderbeginrenderpass)
+    * [GPUCommandEncoder.clearBuffer](#gpucommandencoderclearbuffer)
+    * [GPUCommandEncoder.copyBufferToBuffer](#gpucommandencodercopybuffertobuffer)
+    * [GPUCommandEncoder.copyBufferToTexture](#gpucommandencodercopybuffertotexture)
+    * [GPUCommandEncoder.copyTextureToBuffer](#gpucommandencodercopytexturetobuffer)
+    * [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture)
+    * [GPUCommandEncoder.finish](#gpucommandencoderfinish)
+    * [GPUCommandEncoder.insertDebugMarker](#gpucommandencoderinsertdebugmarker)
+    * [GPUCommandEncoder.popDebugGroup](#gpucommandencoderpopdebuggroup)
+    * [GPUCommandEncoder.pushDebugGroup](#gpucommandencoderpushdebuggroup)
+    * [GPUCommandEncoder.resolveQuerySet](#gpucommandencoderresolvequeryset)
+  * [GPUCommandEncoderDescriptor](#gpucommandencoderdescriptor)
+  * [GPUComputePassDescriptor](#gpucomputepassdescriptor)
+  * [GPUComputePassEncoder](#gpucomputepassencoder)
+    * [GPUComputePassEncoder.dispatchWorkgroups](#gpucomputepassencoderdispatchworkgroups)
+    * [GPUComputePassEncoder.dispatchWorkgroupsIndirect](#gpucomputepassencoderdispatchworkgroupsindirect)
+    * [GPUComputePassEncoder.end_](#gpucomputepassencoderend_)
+    * [GPUComputePassEncoder.insertDebugMarker](#gpucomputepassencoderinsertdebugmarker)
+    * [GPUComputePassEncoder.popDebugGroup](#gpucomputepassencoderpopdebuggroup)
+    * [GPUComputePassEncoder.pushDebugGroup](#gpucomputepassencoderpushdebuggroup)
+    * [GPUComputePassEncoder.setBindGroup](#gpucomputepassencodersetbindgroup)
+    * [GPUComputePassEncoder.setPipeline](#gpucomputepassencodersetpipeline)
+  * [GPUComputePipeline](#gpucomputepipeline)
+  * [GPUComputePipelineDescriptor](#gpucomputepipelinedescriptor)
   * [GPUDevice](#gpudevice)
     * [GPUDevice.createBindGroup](#gpudevicecreatebindgroup)
     * [GPUDevice.createBindGroupLayout](#gpudevicecreatebindgrouplayout)
     * [GPUDevice.createBuffer](#gpudevicecreatebuffer)
     * [GPUDevice.createCommandEncoder](#gpudevicecreatecommandencoder)
+    * [GPUDevice.createComputePipeline](#gpudevicecreatecomputepipeline)
     * [GPUDevice.createPipelineLayout](#gpudevicecreatepipelinelayout)
+    * [GPUDevice.createQuerySet](#gpudevicecreatequeryset)
+    * [GPUDevice.createRenderBundleEncoder](#gpudevicecreaterenderbundleencoder)
     * [GPUDevice.createRenderPipeline](#gpudevicecreaterenderpipeline)
     * [GPUDevice.createSampler](#gpudevicecreatesampler)
     * [GPUDevice.createShaderModule](#gpudevicecreateshadermodule)
     * [GPUDevice.createTexture](#gpudevicecreatetexture)
     * [GPUDevice.queue](#gpudevicequeue)
-  * [GPUBindGroupDescriptor](#gpubindgroupdescriptor)
-  * [GPUBindGroup](#gpubindgroup)
-  * [GPUBindGroupLayoutDescriptor](#gpubindgrouplayoutdescriptor)
-  * [GPUBindGroupLayout](#gpubindgrouplayout)
-  * [GPUBufferDescriptor](#gpubufferdescriptor)
-  * [GPUBuffer](#gpubuffer)
-    * [GPUBuffer.destroy](#gpubufferdestroy)
-  * [GPUCommandBufferDescriptor](#gpucommandbufferdescriptor)
-  * [GPUCommandBuffer](#gpucommandbuffer)
-  * [GPUCommandEncoderDescriptor](#gpucommandencoderdescriptor)
-  * [GPUCommandEncoder](#gpucommandencoder)
-    * [GPUCommandEncoder.beginRenderPass](#gpucommandencoderbeginrenderpass)
-    * [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture)
-    * [GPUCommandEncoder.finish](#gpucommandencoderfinish)
+  * [GPUDeviceDescriptor](#gpudevicedescriptor)
   * [GPUExtent3D](#gpuextent3d)
+  * [GPUImageCopyBuffer](#gpuimagecopybuffer)
   * [GPUImageCopyTexture](#gpuimagecopytexture)
-  * [GPUPipelineLayoutDescriptor](#gpupipelinelayoutdescriptor)
+  * [GPUMappedRange](#gpumappedrange)
+    * [GPUMappedRange.at](#gpumappedrangeat)
+    * [GPUMappedRange.set](#gpumappedrangeset)
   * [GPUPipelineLayout](#gpupipelinelayout)
+  * [GPUPipelineLayoutDescriptor](#gpupipelinelayoutdescriptor)
+  * [GPUQuerySet](#gpuqueryset)
+    * [GPUQuerySet.destroy](#gpuquerysetdestroy)
+  * [GPUQuerySetDescriptor](#gpuquerysetdescriptor)
+  * [GPUQueue](#gpuqueue)
+    * [GPUQueue.onSubmittedWorkDone](#gpuqueueonsubmittedworkdone)
+    * [GPUQueue.submit](#gpuqueuesubmit)
+    * [GPUQueue.writeBuffer](#gpuqueuewritebuffer)
+    * [GPUQueue.writeTexture](#gpuqueuewritetexture)
+  * [GPURenderBundle](#gpurenderbundle)
+  * [GPURenderBundleDescriptor](#gpurenderbundledescriptor)
+  * [GPURenderBundleEncoder](#gpurenderbundleencoder)
+    * [GPURenderBundleEncoder.draw](#gpurenderbundleencoderdraw)
+    * [GPURenderBundleEncoder.drawIndexed](#gpurenderbundleencoderdrawindexed)
+    * [GPURenderBundleEncoder.drawIndexedIndirect](#gpurenderbundleencoderdrawindexed)
+    * [GPURenderBundleEncoder.drawIndirect](#gpurenderbundleencoderdrawindirect)
+    * [GPURenderBundleEncoder.finish](#gpurenderbundleencoderfinish)
+    * [GPURenderBundleEncoder.insertDebugMarker](#gpurenderbundleencoderinsertdebugmarker)
+    * [GPURenderBundleEncoder.popDebugGroup](#gpurenderbundleencoderpopdebuggroup)
+    * [GPURenderBundleEncoder.pushDebugGroup](#gpurenderbundleencoderpushdebuggroup)
+    * [GPURenderBundleEncoder.setBindGroup](#gpurenderbundleencodersetbindgroup)
+    * [GPURenderBundleEncoder.setIndexBuffer](#gpurenderbundleencodersetindexbuffer)
+    * [GPURenderBundleEncoder.setPipeline](#gpurenderbundleencodersetpipeline)
+    * [GPURenderBundleEncoder.setVertexBuffer](#gpurenderbundleencodersetvertexbuffer)
+  * [GPURenderBundleEncoderDescriptor](#gpurenderbundleencoderdescriptor)
   * [GPURenderPassDescriptor](#gpurenderpassdescriptor)
   * [GPURenderPassEncoder](#gpurenderpassencoder)
+    * [GPURenderPassEncoder.beginOcclusionQuery](#gpurenderpassencoderbeginocclusionquery)
     * [GPURenderPassEncoder.draw](#gpurenderpassencoderdraw)
+    * [GPURenderPassEncoder.drawIndexed](#gpurenderpassencoderdrawindexed)
+    * [GPURenderPassEncoder.drawIndexedIndirect](#gpurenderpassencoderdrawindexedindirect)
+    * [GPURenderPassEncoder.drawIndirect](#gpurenderpassencoderdrawindirect)
     * [GPURenderPassEncoder.end_](#gpurenderpassencoderend_)
+    * [GPURenderPassEncoder.endOcclusionQuery](#gpurenderpassencoderendocclusionquery)
+    * [GPURenderPassEncoder.executeBundles](#gpurenderpassencoderexecutebundles)
+    * [GPURenderPassEncoder.insertDebugMarker](#gpurenderpassencoderinsertdebugmarker)
+    * [GPURenderPassEncoder.popDebugGroup](#gpurenderpassencoderpopdebuggroup)
+    * [GPURenderPassEncoder.pushDebugGroup](#gpurenderpassencoderpushdebuggroup)
     * [GPURenderPassEncoder.setBindGroup](#gpurenderpassencodersetbindgroup)
+    * [GPURenderPassEncoder.setBlendConstant](#gpurenderpassencodersetblendconstant)
+    * [GPURenderPassEncoder.setIndexBuffer](#gpurenderpassencodersetindexbuffer)
     * [GPURenderPassEncoder.setPipeline](#gpurenderpassencodersetpipeline)
+    * [GPURenderPassEncoder.setScissorRect](#gpurenderpassencodersetscissorrect)
+    * [GPURenderPassEncoder.setStencilReference](#gpurenderpassencodersetstencilreference)
     * [GPURenderPassEncoder.setVertexBuffer](#gpurenderpassencodersetvertexbuffer)
-  * [GPURenderPipelineDescriptor](#gpurenderpipelinedescriptor)
+    * [GPURenderPassEncoder.setViewport](#gpurenderpassencodersetviewport)
   * [GPURenderPipeline](#gpurenderpipeline)
     * [GPURenderPipeline.getBindGroupLayout](#gpurenderpipelinegetbindgrouplayout)
-  * [GPUSamplerDescriptor](#gpusamplerdescriptor)
+  * [GPURenderPipelineDescriptor](#gpurenderpipelinedescriptor)
+  * [GPURequestAdapterOptions](#gpurequestadapteroptions)
   * [GPUSampler](#gpusampler)
-  * [GPUShaderModuleDescriptor](#gpushadermoduledescriptor)
+  * [GPUSamplerDescriptor](#gpusamplerdescriptor)
   * [GPUShaderModule](#gpushadermodule)
-  * [GPUTextureDescriptor](#gputexturedescriptor)
+    * [GPUShaderModule.getCompilationInfo](#gpushadermodulegetcompilationinfo)
+  * [GPUShaderModuleDescriptor](#gpushadermoduledescriptor)
   * [GPUTexture](#gputexture)
     * [GPUTexture.createView](#gputexturecreateview)
     * [GPUTexture.destroy](#gputexturedestroy)
-  * [GPUTextureViewDescriptor](#gputextureviewdescriptor)
+  * [GPUTextureDataLayout](#gputexturedatalayout)
+  * [GPUTextureDescriptor](#gputexturedescriptor)
   * [GPUTextureView](#gputextureview)
-  * [GPUQueue](#gpuqueue)
-    * [GPUQueue.submit](#gpuqueuesubmit)
-    * [GPUQueue.writeBuffer](#gpuqueuewritebuffer)
+  * [GPUTextureViewDescriptor](#gputextureviewdescriptor)
 * [Enums](#enums)
   * [GPUAddressMode](#gpuaddressmode)
   * [GPUAutoLayoutMode](#gpuautolayoutmode)
@@ -164,7 +233,7 @@ getResourceTexture(texture)
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`texture` | Pointer.Texture | `false` | The texture to retrieve a `GPUTexture` for.
+texture | `Pointer.Texture` | ❌ | The texture to retrieve a `GPUTexture` for.
 
 **Returns:** [GPUTexture](#gputexture)
 
@@ -182,7 +251,7 @@ getResourceTextureView(texture)
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`texture` | Pointer.Texture | `false` | The texture to retrieve a `GPUTextureView` for.
+texture | `Pointer.Texture` | ❌ | The texture to retrieve a `GPUTextureView` for.
 
 **Returns:** [GPUTextureView](#gputextureview)
 
@@ -204,7 +273,7 @@ requestAdapter([options])
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`options` | [GPURequestAdapterOptions](#gpurequestadapteroptions) | `true` | Currently ignored by the function.
+options | [GPURequestAdapterOptions](#gpurequestadapteroptions) | ✅ | Currently ignored by the function.
 
 **Returns:** [GPUAdapter](#gpuadapter)
 
@@ -224,7 +293,7 @@ requestAnimationFrame(callback)
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`callback` | Function | `false` | A function that submits commands to the GPU.
+callback | `Function` | ❌ | A function that submits commands to the GPU.
 
 **Returns:** N/A
 
@@ -239,12 +308,6 @@ Unlike in JS, you should never call `requestAnimationFrame` inside of the callba
 A static read-only property of [GPU](#gpu). Contains an array of available [WGSL language features](https://gpuweb.github.io/gpuweb/wgsl/#language-extension) (strings).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPU/wgslLanguageFeatures>
-
-### GPURequestAdapterOptions
-
-Currently unused, as the [GPU.requestAdapter](#gpurequestadapter) method always returns the [GPUAdapter](#gpuadapter) used internally by GameMaker.
-
-<https://developer.mozilla.org/en-US/docs/Web/API/GPU/requestAdapter#options>
 
 ### GPUAdapter
 
@@ -264,213 +327,11 @@ A method of struct [GPUAdapter](#gpuadapter). Returns a [GPUDevice](#gpudevice),
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`descriptor` | [GPUDeviceDescriptor](#gpudevicedescriptor) | `true` | Currently ignored by the function.
+descriptor | [GPUDeviceDescriptor](#gpudevicedescriptor) | ✅ | Currently ignored by the function.
 
 **Returns:** [GPUDevice](#gpudevice)
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/requestDevice>
-
-### GPUDeviceDescriptor
-
-Currently unused, as the [GPUAdapter.requestDevice](#gpuadapterrequestdevice) method always returns the [GPUDevice](#gpudevice) used internally by GameMaker.
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/requestDevice#descriptor>
-
-### GPUDevice
-
-A struct used to retrieve a [GPUQueue](#gpuqueue), create [GPUCommandEncoder](#gpucommandencoder) and GPU resources like [GPUBuffer](#gpubuffer), [GPUTexture](#gputexture), [GPUSampler](#gpusampler) and many others. Retrieved with [GPUAdapter.requestDevice](#gpuadapterrequestdevice).
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice>
-
-#### GPUDevice.createBindGroup
-
-A method of struct [GPUDevice](#gpudevice). Used to create a new [GPUBindGroup](#gpubindgroup), which is used to pass resources like [GPUBuffer](#gpubuffer), [GPUTextureView](#gputextureview) and [GPUSampler](#gpusampler) to shaders.
-
-**Syntax:**
-
-```gml
-createBindGroup(descriptor)
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUBindGroupDescriptor](#gpubindgroupdescriptor) | `false` | A description of the bind group to be created.
-
-**Returns:** [GPUBindGroup](#gpubindgroup)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroup>
-
-#### GPUDevice.createBindGroupLayout
-
-A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUBindGroupLayout](#gpubindgrouplayout), which defines storage and purpose of GPU resources like buffers, samplers and textures, and is required for creating new [GPUBindGroup](#gpubindgroup)s.
-
-**Syntax:**
-
-`createBindGroupLayout(descriptor)`
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUBindGroupLayoutDescriptor](#gpubindgrouplayoutdescriptor) | `false` | A description of the bind group layout to be created.
-
-**Returns:** [GPUBindGroupLayout](#gpubindgrouplayout)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroupLayout>
-
-#### GPUDevice.createBuffer
-
-A method of struct [GPUDevice](#gpudevice). Used to create a new [GPUBuffer](#gpubuffer), which can be used to store vertex data, shader uniforms etc.
-
-**Syntax:**
-
-```gml
-createBuffer(descriptor)
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUBufferDescriptor](#gpubufferdescriptor) | `false` | A description of the buffer to be created.
-
-**Returns:** [GPUBuffer](#gpubuffer)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBuffer>
-
-#### GPUDevice.createCommandEncoder
-
-A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUCommandEncoder](#gpucommandencoder), which is used to create [GPUCommandBuffer](#gpucommandbuffer)s that are submitted to the GPU via [GPUQueue.submit](#gpuqueuesubmit).
-
-**Syntax:**
-
-```gml
-createCommandEncoder([descriptor])
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUCommandEncoderDescriptor](#gpucommandencoderdescriptor) | `true` | A description of the command encoder to be created.
-
-**Returns:** [GPUCommandEncoder](#gpucommandencoder)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createCommandEncoder>
-
-#### GPUDevice.createPipelineLayout
-
-A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUPipelineLayout](#gpupipelinelayout), which is a struct required for creating new pipelines. `GPUPipelineLayout` defines the [layout](#gpubindgrouplayout) that a [bind group](#gpubindgroup) must have to be compatible with given pipeline.
-
-**Syntax:**
-
-```gml
-createPipelineLayout(descriptor)
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUPipelineLayoutDescriptor](#gpupipelinelayoutdescriptor) | `false` | The description of the pipeline layout to be created.
-
-**Returns:** [GPUPipelineLayout](#gpupipelinelayout)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createPipelineLayout>
-
-#### GPUDevice.createRenderPipeline
-
-A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPURenderPipeline](#gpurenderpipeline), which defines vertex and fragment stages of a render pass.
-
-**Syntax:**
-
-```gml
-createRenderPipeline(descriptor)
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPURenderPipelineDescriptor](#gpurenderpipelinedescriptor) | `false` | The description of the render pipeline to be created.
-
-**Returns:** [GPURenderPipeline](#gpurenderpipeline)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipeline>
-
-#### GPUDevice.createSampler
-
-A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUSampler](#gpusampler), which controls how shaders sample textures.
-
-**Syntax:**
-
-```gml
-createSampler([descriptor])
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUSamplerDescriptor](#gpusamplerdescriptor) | `true` | The description of the sampler to be created.
-
-**Returns:** [GPUSampler](#gpusampler)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createSampler>
-
-#### GPUDevice.createShaderModule
-
-A method of struct [GPUDevice](#gpudevice). Used to create a new [GPUShaderModule](#gpushadermodule) from a WGSL source code.
-
-**Syntax:**
-
-```gml
-createShaderModule(descriptor)
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUShaderModuleDescriptor](#gpushadermoduledescriptor) | `true` | The description of the shader module to be created.
-
-**Returns:** [GPUShaderModule](#gpushadermodule)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createShaderModule>
-
-#### GPUDevice.createTexture
-
-A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUTexture](#gputexture).
-
-**Syntax:**
-
-```gml
-createTexture(descriptor)
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPUTextureDescriptor](#gputexturedescriptor) | `true` | The description of the texture to be created.
-
-**Returns:** [GPUTexture](#gputexture)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createTexture>
-
-#### GPUDevice.queue
-
-A static read-only property of struct [GPUDevice](#gpudevice) containing [GPUQueue](#gpuqueue), which can be used to issue commands to the GPU.
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/queue>
-
-### GPUBindGroupDescriptor
-
-A struct used in [GPUDevice.createBindGroup](#gpudevicecreatebindgroup) to create a new [GPUBindGroup](#gpubindgroup).
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroup#descriptor>
 
 ### GPUBindGroup
 
@@ -478,11 +339,11 @@ A struct containing shader bindings, laid out based on a [GPUBindGroupLayout](#g
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroup>
 
-### GPUBindGroupLayoutDescriptor
+### GPUBindGroupDescriptor
 
-A struct used in [GPUDevice.createBindGroupLayout](#gpudevicecreatebindgrouplayout) to create a new [GPUBindGroupLayout](#gpubindgroup).
+A struct used in [GPUDevice.createBindGroup](#gpudevicecreatebindgroup) to create a new [GPUBindGroup](#gpubindgroup).
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroupLayout#descriptor>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroup#descriptor>
 
 ### GPUBindGroupLayout
 
@@ -490,11 +351,11 @@ A struct that defines layout and usage of shader resources in [GPUBindGroup](#gp
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroupLayout>
 
-### GPUBufferDescriptor
+### GPUBindGroupLayoutDescriptor
 
-A struct used in [GPUDevice.createBuffer](#gpudevicecreatebuffer) to create a new [GPUBuffer](#gpubuffer).
+A struct used in [GPUDevice.createBindGroupLayout](#gpudevicecreatebindgrouplayout) to create a new [GPUBindGroupLayout](#gpubindgroup).
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBuffer#descriptor>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroupLayout#descriptor>
 
 ### GPUBuffer
 
@@ -516,11 +377,105 @@ destroy()
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/destroy>
 
-### GPUCommandBufferDescriptor
+#### GPUBuffer.getMappedRange
 
-A struct used in [GPUCommandEncoder.finish](#gpucommandencoderfinish) to create a new [GPUCommandBuffer](#gpucommandbuffer).
+A method of struct [GPUBuffer](#gpubuffer). Returns a [GPUMappedRange](#gpumappedrange) containing data of a `GPUBuffer` mapped with [GPUBuffer.mapAsync](#gpubuffermapasync), which is used to read/write data from/to the buffer.
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/finish#descriptor>
+**Syntax:**
+
+```gml
+getMappedRange([offset], [size])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+offset | `Real` | ✅ | An offset from the start of the buffer, in bytes. Defaults to 0.
+size | `Real` | ✅ | The portion of the mapped buffer to retrieve a mapped range for, in bytes. Defaults to the whole size of the mapped portion of the buffer minus offset.
+
+**Returns:** [GPUMappedRange](#gpumappedrange)
+
+**Links:**
+
+#### GPUBuffer.mapAsync
+
+A method of struct [GPUBuffer](#gpubuffer). Maps a buffer to CPU memory for reading or writing data. Requires [GPUBufferUsage.MAP_READ](#gpubufferusage) or [GPUBufferUsage.MAP_WRITE](#gpubufferusage) usage.
+
+**Syntax:**
+
+```gml
+mapAsync(mode, [callback])
+mapAsync(mode, [offset], [size], [callback])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+mode | [GPUMapMode](#gpumapmode) | ❌ | Whether to map the buffer for reading or writing.
+offset | `Real` | ✅ | The offset from the start of the buffer to map from, in bytes. Defaults to 0.
+size | `Real` | ✅ | The portion of the buffer to map, in bytes. Defaults to the size of the whole buffer minus offset.
+callback | `Function` | ✅ | A function that receives [GPUBufferMapState](#gpubuffermapstate) as the first argument and the buffer as the second argument.
+
+**Returns:** N/A
+
+**Example:**
+
+The following example maps a buffer for writing, checks whether the mapping was successful and writes floats 1, 2, 3 into it, then unmaps the buffer, commiting the changes. Please note that the buffer must have been previously created with [GPUBufferUsage.MAP_WRITE](#gpubufferusage), otherwise it could not be mapped for writing.
+
+```gml
+buffer.mapAsync(GPUMapMode.WRITE, function (state, buffer) {
+  if (state == GPUBufferMapState.Mapped) {
+    var mappedRange = buffer.getMappedRange();
+    mappedRange.set([1, 2, 3]);
+    buffer.unmap();
+  }
+});
+```
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/mapAsync>
+
+#### GPUBuffer.unmap
+
+A method of struct [GPUBuffer](#gpubuffer). Unmaps a buffer mapped with [GPUBuffer.mapAsync], committing changes done (if any).
+
+**Syntax:**
+
+```gml
+unmap()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/unmap>
+
+### GPUBufferDescriptor
+
+A struct used in [GPUDevice.createBuffer](#gpudevicecreatebuffer) to create a new [GPUBuffer](#gpubuffer).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBuffer#descriptor>
+
+### GPUColor
+
+A struct or an array defining a color. Contained values are in range 0..1.
+
+**Example:**
+
+```gml
+// Red color as a struct
+var colorStruct = {
+  r: 1,
+  g: 0,
+  b: 0,
+  a: 1,
+};
+
+// Red color as an array
+var colorArray = [1, 0, 0, 1];
+```
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBlendConstant#color>
 
 ### GPUCommandBuffer
 
@@ -528,17 +483,147 @@ A struct containing GPU commands, ready to be submitted with [GPUQueue.submit](#
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer>
 
-### GPUCommandEncoderDescriptor
+### GPUCommandBufferDescriptor
 
-A struct used in [GPUDevice.createCommandEncoder](#gpudevicecreatecommandencoder) to create a new [GPUCommandEncoder](#gpucommandencoder).
+A struct used in [GPUCommandEncoder.finish](#gpucommandencoderfinish) to create a new [GPUCommandBuffer](#gpucommandbuffer).
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createCommandEncoder#descriptor>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/finish#descriptor>
 
 ### GPUCommandEncoder
 
 A struct used to create GPU commands. Created with [GPUDevice.createCommandEncoder](#gpudevicecreatecommandencoder).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder>
+
+#### GPUCommandEncoder.beginComputePass
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Begins a new compute pass and returns a [GPUComputePassEncoder](#gpucomputepassencoder), using which you can define commands executed during given compute pass.
+
+**Syntax:**
+
+```gml
+beginComputePass([descriptor])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUComputePassDescriptor](#gpucomputepassdescriptor) | ✅ | The description of the compute pass to begin.
+
+**Returns:** [GPUComputePassEncoder](#gpucomputepassencoder)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/beginComputePass>
+
+#### GPUCommandEncoder.beginRenderPass
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Begins a new render pass and returns a [GPURenderPassEncoder](#gpurenderpassencoder), using which you can define the commands executed during given render pass.
+
+**Syntax:**
+
+```gml
+beginRenderPass([descriptor])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPURenderPassDescriptor](#gpurenderpassdescriptor) | ✅ | The description of the render pass to begin.
+
+**Returns:** [GPURenderPassEncoder](#gpurenderpassencoder)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/beginRenderPass>
+
+#### GPUCommandEncoder.clearBuffer
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Clears a region of a [GPUBuffer](#gpubuffer) with zeros.
+
+**Syntax:**
+
+```gml
+clearBuffer(buffer, [offset], [size])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+buffer | [GPUBuffer](#gpubuffer) | ❌ | The buffer to clear.
+offset | `Real` | ✅ | An offset from the start of the buffer to start clearing from, in bytes. Defaults to 0.
+size | `Real` | ✅ | The size of the buffer to clear, in bytes. Defaults to the size of the whole buffer minus offset.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/clearBuffer>
+
+#### GPUCommandEncoder.copyBufferToBuffer
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Copies data from one [GPUBuffer](#gpubuffer) to another.
+
+**Syntax:**
+
+```gml
+copyBufferToBuffer(source, sourceOffset, destination, destinationOffset, size)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+source | [GPUBuffer](#gpubuffer) | ❌ | The buffer to copy data from.
+sourceOffset | `Real` | ❌ | An offset from the beginning of the source buffer to start copying data from, in bytes.
+destination | [GPUBuffer](#gpubuffer) | ❌ | The buffer to copy data to.
+destinationOffset | `Real` | ❌ | An offset from the beginning of the destination buffer to start copying data to, in bytes.
+size | `Real` | ❌ | The size of the data to copy, in bytes.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer>
+
+#### GPUCommandEncoder.copyBufferToTexture
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Copies data from a [GPUBuffer](#gpubuffer) to [GPUTexture](#gputexture).
+
+**Syntax:**
+
+```gml
+copyBufferToTexture(source, destination, copySize)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+source | [GPUImageCopyBuffer](#gpuimagecopybuffer) | ❌ | A struct defining the source buffer and the layout of the data to be copied.
+destination | [GPUImageCopyTexture](#gpuimagecopytexture) | ❌ | A struct defining the destination texture.
+copySize | [GPUExtent3D](#gpuextent3d) | ❌ | A struct defining the width, height and depth/layer count of the data to be copied.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToTexture>
+
+#### GPUCommandEncoder.copyTextureToBuffer
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Copies data from a [GPUTexture](#gputexture) to a [GPUBuffer](#gpubuffer).
+
+**Syntax:**
+
+```gml
+copyTextureToBuffer(source, destination, copySize)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+source | [GPUImageCopyTexture](#gpuimagecopytexture) | ❌ | A struct defining the source texture.
+destination | [GPUImageCopyBuffer](#gpuimagecopybuffer) | ❌ | A struct defining the destination buffer and the layout of the data to be copied.
+copySize | [GPUExtent3D](#gpuextent3d) | ❌ | A struct defining the width, height and depth/layer count of the data to be copied.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToBuffer>
 
 #### GPUCommandEncoder.copyTextureToTexture
 
@@ -554,33 +639,13 @@ copyTextureToTexture(source, destination, copySize)
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`source` | [GPUImageCopyTexture](#gpuimagecopytexture) | `false` | The texture to copy from.
-`destination` | [GPUImageCopyTexture](#gpuimagecopytexture) | `false` | The texture to copy to.
-`copySize` | [GPUExtent3D](#gpuextent3d) | `false` | The width, height, and depth/array layer count to be copied.
+source | [GPUImageCopyTexture](#gpuimagecopytexture) | ❌ | A struct defining the source texture.
+destination | [GPUImageCopyTexture](#gpuimagecopytexture) | ❌ | A struct defining the destination texture.
+copySize | [GPUExtent3D](#gpuextent3d) | ❌ | A struct defining the width, height, and depth/layer count to be copied.
 
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToTexture>
-
-#### GPUCommandEncoder.beginRenderPass
-
-A method of struct [GPUCommandEncoder](#gpucommandencoder). Begins a new render pass and returns a [GPURenderPassEncoder](#gpurenderpassencoder), using which you can define the commands execute during given render pass.
-
-**Syntax:**
-
-```gml
-beginRenderPass([descriptor])
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`descriptor` | [GPURenderPassDescriptor](#gpurenderpassdescriptor) | `true` | The description of the render pass to begin.
-
-**Returns:** [GPURenderPassEncoder](#gpurenderpassencoder)
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/beginRenderPass>
 
 #### GPUCommandEncoder.finish
 
@@ -596,25 +661,596 @@ finish([descriptor])
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`descriptor` | [GPUCommandBufferDescriptor](#gpucommandbufferdescriptor) | `true` | The description of the command buffer to be created.
+descriptor | [GPUCommandBufferDescriptor](#gpucommandbufferdescriptor) | ✅ | The description of the command buffer to be created.
 
 **Returns:** [GPUCommandBuffer](#gpucommandbuffer)
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/finish>
 
+#### GPUCommandEncoder.insertDebugMarker
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Marks a specific point in a series of encoded commands with a label.
+
+**Syntax:**
+
+```gml
+insertDebugMarker(markerLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+markerLabel | `String` | ❌ | The label of the debug marker.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/insertDebugMarker>
+
+#### GPUCommandEncoder.popDebugGroup
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Ends a debug group started with [GPUCommandEncoder.pushDebugGroup](#gpucommandencoderpushdebuggroup).
+
+**Syntax:**
+
+```gml
+popDebugGroup()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/popDebugGroup>
+
+#### GPUCommandEncoder.pushDebugGroup
+
+A method of struct [GPUCommandEncoder](#gpurenderpassencoder). Starts a debug group, which then contains all subsequent commands until [GPUCommandEncoder.popDebugGroup](#gpucommandencoderpopdebuggroup) is called.
+
+**Syntax:**
+
+```gml
+pushDebugGroup(groupLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+groupLabel | `String` | ❌ | The label of the debug group.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/pushDebugGroup>
+
+#### GPUCommandEncoder.resolveQuerySet
+
+A method of struct [GPUCommandEncoder](#gpucommandencoder).
+
+**Syntax:**
+
+```gml
+resolveQuerySet()
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+
+**Returns:** N/A
+
+**Links:**
+
+### GPUComputePassDescriptor
+
+A struct used in [GPUCommandEncoder.beginComputePass](#gpucommandencoderbegincomputepass) to begin a new compute pass.
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/beginComputePass#descriptor>
+
+### GPUCommandEncoderDescriptor
+
+A struct used in [GPUDevice.createCommandEncoder](#gpudevicecreatecommandencoder) to create a new [GPUCommandEncoder](#gpucommandencoder).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createCommandEncoder#descriptor>
+
+### GPUComputePassEncoder
+
+A struct that creates compute pass GPU commands. Created with [GPUCommandEncoder.beginComputePass].
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder>
+
+#### GPUComputePassEncoder.dispatchWorkgroups
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Dispatches a grid of workgroups to execute work defined by the current [GPUComputePipeline](#gpucomputepipeline) set by [GPUComputePassEncoder.setPipeline](#gpucomputepassencodersetpipeline).
+
+**Syntax:**
+
+```gml
+dispatchWorkgroups(workgroupCountX, [workgroupCountY], [workgroupCountZ])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+workgroupCountX | `Real` | ❌ | The X dimension of the grid of workgroups to dispatch.
+workgroupCountY | `Real` | ✅ | The Y dimension of the grid of workgroups to dispatch. Defaults to 1.
+workgroupCountZ | `Real` | ✅ | The Z dimension of the grid of workgroups to dispatch. Defaults to 1.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroups>
+
+#### GPUComputePassEncoder.dispatchWorkgroupsIndirect
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Uses a [GPUBuffer](#gpubuffer) as a parameter to dispatch a grid of workgroups to execute work defined by the current [GPUComputePipeline](#gpucomputepipeline) set by [GPUComputePassEncoder.setPipeline](#gpucomputepassencodersetpipeline).
+
+**Syntax:**
+
+```gml
+dispatchWorkgroupsIndirect(indirectBuffer, indirectOffset)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+indirectBuffer | [GPUBuffer](#gpubuffer) | ❌ | A buffer containing the X, Y, Z dimensions of the workgroups to dispatch (three 32-bit unsigned integers).
+indirectOffset | `Real` | ❌ | An offset from the beginning of the buffer to a position where the workgroup dimensions start.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroupsIndirect>
+
+#### GPUComputePassEncoder.end_
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Equivalent to JavaScript's `end()` (which is a reserved keyword in GML, so an underscore is appended to avoid the name clash). Ends a compute pass.
+
+**Syntax:**
+
+```gml
+end_()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/end>
+
+#### GPUComputePassEncoder.insertDebugMarker
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Marks a specific point in a series of encoded compute pass commands with a label.
+
+**Syntax:**
+
+```gml
+insertDebugMarker(markerLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+markerLabel | `String` | ❌ | The label of the debug marker.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/insertDebugMarker>
+
+#### GPUComputePassEncoder.popDebugGroup
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Ends a debug group started with [GPUComputePassEncoder.pushDebugGroup](#gpucomputepassencoderpushdebuggroup).
+
+**Syntax:**
+
+```gml
+popDebugGroup()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/popDebugGroup>
+
+#### GPUComputePassEncoder.pushDebugGroup
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Starts a debug group, which then contains all subsequent commands until [GPUComputePassEncoder.popDebugGroup](#gpucomputepassencoderpopdebuggroup) is called.
+
+**Syntax:**
+
+```gml
+pushDebugGroup(groupLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+groupLabel | `String` | ❌ | The label of the debug group.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/pushDebugGroup>
+
+#### GPUComputePassEncoder.setBindGroup
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Defines the [GPUBindGroup](#gpubindgroup) used in subsequent commands at given index.
+
+**Syntax:**
+
+```gml
+setBindGroup(index, bindGroup, [dynamicOffsets], [dynamicOffsetsStart], [dynamicOffsetsLength])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+index | `Real` | ❌ | The index to set the bind group at.
+bindGroup | [GPUBindGroup](#gpubindgroup), `Undefined` | ❌ | The bind group to set. Use `undefined` to unset a previously set bind group for given index.
+dynamicOffsets | `Array<Real>` | ✅ | An array of values specifying the offset, in bytes, for each entry in `bindGroup` with `hasDynamicOffset: true` set.
+dynamicOffsetsStart | `Real` | ✅ | An offset, in array elements, into `dynamicOffsetsData`, where the dynamic offset data begins. Defaults to 0.
+dynamicOffsetsLength | `Real` | ✅ | The number of dynamic offset values to be read from in `dynamicOffsetsData`. Defaults to the length of the array.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/setBindGroup>
+
+#### GPUComputePassEncoder.setPipeline
+
+A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Defines the [GPUComputePipeline](#gpucomputepipeline) used in subsequent commands.
+
+**Syntax:**
+
+```gml
+setPipeline(pipeline)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+pipeline | [GPUComputePipeline](#gpucomputepipeline) | ❌ | The compute pipeline to use in subsequent commands.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/setPipeline>
+
+### GPUComputePipeline
+
+A struct that defines a compute pipeline stage, used in [GPUComputePassEncoder.setPipeline](#gpucomputepassencodersetpipeline). Created with [GPUDevice.createComputePipeline](#gpudevicecreatecomputepipeline).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline>
+
+### GPUComputePipelineDescriptor
+
+A struct used in [GPUDevice.createComputePipeline](#gpudevicecreatecomputepipeline) to create a new [GPUComputePipeline](#gpucomputepipeline).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createComputePipeline#descriptor>
+
+### GPUDevice
+
+A struct used to retrieve a [GPUQueue](#gpuqueue), create [GPUCommandEncoder](#gpucommandencoder) and GPU resources like [GPUBuffer](#gpubuffer), [GPUTexture](#gputexture), [GPUSampler](#gpusampler) and many others. Retrieved with [GPUAdapter.requestDevice](#gpuadapterrequestdevice).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice>
+
+#### GPUDevice.createBindGroup
+
+A method of struct [GPUDevice](#gpudevice). Used to create a new [GPUBindGroup](#gpubindgroup), which is used to pass resources like [GPUBuffer](#gpubuffer), [GPUTextureView](#gputextureview) and [GPUSampler](#gpusampler) to shaders.
+
+**Syntax:**
+
+```gml
+createBindGroup(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUBindGroupDescriptor](#gpubindgroupdescriptor) | ❌ | A description of the bind group to be created.
+
+**Returns:** [GPUBindGroup](#gpubindgroup)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroup>
+
+#### GPUDevice.createBindGroupLayout
+
+A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUBindGroupLayout](#gpubindgrouplayout), which defines storage and purpose of GPU resources like buffers, samplers and textures, and is required for creating new [GPUBindGroup](#gpubindgroup)s.
+
+**Syntax:**
+
+`createBindGroupLayout(descriptor)`
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUBindGroupLayoutDescriptor](#gpubindgrouplayoutdescriptor) | ❌ | A description of the bind group layout to be created.
+
+**Returns:** [GPUBindGroupLayout](#gpubindgrouplayout)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroupLayout>
+
+#### GPUDevice.createBuffer
+
+A method of struct [GPUDevice](#gpudevice). Used to create a new [GPUBuffer](#gpubuffer), which can be used to store vertex data, shader uniforms etc.
+
+**Syntax:**
+
+```gml
+createBuffer(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUBufferDescriptor](#gpubufferdescriptor) | ❌ | A description of the buffer to be created.
+
+**Returns:** [GPUBuffer](#gpubuffer)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBuffer>
+
+#### GPUDevice.createCommandEncoder
+
+A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUCommandEncoder](#gpucommandencoder), which is used to create [GPUCommandBuffer](#gpucommandbuffer)s that are submitted to the GPU via [GPUQueue.submit](#gpuqueuesubmit).
+
+**Syntax:**
+
+```gml
+createCommandEncoder([descriptor])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUCommandEncoderDescriptor](#gpucommandencoderdescriptor) | ✅ | A description of the command encoder to be created.
+
+**Returns:** [GPUCommandEncoder](#gpucommandencoder)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createCommandEncoder>
+
+#### GPUDevice.createComputePipeline
+
+A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUComputePipeline](#gpucomputepipeline), which defines a compute pipeline stage.
+
+**Syntax:**
+
+```gml
+createComputePipeline(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUComputePipelineDescriptor](#gpucomputepipelinedescriptor) | ❌ | The description of the compute pipeline to be created.
+
+**Returns:** [GPUComputePipeline](#gpucomputepipeline)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createComputePipeline>
+
+#### GPUDevice.createPipelineLayout
+
+A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUPipelineLayout](#gpupipelinelayout), which is a struct required for creating new pipelines. `GPUPipelineLayout` defines the [layout](#gpubindgrouplayout) that a [bind group](#gpubindgroup) must have to be compatible with given pipeline.
+
+**Syntax:**
+
+```gml
+createPipelineLayout(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUPipelineLayoutDescriptor](#gpupipelinelayoutdescriptor) | ❌ | The description of the pipeline layout to be created.
+
+**Returns:** [GPUPipelineLayout](#gpupipelinelayout)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createPipelineLayout>
+
+#### GPUDevice.createQuerySet
+
+A method of [GPUDevice](#gpudevice). Creates a new [GPUQuery](#gpuqueryset) that can be used to record results of queries on passes, such as occlusion or timestamp queries.
+
+**Syntax:**
+
+```gml
+createQuerySet(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUQuerySetDescriptor](#gpuquerysetdescriptor) | ❌ | The description of the query set to be created.
+
+**Returns:** [GPUQuerySet](#gpuqueryset)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createQuerySet>
+
+#### GPUDevice.createRenderBundleEncoder
+
+A method of [GPUDevice](#gpudevice). Creates a new [GPURenderBundleEncoder](#gpurenderbundleencoder), which is used to encoder render pass commands once into [GPURenderBundle](#gpurenderbundle)s, which can be then executed multiple times using [GPURenderPassEncoder.executeBundles](#gpurenderpassencoderexecutebundles).
+
+**Syntax:**
+
+```gml
+createRenderBundleEncoder(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPURenderBundleEncoderDescriptor](#gpurenderbundleencoderdescriptor) | ❌ | The description of the render bundle encoder to be created.
+
+**Returns:** [GPURenderBundleEncoder](#gpurenderbundleencoder)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderBundleEncoder>
+
+#### GPUDevice.createRenderPipeline
+
+A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPURenderPipeline](#gpurenderpipeline), which defines vertex and fragment stages of a render pass.
+
+**Syntax:**
+
+```gml
+createRenderPipeline(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPURenderPipelineDescriptor](#gpurenderpipelinedescriptor) | ❌ | The description of the render pipeline to be created.
+
+**Returns:** [GPURenderPipeline](#gpurenderpipeline)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipeline>
+
+#### GPUDevice.createSampler
+
+A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUSampler](#gpusampler), which controls how shaders sample textures.
+
+**Syntax:**
+
+```gml
+createSampler([descriptor])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUSamplerDescriptor](#gpusamplerdescriptor) | ✅ | The description of the sampler to be created.
+
+**Returns:** [GPUSampler](#gpusampler)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createSampler>
+
+#### GPUDevice.createShaderModule
+
+A method of struct [GPUDevice](#gpudevice). Used to create a new [GPUShaderModule](#gpushadermodule) from a WGSL source code.
+
+**Syntax:**
+
+```gml
+createShaderModule(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUShaderModuleDescriptor](#gpushadermoduledescriptor) | ✅ | The description of the shader module to be created.
+
+**Returns:** [GPUShaderModule](#gpushadermodule)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createShaderModule>
+
+#### GPUDevice.createTexture
+
+A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUTexture](#gputexture).
+
+**Syntax:**
+
+```gml
+createTexture(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPUTextureDescriptor](#gputexturedescriptor) | ✅ | The description of the texture to be created.
+
+**Returns:** [GPUTexture](#gputexture)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createTexture>
+
+#### GPUDevice.queue
+
+A static read-only property of struct [GPUDevice](#gpudevice) containing [GPUQueue](#gpuqueue), which can be used to issue commands to the GPU.
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/queue>
+
+### GPUDeviceDescriptor
+
+Currently unused, as the [GPUAdapter.requestDevice](#gpuadapterrequestdevice) method always returns the [GPUDevice](#gpudevice) used internally by GameMaker.
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/requestDevice#descriptor>
+
 ### GPUExtent3D
 
-A struct or an array containing width, height and depth/array layers. used for example in [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture) for copying data from one [GPUTexture](#gputexture) to another.
+A struct or an array containing width, height and depth/array layers. Used for example in [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture) for copying data from one [GPUTexture](#gputexture) to another.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToTexture#copysize>
 
+### GPUImageCopyBuffer
+
+A struct defining source or destination buffer in a texture copy operation.
+
+**See also:** [GPUCommandEncoder.copyBufferToTexture](#gpucommandencodercopybuffertotexture), [GPUCommandEncoder.copyTextureToBuffer](#gpucommandencodercopytexturetobuffer)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToBuffer#destination>
+
 ### GPUImageCopyTexture
 
-A struct defining source or destination texture in a texture copy operation.
+A struct defining source or destination texture in a copy operation.
 
-**See also:** [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture)
+**See also:** [GPUCommandEncoder.copyBufferToTexture](#gpucommandencodercopybuffertotexture), [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture)
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToTexture#copy_texture_object_structure>
+
+### GPUMappedRange
+
+A struct **specific to GameMaker**, that currently serves as a replacement for JS's `ArrayBuffer` and `TypedArray`. Retrieved with [GPUBuffer.getMappedRange](#gpubuffergetmappedrange). Used to read/write data from/to mapped [GPUBuffer](#gpubuffer)s. **Assumed to contain only 32-bit floats! Other data types are not supported!**
+
+**See also:** [GPUBuffer.mapAsync](#gpubuffermapasync)
+
+#### GPUMappedRange.at
+
+A method of struct [GPUMappedRange](#gpumappedrange). Reads a 32-bit float at given index from a mapped range, retrieved with [GPUBuffer.getMappedRange](#gpubuffergetmappedrange).
+
+**Syntax:**
+
+```gml
+at(index)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+index | `Real` | ❌ | The index to read a value at.
+
+**Returns:** `Real`
+
+#### GPUMappedRange.set
+
+A method of struct [GPUMappedRange](#gpumappedrange). Writes an array of 32-bit floats into a mapped range, retrieved with [GPUBuffer.getMappedRange](#gpubuffergetmappedrange).
+
+**Syntax:**
+
+```gml
+set(array, [targetOffset])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+array | `Array<Real>` | ❌ | Values to write into the mapped range.
+targetOffset | `Real` | ✅ | Index within the mapped range to start writing the values at. Defaults to 0.
+
+**Returns:** N/A
+
+### GPUPipelineLayout
+
+A struct that defines [GPUBindGroupLayout](#gpubindgrouplayout)s used by a pipeline. Created with [GPUDevice.createPipelineLayout](#gpudevicecreatepipelinelayout).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout>
 
 ### GPUPipelineLayoutDescriptor
 
@@ -622,11 +1258,411 @@ A struct used in [GPUDevice.createPipelineLayout](#gpudevicecreatepipelinelayout
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createPipelineLayout#descriptor>
 
-### GPUPipelineLayout
+### GPUQuerySet
 
-A struct that defines [GPUBindGroupLayout](#gpubindgrouplayout)s used by a pipeline. Created with [GPUDevice.createPipelineLayout](#gpudevicecreatepipelinelayout).
+A struct used to record results of queries on passes, such as occlusion or timestamp queries.
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet>
+
+#### GPUQuerySet.destroy
+
+A method of [GPUQuerySet](#gpuqueryset). Destroys the query set. You should always use this function when the query set is no longer needed to avoid memory leaks!
+
+**Syntax:**
+
+```gml
+destroy()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/destroy>
+
+### GPUQuerySetDescriptor
+
+A struct used in [GPUDevice.createQuerySet](#gpudevicecreatequeryset) to create a new [GPUQuerySet](#gpuqueryset).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createQuerySet#descriptor>
+
+### GPUQueue
+
+A struct used to issue commands to the GPU. Retrieved with [GPUDevice.queue](#gpudevicequeue).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue>
+
+#### GPUQueue.onSubmittedWorkDone
+
+A method of [GPUQueue](#gpuqueue). Executes given function when all work submitted to the GPU via this queue at the point the method is called has been processed.
+
+**Syntax:**
+
+```gml
+onSubmittedWorkDone([callback])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+callback | `Function` | ✅ | The function to execute when the work has been processed.
+
+**Example:**
+
+The following example maps two buffers for writing and uses `onSubmittedWorkDone` to wait till they are both mapped, then retrieves their mapped ranges and unmaps the buffers in the end.
+
+```gml
+buffer1.mapAsync(GPUMapMode.WRITE);
+buffer2.mapAsync(GPUMapMode.WRITE);
+device.queue.onSubmittedWorkDone(function () {
+  var mappedRange1 = buffer1.getMappedRange();
+  var mappedRange2 = buffer2.getMappedRange();
+  // Use mapped ranges here...
+  mappedRange1.unmap();
+  mappedRange2.unmap();
+});
+```
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/onSubmittedWorkDone>
+
+#### GPUQueue.submit
+
+A method of struct [GPUQueue](#gpuqueue). Submits an array of [GPUCommandBuffer](#gpucommandbuffer)s to the GPU.
+
+`submit(commandBuffers)`
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+commandBuffers | `Array<`[GPUCommandBuffer](#gpucommandbuffer)`>` | ❌ | An array of `GPUCommandBuffer`s to submit.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/submit>
+
+#### GPUQueue.writeBuffer
+
+A method of struct [GPUQueue](#gpuqueue). Writes 32-bit floats into a [GPUBuffer](#gpubuffer). **Other data types are currently not supported!**
+
+**Syntax:**
+
+```gml
+writeBuffer(buffer, bufferOffset, data, [dataOffset], [size])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+buffer | [GPUBuffer](#gpubuffer) | ❌ | The buffer to write the data into. Must be created with the `GPUBufferUsage.COPY_DST` usage!
+bufferOffset | `Real` | ❌ | The offset, in bytes, to start writing into the buffer at.
+data | `Array<Real>` | ❌ | An array of 32-bit floats to write into the buffer.
+dataOffset | `Real` | ❌ | An offset, in array elements, to start reading the data from. Defaults to 0.
+size | `Real` | ❌ | The number of array elements to write. Defaults to the size of the array minus offset.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/writeBuffer>
+
+#### GPUQueue.writeTexture
+
+A method of [GPUQueue](#gpuqueue). Writes 32-bit unsigned integers into a [GPUTexture](#gputexture). **Other data types are currently not supported!**
+
+**Syntax:**
+
+```gml
+writeTexture(destination, data, dataLayout, size)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+destination | [GPUImageCopyTexture](#gpuimagecopytexture) | ❌ | A struct defining the destination texture.
+data | `Array<Real>` | ❌ | An array of 32-bit unsigned integers to write into the texture.
+dataOffset | [GPUTextureDataLayout](#gputexturedatalayout) | ❌ | A struct defining the layout of given data.
+size | [GPUExtent3D](#gpuextent3d) | ❌ | A struct defining the width, height and depth/layer count of the data to be copied.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/writeTexture>
+
+### GPURenderBundle
+
+A struct containing encoded render pass commands, ready to be executed with [GPURenderPassEncoder.executeBundles](#gpurenderpassencoderexecutebundles). Created with [GPURenderBundleEncoder.finish](#gpurenderbundleencoderfinish).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundle>
+
+### GPURenderBundleDescriptor
+
+A struct used in [GPURenderBundleEncoder.finish](#gpurenderbundleencoderfinish) to create a new [GPURenderBundle](#gpurenderbundle).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/finish#descriptor>
+
+### GPURenderBundleEncoder
+
+A struct used to encode render pass commands once into [GPURenderBundle](#gpurenderbundle)s, which can be then executed multiple times using [GPURenderPassEncoder.executeBundles](#gpurenderpassencoderexecutebundles).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder>
+
+#### GPURenderBundleEncoder.draw
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Draws vertices from a vertex buffer previously set using [GPURenderBundleEncoder.setVertexBuffer](#gpurenderbundleencodersetvertexbuffer).
+
+**Syntax:**
+
+```gml
+draw(vertexCount, [instanceCount], [firstVertex], [firstInstance])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+vertexCount | `Real` | ❌ | The number of vertices to draw.
+instanceCount | `Real` | ✅ | The number of instances to draw. Defaults to 1.
+firstVertex | `Real` | ✅ | The index of the first vertex to start drawing form. Defaults to 0.
+firstInstance | `Real` | ✅ | The number of the first instance to draw. Defaults to 0.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/draw>
+
+#### GPURenderBundleEncoder.drawIndexed
+
+A method of struct [GPURenderPassEnGPURenderBundleEncodercoder](#gpurenderbundleencoder). Draws an indexed primitive using the index and the vertex buffers specified with [GPURenderBundleEncoder.setIndexBuffer](#gpurenderbundleencodersetindexbuffer) and [GPURenderBundleEncoder.setVertexBuffer](#gpurenderbundleencodersetvertexbuffer).
+
+**Syntax:**
+
+```gml
+drawIndexed(indexCount, [instanceCount], [firstIndex], [baseVertex], [firstInstance])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+indexCount | `Real` | ❌ | Number of indices to draw.
+instanceCount | `Real` | ✅ | Number of instances to draw. Defaults to 1.
+firstIndex | `Real` | ✅ | The offset into the index buffer, in indices, to start drawing from. Defaults to 0.
+baseVertex | `Real` | ✅ | A number added to each index value before indexing into the vertex buffer. Defaults to 0.
+firstInstance | `Real` | ✅ | The number of the first instance to draw. Defaults to 0.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/drawIndexed>
+
+#### GPURenderBundleEncoder.drawIndexedIndirect
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Draws an indexed primitive using the index and the vertex buffers specified with [GPURenderBundleEncoder.setIndexBuffer](#gpurenderbundleencodersetindexbuffer) and [GPURenderBundleEncoder.setVertexBuffer](#gpurenderbundleencodersetvertexbuffer), parametrized by contents of a [GPUBuffer](#gpubuffer).
+
+**Syntax:**
+
+```gml
+drawIndexedIndirect(indirectBuffer, indirectOffset)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+indirectBuffer | [GPUBuffer](#gpubuffer) | ❌ | A buffer containing the `indexCount`, `instanceCount`, `firstInstance`, `baseVertex`, `firstInstance` arguments as 32-bit unsigned integers.
+indirectOffset | `Real` | ❌ | An offset from the beginning of the buffer to a position where the arguments start.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/drawIndexedIndirect>
+
+#### GPURenderBundleEncoder.drawIndirect
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Draws vertices from a vertex buffer previously set using [GPURenderBundleEncoder.setVertexBuffer](#gpurenderbundleencodersetvertexbuffer), parametrized by contents of a [GPUBuffer](#gpubuffer).
+
+**Syntax:**
+
+```gml
+drawIndirect(indirectBuffer, indirectOffset)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+indirectBuffer | [GPUBuffer](#gpubuffer) | ❌ | A buffer containing the `vertexCount`, `instanceCount`, `firstVertex`, `firstInstance` arguments as 32-bit unsigned integers.
+indirectOffset | `Real` | ❌ | An offset from the beginning of the buffer to a position where the arguments start.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/drawIndirect>
+
+#### GPURenderBundleEncoder.finish
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Encodes previously issued commands into a [GPURenderBundle](#gpurenderbundle), which can be then executed multiple times using [GPURenderPassEncoder.executeBundles](#gpurenderpassencoderexecutebundles).
+
+**Syntax:**
+
+```gml
+finish(descriptor)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+descriptor | [GPURenderBundleDescriptor](#gpurenderbundledescriptor) | ❌ | A description of the render bundle to be created.
+
+**Returns:** [GPURenderBundle](#gpurenderbundle)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/finish>
+
+#### GPURenderBundleEncoder.insertDebugMarker
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Marks a specific point in a series of encoded render bundle commands with a label.
+
+**Syntax:**
+
+```gml
+insertDebugMarker(markerLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+markerLabel | `String` | ❌ | The label of the debug marker.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/insertDebugMarker>
+
+#### GPURenderBundleEncoder.popDebugGroup
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Ends a debug group started with [GPURenderBundleEncoder.pushDebugGroup](#gpurenderbundleencoderpushdebuggroup).
+
+**Syntax:**
+
+```gml
+popDebugGroup()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/popDebugGroup>
+
+#### GPURenderBundleEncoder.pushDebugGroup
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Starts a debug group, which then contains all subsequent commands until [GPURenderBundleEncoder.popDebugGroup](#gpurenderbundleencoderpopdebuggroup) is called.
+
+**Syntax:**
+
+```gml
+pushDebugGroup(groupLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+groupLabel | `String` | ❌ | The label of the debug group.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/pushDebugGroup>
+
+#### GPURenderBundleEncoder.setBindGroup
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Defines the [GPUBindGroup](#gpubindgroup) used in subsequent commands at given index.
+
+**Syntax:**
+
+```gml
+setBindGroup(index, bindGroup, [dynamicOffsets], [dynamicOffsetsStart], [dynamicOffsetsLength])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+index | `Real` | ❌ | The index to set the bind group at.
+bindGroup | [GPUBindGroup](#gpubindgroup), `Undefined` | ❌ | The bind group to set. Use `undefined` to unset a previously set bind group for given index.
+dynamicOffsets | `Array<Real>` | ✅ | An array of values specifying the offset, in bytes, for each entry in `bindGroup` with `hasDynamicOffset: true` set.
+dynamicOffsetsStart | `Real` | ✅ | An offset, in array elements, into `dynamicOffsetsData`, where the dynamic offset data begins. Defaults to 0.
+dynamicOffsetsLength | `Real` | ✅ | The number of dynamic offset values to be read from in `dynamicOffsetsData`. Defaults to the length of the array.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/setBindGroup>
+
+#### GPURenderBundleEncoder.setIndexBuffer
+
+A method of [GPURenderBundleEncoder](#gpurenderbundleencoder). Sets or unsets the current [GPUBuffer](#gpubuffer) containing index data used in subsequent indexed draw commands.
+
+**Syntax:**
+
+```gml
+setIndexBuffer(buffer, indexFormat, [offset], [size])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+buffer | [GPUBuffer](#gpubuffer), `Undefined` | ❌ | The new index buffer or `undefined` to unset the previously set index buffer.
+indexFormat | [GPUIndexFormat](#gpuindexformat) | ❌ | The format of the index data contained in given buffer.
+offset | `Real` | ✅ | An offset, in bytes, to where the index buffer begins. Defaults to 0.
+size | `Real` | ✅ | The size of the index buffer, in bytes. Defaults to the whole size of the buffer minus offset.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/setIndexBuffer>
+
+#### GPURenderBundleEncoder.setPipeline
+
+A method of struct [GPURenderBundleEncoder](#gpurenderbundleencoder). Defines the [GPURenderPipeline](#gpurenderpipeline) used in subsequent commands.
+
+**Syntax:**
+
+```gml
+setPipeline(pipeline)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+pipeline | [GPURenderPipeline](#gpurenderpipeline) | ❌ | The render pipeline to use in subsequent commands.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/setPipeline>
+
+#### GPURenderBundleEncoder.setVertexBuffer
+
+A method of [GPURenderBundleEncoder](#gpurenderbundleencoder). Sets or unsets the current [GPUBuffer](#gpubuffer) for given slot containing vertex data used in subsequent draw commands.
+
+**Syntax:**
+
+```gml
+setVertexBuffer(slot, buffer, [offset], [size])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+slot | `Real` | ❌ | The number of the slot to set the vertex buffer for.
+buffer | [GPUBuffer](#gpubuffer), `Undefined` | ❌ | A vertex buffer to set for given slot. Use `undefined` to unset a previously set buffer for given slot.
+offset | `Real` | ✅ | An offset, in bytes, to where the vertex buffer begins. Defaults to 0.
+size | `Real` | ✅ | The size of the vertex buffer, in bytes. Defaults to the whole size of the buffer minus offset.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/setVertexBuffer>
+
+### GPURenderBundleEncoderDescriptor
+
+A struct used in [GPUDevice.createRenderBundleEncoder](#gpudevicecreaterenderbundleencoder) to create a new [GPURenderBundleEncoder](#gpurenderbundleencoder).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderBundleEncoder#descriptor>
 
 ### GPURenderPassDescriptor
 
@@ -639,6 +1675,26 @@ A struct used in [GPUCommandEncoder.beginRenderPass](#gpucommandencoderbeginrend
 A struct that creates render pass GPU commands. Created with [GPUCommandEncoder.beginRenderPass].
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder>
+
+#### GPURenderPassEncoder.beginOcclusionQuery
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Begins an occlusion query at given index of a [GPUQuerySet](#gpuqueryset) specified in a [GPURenderPassDescriptor](#gpurenderpassdescriptor) that was passed to [GPUCommandEncoder.beginRenderPass](#gpucommandencoderbeginrenderpass).
+
+**Syntax:**
+
+```gml
+beginOcclusionQuery(queryIndex)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+queryIndex | `Real` | ❌ | The index in the `GPUQuerySet` to begin the occlusion query at.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/beginOcclusionQuery>
 
 #### GPURenderPassEncoder.draw
 
@@ -654,14 +1710,80 @@ draw(vertexCount, [instanceCount], [firstVertex], [firstInstance])
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`vertexCount` | Real | `false` | The number of vertices to draw.
-`instanceCount` | Real | `true` | The number of instances to draw. Defaults to 1.
-`firstVertex` | Real | `true` | The index of the first vertex to start drawing form. Defaults to 0.
-`firstInstance` | Real | `true` | The number of the first instance to draw. Defaults to 0.
+vertexCount | `Real` | ❌ | The number of vertices to draw.
+instanceCount | `Real` | ✅ | The number of instances to draw. Defaults to 1.
+firstVertex | `Real` | ✅ | The index of the first vertex to start drawing form. Defaults to 0.
+firstInstance | `Real` | ✅ | The number of the first instance to draw. Defaults to 0.
 
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/draw>
+
+#### GPURenderPassEncoder.drawIndexed
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Draws an indexed primitive using the index and the vertex buffers specified with [GPURenderPassEncoder.setIndexBuffer](#gpurenderpassencodersetindexbuffer) and [GPURenderPassEncoder.setVertexBuffer](#gpurenderpassencodersetvertexbuffer).
+
+**Syntax:**
+
+```gml
+drawIndexed(indexCount, [instanceCount], [firstIndex], [baseVertex], [firstInstance])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+indexCount | `Real` | ❌ | Number of indices to draw.
+instanceCount | `Real` | ✅ | Number of instances to draw. Defaults to 1.
+firstIndex | `Real` | ✅ | The offset into the index buffer, in indices, to start drawing from. Defaults to 0.
+baseVertex | `Real` | ✅ | A number added to each index value before indexing into the vertex buffer. Defaults to 0.
+firstInstance | `Real` | ✅ | The number of the first instance to draw. Defaults to 0.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/drawIndexed>
+
+#### GPURenderPassEncoder.drawIndexedIndirect
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Draws an indexed primitive using the index and the vertex buffers specified with [GPURenderPassEncoder.setIndexBuffer](#gpurenderpassencodersetindexbuffer) and [GPURenderPassEncoder.setVertexBuffer](#gpurenderpassencodersetvertexbuffer), parametrized by contents of a [GPUBuffer](#gpubuffer).
+
+**Syntax:**
+
+```gml
+drawIndexedIndirect(indirectBuffer, indirectOffset)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+indirectBuffer | [GPUBuffer](#gpubuffer) | ❌ | A buffer containing the `indexCount`, `instanceCount`, `firstInstance`, `baseVertex`, `firstInstance` arguments as 32-bit unsigned integers.
+indirectOffset | `Real` | ❌ | An offset from the beginning of the buffer to a position where the arguments start.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/drawIndexedIndirect>
+
+#### GPURenderPassEncoder.drawIndirect
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Draws vertices from a vertex buffer previously set using [GPURenderPassEncoder.setVertexBuffer](#gpurenderpassencodersetvertexbuffer), parametrized by contents of a [GPUBuffer](#gpubuffer).
+
+**Syntax:**
+
+```gml
+drawIndirect(indirectBuffer, indirectOffset)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+indirectBuffer | [GPUBuffer](#gpubuffer) | ❌ | A buffer containing the `vertexCount`, `instanceCount`, `firstVertex`, `firstInstance` arguments as 32-bit unsigned integers.
+indirectOffset | `Real` | ❌ | An offset from the beginning of the buffer to a position where the arguments start.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/drawIndirect>
 
 #### GPURenderPassEncoder.end_
 
@@ -677,6 +1799,88 @@ end_()
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/end>
 
+#### GPURenderPassEncoder.endOcclusionQuery
+
+A method of [GPURenderPassEncoder](#gpurenderpassencoder). Ends an occlusion query previously started with [GPURenderPassEncoder.beginOcclusionQuery](#gpurenderpassencoderbeginocclusionquery).
+
+**Syntax:**
+
+```gml
+endOcclusionQuery()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/endOcclusionQuery>
+
+#### GPURenderPassEncoder.executeBundles
+
+A method of [GPURenderPassEncoder](#gpurenderpassencoder). Executes [GPURenderBundle](#gpurenderbundle)s previously created with [GPURenderBundleEncoder.finish](#gpurenderbundleencoderfinish) as part of this render pass.
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+bundles | `Array<`[GPURenderBundle](#gpurenderbundle)`>` | ❌ | Render bundles to execute.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/executeBundles>
+
+#### GPURenderPassEncoder.insertDebugMarker
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Marks a specific point in a series of encoded render pass commands with a label.
+
+**Syntax:**
+
+```gml
+insertDebugMarker(markerLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+markerLabel | `String` | ❌ | The label of the debug marker.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/insertDebugMarker>
+
+#### GPURenderPassEncoder.popDebugGroup
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Ends a debug group started with [GPURenderPassEncoder.pushDebugGroup](#gpurenderpassencoderpushdebuggroup).
+
+**Syntax:**
+
+```gml
+popDebugGroup()
+```
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/popDebugGroup>
+
+#### GPURenderPassEncoder.pushDebugGroup
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Starts a debug group, which then contains all subsequent commands until [GPURenderPassEncoder.popDebugGroup](#gpurenderpassencoderpopdebuggroup) is called.
+
+**Syntax:**
+
+```gml
+pushDebugGroup(groupLabel)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+groupLabel | `String` | ❌ | The label of the debug group.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/pushDebugGroup>
+
 #### GPURenderPassEncoder.setBindGroup
 
 A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Defines the [GPUBindGroup](#gpubindgroup) used in subsequent commands at given index.
@@ -691,15 +1895,58 @@ setBindGroup(index, bindGroup, [dynamicOffsets], [dynamicOffsetsStart], [dynamic
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`index` | Real | `false` | The index to set the bind group at.
-`bindGroup` | [GPUBindGroup](#gpubindgroup), Undefined | `false` | The bind group to set. Use `undefined` to unset a previously set bind group for given index.
-`dynamicOffsets` | Array\<Real\> | `true` | An array of values specifying the offset, in bytes, for each entry in `bindGroup` with `hasDynamicOffset: true` set.
-`dynamicOffsetsStart` | Real | `true` | An offset, in array elements, into `dynamicOffsetsData`, where the dynamic offset data begins. Defaults to 0.
-`dynamicOffsetsLength` | Real | `true` | The number of dynamic offset values to be read from in `dynamicOffsetsData`. Defaults to the length of the array.
+index | `Real` | ❌ | The index to set the bind group at.
+bindGroup | [GPUBindGroup](#gpubindgroup), `Undefined` | ❌ | The bind group to set. Use `undefined` to unset a previously set bind group for given index.
+dynamicOffsets | `Array<Real>` | ✅ | An array of values specifying the offset, in bytes, for each entry in `bindGroup` with `hasDynamicOffset: true` set.
+dynamicOffsetsStart | `Real` | ✅ | An offset, in array elements, into `dynamicOffsetsData`, where the dynamic offset data begins. Defaults to 0.
+dynamicOffsetsLength | `Real` | ✅ | The number of dynamic offset values to be read from in `dynamicOffsetsData`. Defaults to the length of the array.
 
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBindGroup>
+
+#### GPURenderPassEncoder.setBlendConstant
+
+A method of [GPURenderPassEncoder](#gpurenderpassencoder). Sets the constant blend color and alpha used with [GPUBlendFactor.Constant](#gpublendfactor) and [GPUBlendFactor.OneMinusConstant](#gpublendfactor) blend factors, as set in the [GPURenderPipelineDescriptor](#gpurenderpipelinedescriptor) used in [GPUDevice.createRenderPipeline](#gpudevicecreaterenderpipeline).
+
+**Syntax:**
+
+```gml
+setBlendConstant(color)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+color | [GPUColor](#gpucolor) | ❌ | The new color to use when blending.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBlendConstant>
+
+#### GPURenderPassEncoder.setIndexBuffer
+
+A method of [GPURenderPassEncoder](#gpurenderpassencoder). Sets or unsets the current [GPUBuffer](#gpubuffer) containing index data used in subsequent indexed draw commands.
+
+**Syntax:**
+
+```gml
+setIndexBuffer(buffer, indexFormat, [offset], [size])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+buffer | [GPUBuffer](#gpubuffer), `Undefined` | ❌ | The new index buffer or `undefined` to unset the previously set index buffer.
+indexFormat | [GPUIndexFormat](#gpuindexformat) | ❌ | The format of the index data contained in given buffer.
+offset | `Real` | ✅ | An offset, in bytes, to where the index buffer begins. Defaults to 0.
+size | `Real` | ✅ | The size of the index buffer, in bytes. Defaults to the whole size of the buffer minus offset.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setIndexBuffer>
 
 #### GPURenderPassEncoder.setPipeline
 
@@ -715,13 +1962,58 @@ setPipeline(pipeline)
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`pipeline` | [GPURenderPipeline](#gpurenderpipeline) | `false` | The render pipeline to use in subsequent commands.
+pipeline | [GPURenderPipeline](#gpurenderpipeline) | ❌ | The render pipeline to use in subsequent commands.
 
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setPipeline>
 
+#### GPURenderPassEncoder.setScissorRect
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Sets the scissor rectangle used during the rasterization stage.
+
+**Syntax:**
+
+```gml
+setScissorRect(x, y, width, height)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+x | `Real` | ❌ | The minimum X coordinate of the scissor rectangle, in pixels.
+y | `Real` | ❌ | The minimum Y coordinate of the scissor rectangle, in pixels.
+width | `Real` | ❌ | The width of the scissor rectangle, in pixels.
+height | `Real` | ❌ | The height of the scissor rectangle, in pixels.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setScissorRect>
+
+#### GPURenderPassEncoder.setStencilReference
+
+A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Sets the stencil reference value used during stencil tests.
+
+**Syntax:**
+
+```gml
+setStencilReference(reference)
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+reference | `Real` | ❌ | The new stencil reference value.
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setStencilReference>
+
 #### GPURenderPassEncoder.setVertexBuffer
+
+A method of [GPURenderPassEncoder](#gpurenderpassencoder). Sets or unsets the current [GPUBuffer](#gpubuffer) for given slot containing vertex data used in subsequent draw commands.
 
 **Syntax:**
 
@@ -733,20 +2025,39 @@ setVertexBuffer(slot, buffer, [offset], [size])
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`slot` | Real | `true` | The number of the slot to set the vertex buffer for.
-`buffer` | [GPUBuffer](#gpubuffer), Undefined | `true` | A vertex buffer to set for given slot. Use `undefined` to unset a previously set buffer for given slot.
-`offset` | Real | `true` | An offset, in bytes, to where the vertex buffer begins. Defaults to 0.
-`size` | Real | `true` | The size of the vertex buffer, in bytes. Defaults to the whole size of the buffer minus offset.
+slot | `Real` | ❌ | The number of the slot to set the vertex buffer for.
+buffer | [GPUBuffer](#gpubuffer), `Undefined` | ❌ | A vertex buffer to set for given slot. Use `undefined` to unset a previously set buffer for given slot.
+offset | `Real` | ✅ | An offset, in bytes, to where the vertex buffer begins. Defaults to 0.
+size | `Real` | ✅ | The size of the vertex buffer, in bytes. Defaults to the whole size of the buffer minus offset.
 
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setVertexBuffer>
 
-### GPURenderPipelineDescriptor
+#### GPURenderPassEncoder.setViewport
 
-A struct used in [GPUDevice.createRenderPipeline](#gpudevicecreaterenderpipeline) to create a new [GPURenderPipeline](#gpurenderpipeline).
+A method of [GPURenderPassEncoder](#gpurenderpassencoder). Sets the viewport rectangle used during rasterization stage.
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipeline#descriptor>
+**Syntax:**
+
+```gml
+setViewport(x, y, width, height, minDepth, maxDepth)
+```
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+x | `Real` | ❌ | The minimum X coordinate of the viewport rectangle, in pixels.
+y | `Real` | ❌ | The minimum Y coordinate of the viewport rectangle, in pixels.
+width | `Real` | ❌ | The width of the viewport rectangle, in pixels.
+height | `Real` | ❌ | The height of the viewport rectangle, in pixels.
+minDepth | `Real` | ❌ | The minimum depth value of the viewport.
+maxDepth | `Real` | ❌ | The maximum depth value of the viewport.
+
+**Params:**
+
+**Returns:** N/A
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setViewport>
 
 ### GPURenderPipeline
 
@@ -768,17 +2079,23 @@ getBindGroupLayout(index)
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`index` | Real | `false` | The index of the bind group layout.
+index | `Real` | ❌ | The index of the bind group layout.
 
 **Returns:** [GPUBindGroupLayout](#gpubindgrouplayout)
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPipeline/getBindGroupLayout>
 
-### GPUSamplerDescriptor
+### GPURenderPipelineDescriptor
 
-A struct used in [GPUDevice.createSampler](#gpudevicecreatesampler) to create a new [GPUSampler](#gpusampler).
+A struct used in [GPUDevice.createRenderPipeline](#gpudevicecreaterenderpipeline) to create a new [GPURenderPipeline](#gpurenderpipeline).
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createSampler#descriptor>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipeline#descriptor>
+
+### GPURequestAdapterOptions
+
+Currently unused, as the [GPU.requestAdapter](#gpurequestadapter) method always returns the [GPUAdapter](#gpuadapter) used internally by GameMaker.
+
+<https://developer.mozilla.org/en-US/docs/Web/API/GPU/requestAdapter#options>
 
 ### GPUSampler
 
@@ -786,11 +2103,11 @@ A struct that defines how are textures sampled in a shader. Created with [GPUDev
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUSampler>
 
-### GPUShaderModuleDescriptor
+### GPUSamplerDescriptor
 
-A struct used in [GPUDevice.createShaderModule](#gpudevicecreateshadermodule) to create a new [GPUShaderModule](#gpushadermodule).
+A struct used in [GPUDevice.createSampler](#gpudevicecreatesampler) to create a new [GPUSampler](#gpusampler).
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createShaderModule#descriptor>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createSampler#descriptor>
 
 ### GPUShaderModule
 
@@ -798,11 +2115,66 @@ A struct that represents a compiled WGSL code. Created with [GPUDevice.createSha
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule>
 
-### GPUTextureDescriptor
+#### GPUShaderModule.getCompilationInfo
 
-A struct used in [GPUDevice.createTexture](#gpudevicecreatetexture) to create a new [GPUTexture](#gputexture).
+A method of struct [GPUShaderModule](#gpushadermodule). Retrieves compilation info from the `GPUShaderModule`.
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createTexture#descriptor>
+**Syntax:**
+
+```gml
+getCompilationInfo([callback])
+```
+
+**Params:**
+
+Name | Type | Optional | Description
+---- | ---- | -------- | -----------
+callback | `Function` | ✅ | A function that receives a struct containing the compilation info as the first argument.
+
+**Returns:** N/A
+
+**Compilation info struct:**
+
+Key | Type | Description
+--- | ---- | -----------
+`messages` | `Array<Struct>` | An array of compilation message structs.
+
+**Compilation message struct:**
+
+Key | Type | Description
+--- | ---- | -----------
+`length` | `Real` | The length of the substring the message corresponds to.
+`lineNum` | `Real` | The line number in the shader code that the message corresponds to.
+`linePos` | `Real` | The position in the shader code line that the message corresponds to.
+`message` | `String` | The compilation message string.
+`offset` | `Real` | An offset from the start of the shader code to the position that the message corresponds to.
+`type` | [GPUCompilationMessageType](#gpucompilationmessagetype) | The type of the message.
+
+**Example:**
+
+The following example compiles a shader, retrieves its compilation info messages and prints them out to the console.
+
+```gml
+shader = device.createShaderModule({
+  code: shaderCode,
+});
+
+shader.getCompilationInfo(function (compilationInfo) {
+  var messages = compilationInfo.messages;
+  for (var i = 0; i < array_length(messages); ++i) {
+    var m = messages[i];
+    show_debug_message($"Found {m.type} on line {m.lineNum} at position {m.linePos}: \"{m.message}\"");
+  }
+});
+```
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/getCompilationInfo>
+
+### GPUShaderModuleDescriptor
+
+A struct used in [GPUDevice.createShaderModule](#gpudevicecreateshadermodule) to create a new [GPUShaderModule](#gpushadermodule).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createShaderModule#descriptor>
 
 ### GPUTexture
 
@@ -824,7 +2196,7 @@ createView([descriptor])
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
-`descriptor` | [GPUTextureViewDescriptor](#gputextureviewdescriptor) | `true` | The description of the texture view to be created. Can be ommited to create a texture view with default properties.
+descriptor | [GPUTextureViewDescriptor](#gputextureviewdescriptor) | ✅ | The description of the texture view to be created. Can be ommited to create a texture view with default properties.
 
 **Returns:** [GPUTextureView](#gputextureview)
 
@@ -844,11 +2216,17 @@ destroy()
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/destroy>
 
-### GPUTextureViewDescriptor
+### GPUTextureDataLayout
 
-A struct used in [GPUTexture.createView](#gputexturecreateview) to create a new [GPUTextureView](#gputextureview).
+A struct that describes how texture data is stored in a buffer. Used when copying data into a [GPUTexture](#gputexture).
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/createView#descriptor>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/writeTexture#datalayout>
+
+### GPUTextureDescriptor
+
+A struct used in [GPUDevice.createTexture](#gpudevicecreatetexture) to create a new [GPUTexture](#gputexture).
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createTexture#descriptor>
 
 ### GPUTextureView
 
@@ -856,51 +2234,11 @@ A struct that represents a view into a subset of a [GPUTexture](#gputexture). Cr
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTextureView>
 
-### GPUQueue
+### GPUTextureViewDescriptor
 
-A struct used to issue commands to the GPU. Retrieved with [GPUDevice.queue](#gpudevicequeue).
+A struct used in [GPUTexture.createView](#gputexturecreateview) to create a new [GPUTextureView](#gputextureview).
 
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue>
-
-#### GPUQueue.submit
-
-A method of struct [GPUQueue](#gpuqueue). Submits an array of [GPUCommandBuffer](#gpucommandbuffer)s to the GPU.
-
-`submit(commandBuffers)`
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-`commandBuffers` | Array\<[GPUCommandBuffer](#gpucommandbuffer)\> | `false` | An array of `GPUCommandBuffer`s to submit.
-
-**Returns:** N/A
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/submit>
-
-#### GPUQueue.writeBuffer
-
-A method of struct [GPUQueue](#gpuqueue). Copies data from an array into a buffer.
-
-**Syntax:**
-
-```gml
-writeBuffer(buffer, bufferOffset, data, [dataOffset], [size])
-```
-
-**Params:**
-
-Name | Type | Optional | Description
----- | ---- | -------- | -----------
-buffer | [GPUBuffer](#gpubuffer) | `false` | The buffer to write the data into. Must be created with the `GPUBufferUsage.COPY_DST` usage!
-bufferOffset | Real | `false` | The offset, in bytes, to start writing into the buffer at.
-data | Array\<Real\> | `false` | An array of numbers to write into the buffer.
-dataOffset | Real | `false` | An offset, in array elements, to start reading the data from. Defaults to 0.
-size | Real | `false` | The number of array elements to write. Defaults to the size of the array minus offset.
-
-**Returns:** N/A
-
-**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/writeBuffer>
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/createView#descriptor>
 
 ## Enums
 
@@ -910,9 +2248,9 @@ size | Real | `false` | The number of array elements to write. Defaults to the s
 
 Name | Value
 ---- | -----
-`ClampToEdge` | `"clamp-to-edge"`
-`Repeat` | `"repeat"`
-`MirrorRepeat` | `"mirror-repeat"`
+ClampToEdge | `"clamp-to-edge"`
+Repeat | `"repeat"`
+MirrorRepeat | `"mirror-repeat"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuaddressmode>
 
@@ -922,7 +2260,7 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Auto` | `"auto"`
+Auto | `"auto"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuautolayoutmode>
 
@@ -932,19 +2270,19 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Zero` | `"zero"`
-`One` | `"one"`
-`Src` | `"src"`
-`OneMinusSrc` | `"one-minus-src"`
-`SrcAlpha` | `"src-alpha"`
-`OneMinusSrcAlpha` | `"one-minus-src-alpha"`
-`Dst` | `"dst"`
-`OneMinusDst` | `"one-minus-dst"`
-`DstAlpha` | `"dst-alpha"`
-`OneMinusDstAlpha` | `"one-minus-dst-alpha"`
-`SrcAlphaSaturated` | `"src-alpha-saturated"`
-`Constant` | `"constant"`
-`OneMinusConstant` | `"one-minus-constant"`
+Zero | `"zero"`
+One | `"one"`
+Src | `"src"`
+OneMinusSrc | `"one-minus-src"`
+SrcAlpha | `"src-alpha"`
+OneMinusSrcAlpha | `"one-minus-src-alpha"`
+Dst | `"dst"`
+OneMinusDst | `"one-minus-dst"`
+DstAlpha | `"dst-alpha"`
+OneMinusDstAlpha | `"one-minus-dst-alpha"`
+SrcAlphaSaturated | `"src-alpha-saturated"`
+Constant | `"constant"`
+OneMinusConstant | `"one-minus-constant"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpublendfactor>
 
@@ -954,11 +2292,11 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Add` | `"add"`
-`Subtract` | `"subtract"`
-`ReverseSubtract` | `"reverse-subtract"`
-`Min` | `"min"`
-`Max` | `"max"`
+Add | `"add"`
+Subtract | `"subtract"`
+ReverseSubtract | `"reverse-subtract"`
+Min | `"min"`
+Max | `"max"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpublendoperation>
 
@@ -968,9 +2306,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Uniform` | `"uniform"`
-`Storage` | `"storage"`
-`ReadOnlyStorage` | `"read-only-storage"`
+Uniform | `"uniform"`
+Storage | `"storage"`
+ReadOnlyStorage | `"read-only-storage"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpubufferbindingtype>
 
@@ -980,9 +2318,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Unmapped` | `"unmapped"`
-`Pending` | `"pending"`
-`Mapped` | `"mapped"`
+Unmapped | `"unmapped"`
+Pending | `"pending"`
+Mapped | `"mapped"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpubuffermapstate>
 
@@ -992,16 +2330,16 @@ Name | Value
 
 Name | Value
 ---- | -----
-`MAP_READ` | `0x0001`
-`MAP_WRITE` | `0x0002`
-`COPY_SRC` | `0x0004`
-`COPY_DST` | `0x0008`
-`INDEX` | `0x0010`
-`VERTEX` | `0x0020`
-`UNIFORM` | `0x0040`
-`STORAGE` | `0x0080`
-`INDIRECT` | `0x0100`
-`QUERY_RESOLVE` | `0x0200`
+MAP_READ | `0x0001`
+MAP_WRITE | `0x0002`
+COPY_SRC | `0x0004`
+COPY_DST | `0x0008`
+INDEX | `0x0010`
+VERTEX | `0x0020`
+UNIFORM | `0x0040`
+STORAGE | `0x0080`
+INDIRECT | `0x0100`
+QUERY_RESOLVE | `0x0200`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#namespacedef-gpubufferusage>
 
@@ -1011,8 +2349,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Opaque` | `"opaque"`
-`Premultiplied` | `"premultiplied"`
+Opaque | `"opaque"`
+Premultiplied | `"premultiplied"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#gpucanvasalphamode>
 
@@ -1022,11 +2360,11 @@ Name | Value
 
 Name | Value
 ---- | -----
-`RED` | `0x1`
-`GREEN` | `0x2`
-`BLUE` | `0x4`
-`ALPHA` | `0x8`
-`ALL` | `0xF`
+RED | `0x1`
+GREEN | `0x2`
+BLUE | `0x4`
+ALPHA | `0x8`
+ALL | `0xF`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#namespacedef-gpucolorwrite>
 
@@ -1036,14 +2374,14 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Never` | `"never"`
-`Less` | `"less"`
-`Equal` | `"equal"`
-`LessEqual` | `"less-equal"`
-`Greater` | `"greater"`
-`NotEqual` | `"not-equal"`
-`GreaterEqual` | `"greater-equal"`
-`Always` | `"always"`
+Never | `"never"`
+Less | `"less"`
+Equal | `"equal"`
+LessEqual | `"less-equal"`
+Greater | `"greater"`
+NotEqual | `"not-equal"`
+GreaterEqual | `"greater-equal"`
+Always | `"always"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpucomparefunction>
 
@@ -1053,9 +2391,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Error` | `"error"`
-`Warning` | `"warning"`
-`Info` | `"info"`
+Error | `"error"`
+Warning | `"warning"`
+Info | `"info"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpucompilationmessagetype>
 
@@ -1065,9 +2403,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`None` | `"none"`
-`Front` | `"front"`
-`Back` | `"back"`
+None | `"none"`
+Front | `"front"`
+Back | `"back"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpucullmode>
 
@@ -1077,8 +2415,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Unknown` | `"unknown"`
-`Destroyed` | `"destroyed"`
+Unknown | `"unknown"`
+Destroyed | `"destroyed"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpudevicelostreason>
 
@@ -1088,9 +2426,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Validation` | `"validation"`
-`OutOfMemory` | `"out-of-memory"`
-`Internal` | `"internal"`
+Validation | `"validation"`
+OutOfMemory | `"out-of-memory"`
+Internal | `"internal"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuerrorfilter>
 
@@ -1100,17 +2438,17 @@ Name | Value
 
 Name | Value
 ---- | -----
-`DepthClipControl` | `"depth-clip-control"`
-`Depth32floatStencil8` | `"depth32float-stencil8"`
-`TextureCompressionBc` | `"texture-compression-bc"`
-`TextureCompressionEtc2` | `"texture-compression-etc2"`
-`TextureCompressionAstc` | `"texture-compression-astc"`
-`TimestampQuery` | `"timestamp-query"`
-`IndirectFirstInstance` | `"indirect-first-instance"`
-`ShaderF16` | `"shader-f16"`
-`Rg11b10ufloatRenderable` | `"rg11b10ufloat-renderable"`
-`Bgra8unormStorage` | `"bgra8unorm-storage"`
-`Float32Filterable` | `"float32-filterable"`
+DepthClipControl | `"depth-clip-control"`
+Depth32floatStencil8 | `"depth32float-stencil8"`
+TextureCompressionBc | `"texture-compression-bc"`
+TextureCompressionEtc2 | `"texture-compression-etc2"`
+TextureCompressionAstc | `"texture-compression-astc"`
+TimestampQuery | `"timestamp-query"`
+IndirectFirstInstance | `"indirect-first-instance"`
+ShaderF16 | `"shader-f16"`
+Rg11b10ufloatRenderable | `"rg11b10ufloat-renderable"`
+Bgra8unormStorage | `"bgra8unorm-storage"`
+Float32Filterable | `"float32-filterable"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#gpufeaturename>
 
@@ -1142,8 +2480,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Uint16` | `"uint16"`
-`Uint32` | `"uint32"`
+Uint16 | `"uint16"`
+Uint32 | `"uint32"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuindexformat>
 
@@ -1153,8 +2491,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Load` | `"load"`
-`Clear` | `"clear"`
+Load | `"load"`
+Clear | `"clear"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuloadop>
 
@@ -1164,8 +2502,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`READ` | `0x0001`
-`WRITE` | `0x0002`
+READ | `0x0001`
+WRITE | `0x0002`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#namespacedef-gpumapmode>
 
@@ -1175,8 +2513,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Nearest` | `"nearest"`
-`Linear` | `"linear"`
+Nearest | `"nearest"`
+Linear | `"linear"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpumipmapfiltermode>
 
@@ -1186,8 +2524,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Validation` | `"validation"`
-`Internal` | `"internal"`
+Validation | `"validation"`
+Internal | `"internal"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpupipelineerrorreason>
 
@@ -1197,8 +2535,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`LowPower` | `"low-power"`
-`HighPerformance` | `"high-performance"`
+LowPower | `"low-power"`
+HighPerformance | `"high-performance"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpupowerpreference>
 
@@ -1208,11 +2546,11 @@ Name | Value
 
 Name | Value
 ---- | -----
-`PointList` | `"point-list"`
-`LineList` | `"line-list"`
-`LineStrip` | `"line-strip"`
-`TriangleList` | `"triangle-list"`
-`TriangleStrip` | `"triangle-strip"`
+PointList | `"point-list"`
+LineList | `"line-list"`
+LineStrip | `"line-strip"`
+TriangleList | `"triangle-list"`
+TriangleStrip | `"triangle-strip"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuprimitivetopology>
 
@@ -1222,8 +2560,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Occlusion` | `"occlusion"`
-`Timestamp` | `"timestamp"`
+Occlusion | `"occlusion"`
+Timestamp | `"timestamp"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuquerytype>
 
@@ -1233,9 +2571,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Filtering` | `"filtering"`
-`NonFiltering` | `"non-filtering"`
-`Comparison` | `"comparison"`
+Filtering | `"filtering"`
+NonFiltering | `"non-filtering"`
+Comparison | `"comparison"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpusamplerbindingtype>
 
@@ -1245,9 +2583,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`VERTEX` | `0x1`
-`FRAGMENT` | `0x2`
-`COMPUTE` | `0x4`
+VERTEX | `0x1`
+FRAGMENT | `0x2`
+COMPUTE | `0x4`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#namespacedef-gpushaderstage>
 
@@ -1257,14 +2595,14 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Keep` | `"keep"`
-`Zero` | `"zero"`
-`Replace` | `"replace"`
-`Invert` | `"invert"`
-`IncrementClamp` | `"increment-clamp"`
-`DecrementClamp` | `"decrement-clamp"`
-`IncrementWrap` | `"increment-wrap"`
-`DecrementWrap` | `"decrement-wrap"`
+Keep | `"keep"`
+Zero | `"zero"`
+Replace | `"replace"`
+Invert | `"invert"`
+IncrementClamp | `"increment-clamp"`
+DecrementClamp | `"decrement-clamp"`
+IncrementWrap | `"increment-wrap"`
+DecrementWrap | `"decrement-wrap"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpustenciloperation>
 
@@ -1274,7 +2612,7 @@ Name | Value
 
 Name | Value
 ---- | -----
-`WriteOnly` | `"write-only"`
+WriteOnly | `"write-only"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpustoragetextureaccess>
 
@@ -1284,8 +2622,8 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Store` | `"store"`
-`Discard` | `"discard"`
+Store | `"store"`
+Discard | `"discard"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpustoreop>
 
@@ -1295,9 +2633,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`All` | `"all"`
-`StencilOnly` | `"stencil-only"`
-`DepthOnly` | `"depth-only"`
+All | `"all"`
+StencilOnly | `"stencil-only"`
+DepthOnly | `"depth-only"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gputextureaspect>
 
@@ -1307,9 +2645,9 @@ Name | Value
 
 Name | Value
 ---- | -----
-`_1D` | `"1d"`
-`_2D` | `"2d"`
-`_3D` | `"3d"`
+_1D | `"1d"`
+_2D | `"2d"`
+_3D | `"3d"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gputexturedimension>
 
@@ -1319,100 +2657,100 @@ Name | Value
 
 Name | Value
 ---- | -----
-`R8unorm` | `"r8unorm"`
-`R8snorm` | `"r8snorm"`
-`R8uint` | `"r8uint"`
-`R8sint` | `"r8sint"`
-`R16uint` | `"r16uint"`
-`R16sint` | `"r16sint"`
-`R16float` | `"r16float"`
-`Rg8unorm` | `"rg8unorm"`
-`Rg8snorm` | `"rg8snorm"`
-`Rg8uint` | `"rg8uint"`
-`Rg8sint` | `"rg8sint"`
-`R32uint` | `"r32uint"`
-`R32sint` | `"r32sint"`
-`R32float` | `"r32float"`
-`Rg16uint` | `"rg16uint"`
-`Rg16sint` | `"rg16sint"`
-`Rg16float` | `"rg16float"`
-`Rgba8unorm` | `"rgba8unorm"`
-`Rgba8unormSrgb` | `"rgba8unorm-srgb"`
-`Rgba8snorm` | `"rgba8snorm"`
-`Rgba8uint` | `"rgba8uint"`
-`Rgba8sint` | `"rgba8sint"`
-`Bgra8unorm` | `"bgra8unorm"`
-`Bgra8unormSrgb` | `"bgra8unorm-srgb"`
-`Rgb9e5ufloat` | `"rgb9e5ufloat"`
-`Rgb10a2unorm` | `"rgb10a2unorm"`
-`Rg11b10ufloat` | `"rg11b10ufloat"`
-`Rg32uint` | `"rg32uint"`
-`Rg32sint` | `"rg32sint"`
-`Rg32float` | `"rg32float"`
-`Rgba16uint` | `"rgba16uint"`
-`Rgba16sint` | `"rgba16sint"`
-`Rgba16float` | `"rgba16float"`
-`Rgba32uint` | `"rgba32uint"`
-`Rgba32sint` | `"rgba32sint"`
-`Rgba32float` | `"rgba32float"`
-`Stencil8` | `"stencil8"`
-`Depth16unorm` | `"depth16unorm"`
-`Depth24plus` | `"depth24plus"`
-`Depth24plusStencil8` | `"depth24plus-stencil8"`
-`Depth32float` | `"depth32float"`
-`Depth32floatStencil8` | `"depth32float-stencil8"`
-`Bc1RgbaUnorm` | `"bc1-rgba-unorm"`
-`Bc1RgbaUnormSrgb` | `"bc1-rgba-unorm-srgb"`
-`Bc2RgbaUnorm` | `"bc2-rgba-unorm"`
-`Bc2RgbaUnormSrgb` | `"bc2-rgba-unorm-srgb"`
-`Bc3RgbaUnorm` | `"bc3-rgba-unorm"`
-`Bc3RgbaUnormSrgb` | `"bc3-rgba-unorm-srgb"`
-`Bc4RUnorm` | `"bc4-r-unorm"`
-`Bc4RSnorm` | `"bc4-r-snorm"`
-`Bc5RgUnorm` | `"bc5-rg-unorm"`
-`Bc5RgSnorm` | `"bc5-rg-snorm"`
-`Bc6hRgbUfloat` | `"bc6h-rgb-ufloat"`
-`Bc6hRgbFloat` | `"bc6h-rgb-float"`
-`Bc7RgbaUnorm` | `"bc7-rgba-unorm"`
-`Bc7RgbaUnormSrgb` | `"bc7-rgba-unorm-srgb"`
-`Etc2Rgb8unorm` | `"etc2-rgb8unorm"`
-`Etc2Rgb8unormSrgb` | `"etc2-rgb8unorm-srgb"`
-`Etc2Rgb8a1unorm` | `"etc2-rgb8a1unorm"`
-`Etc2Rgb8a1unormSrgb` | `"etc2-rgb8a1unorm-srgb"`
-`Etc2Rgba8unorm` | `"etc2-rgba8unorm"`
-`Etc2Rgba8unormSrgb` | `"etc2-rgba8unorm-srgb"`
-`EacR11unorm` | `"eac-r11unorm"`
-`EacR11snorm` | `"eac-r11snorm"`
-`EacRg11unorm` | `"eac-rg11unorm"`
-`EacRg11snorm` | `"eac-rg11snorm"`
-`Astc4X4Unorm` | `"astc-4x4-unorm"`
-`Astc4X4UnormSrgb` | `"astc-4x4-unorm-srgb"`
-`Astc5X4Unorm` | `"astc-5x4-unorm"`
-`Astc5X4UnormSrgb` | `"astc-5x4-unorm-srgb"`
-`Astc5X5Unorm` | `"astc-5x5-unorm"`
-`Astc5X5UnormSrgb` | `"astc-5x5-unorm-srgb"`
-`Astc6X5Unorm` | `"astc-6x5-unorm"`
-`Astc6X5UnormSrgb` | `"astc-6x5-unorm-srgb"`
-`Astc6X6Unorm` | `"astc-6x6-unorm"`
-`Astc6X6UnormSrgb` | `"astc-6x6-unorm-srgb"`
-`Astc8X5Unorm` | `"astc-8x5-unorm"`
-`Astc8X5UnormSrgb` | `"astc-8x5-unorm-srgb"`
-`Astc8X6Unorm` | `"astc-8x6-unorm"`
-`Astc8X6UnormSrgb` | `"astc-8x6-unorm-srgb"`
-`Astc8X8Unorm` | `"astc-8x8-unorm"`
-`Astc8X8UnormSrgb` | `"astc-8x8-unorm-srgb"`
-`Astc10X5Unorm` | `"astc-10x5-unorm"`
-`Astc10X5UnormSrgb` | `"astc-10x5-unorm-srgb"`
-`Astc10X6Unorm` | `"astc-10x6-unorm"`
-`Astc10X6UnormSrgb` | `"astc-10x6-unorm-srgb"`
-`Astc10X8Unorm` | `"astc-10x8-unorm"`
-`Astc10X8UnormSrgb` | `"astc-10x8-unorm-srgb"`
-`Astc10X10Unorm` | `"astc-10x10-unorm"`
-`Astc10X10UnormSrgb` | `"astc-10x10-unorm-srgb"`
-`Astc12X10Unorm` | `"astc-12x10-unorm"`
-`Astc12X10UnormSrgb` | `"astc-12x10-unorm-srgb"`
-`Astc12X12Unorm` | `"astc-12x12-unorm"`
-`Astc12X12UnormSrgb` | `"astc-12x12-unorm-srgb"`
+R8unorm | `"r8unorm"`
+R8snorm | `"r8snorm"`
+R8uint | `"r8uint"`
+R8sint | `"r8sint"`
+R16uint | `"r16uint"`
+R16sint | `"r16sint"`
+R16float | `"r16float"`
+Rg8unorm | `"rg8unorm"`
+Rg8snorm | `"rg8snorm"`
+Rg8uint | `"rg8uint"`
+Rg8sint | `"rg8sint"`
+R32uint | `"r32uint"`
+R32sint | `"r32sint"`
+R32float | `"r32float"`
+Rg16uint | `"rg16uint"`
+Rg16sint | `"rg16sint"`
+Rg16float | `"rg16float"`
+Rgba8unorm | `"rgba8unorm"`
+Rgba8unormSrgb | `"rgba8unorm-srgb"`
+Rgba8snorm | `"rgba8snorm"`
+Rgba8uint | `"rgba8uint"`
+Rgba8sint | `"rgba8sint"`
+Bgra8unorm | `"bgra8unorm"`
+Bgra8unormSrgb | `"bgra8unorm-srgb"`
+Rgb9e5ufloat | `"rgb9e5ufloat"`
+Rgb10a2unorm | `"rgb10a2unorm"`
+Rg11b10ufloat | `"rg11b10ufloat"`
+Rg32uint | `"rg32uint"`
+Rg32sint | `"rg32sint"`
+Rg32float | `"rg32float"`
+Rgba16uint | `"rgba16uint"`
+Rgba16sint | `"rgba16sint"`
+Rgba16float | `"rgba16float"`
+Rgba32uint | `"rgba32uint"`
+Rgba32sint | `"rgba32sint"`
+Rgba32float | `"rgba32float"`
+Stencil8 | `"stencil8"`
+Depth16unorm | `"depth16unorm"`
+Depth24plus | `"depth24plus"`
+Depth24plusStencil8 | `"depth24plus-stencil8"`
+Depth32float | `"depth32float"`
+Depth32floatStencil8 | `"depth32float-stencil8"`
+Bc1RgbaUnorm | `"bc1-rgba-unorm"`
+Bc1RgbaUnormSrgb | `"bc1-rgba-unorm-srgb"`
+Bc2RgbaUnorm | `"bc2-rgba-unorm"`
+Bc2RgbaUnormSrgb | `"bc2-rgba-unorm-srgb"`
+Bc3RgbaUnorm | `"bc3-rgba-unorm"`
+Bc3RgbaUnormSrgb | `"bc3-rgba-unorm-srgb"`
+Bc4RUnorm | `"bc4-r-unorm"`
+Bc4RSnorm | `"bc4-r-snorm"`
+Bc5RgUnorm | `"bc5-rg-unorm"`
+Bc5RgSnorm | `"bc5-rg-snorm"`
+Bc6hRgbUfloat | `"bc6h-rgb-ufloat"`
+Bc6hRgbFloat | `"bc6h-rgb-float"`
+Bc7RgbaUnorm | `"bc7-rgba-unorm"`
+Bc7RgbaUnormSrgb | `"bc7-rgba-unorm-srgb"`
+Etc2Rgb8unorm | `"etc2-rgb8unorm"`
+Etc2Rgb8unormSrgb | `"etc2-rgb8unorm-srgb"`
+Etc2Rgb8a1unorm | `"etc2-rgb8a1unorm"`
+Etc2Rgb8a1unormSrgb | `"etc2-rgb8a1unorm-srgb"`
+Etc2Rgba8unorm | `"etc2-rgba8unorm"`
+Etc2Rgba8unormSrgb | `"etc2-rgba8unorm-srgb"`
+EacR11unorm | `"eac-r11unorm"`
+EacR11snorm | `"eac-r11snorm"`
+EacRg11unorm | `"eac-rg11unorm"`
+EacRg11snorm | `"eac-rg11snorm"`
+Astc4X4Unorm | `"astc-4x4-unorm"`
+Astc4X4UnormSrgb | `"astc-4x4-unorm-srgb"`
+Astc5X4Unorm | `"astc-5x4-unorm"`
+Astc5X4UnormSrgb | `"astc-5x4-unorm-srgb"`
+Astc5X5Unorm | `"astc-5x5-unorm"`
+Astc5X5UnormSrgb | `"astc-5x5-unorm-srgb"`
+Astc6X5Unorm | `"astc-6x5-unorm"`
+Astc6X5UnormSrgb | `"astc-6x5-unorm-srgb"`
+Astc6X6Unorm | `"astc-6x6-unorm"`
+Astc6X6UnormSrgb | `"astc-6x6-unorm-srgb"`
+Astc8X5Unorm | `"astc-8x5-unorm"`
+Astc8X5UnormSrgb | `"astc-8x5-unorm-srgb"`
+Astc8X6Unorm | `"astc-8x6-unorm"`
+Astc8X6UnormSrgb | `"astc-8x6-unorm-srgb"`
+Astc8X8Unorm | `"astc-8x8-unorm"`
+Astc8X8UnormSrgb | `"astc-8x8-unorm-srgb"`
+Astc10X5Unorm | `"astc-10x5-unorm"`
+Astc10X5UnormSrgb | `"astc-10x5-unorm-srgb"`
+Astc10X6Unorm | `"astc-10x6-unorm"`
+Astc10X6UnormSrgb | `"astc-10x6-unorm-srgb"`
+Astc10X8Unorm | `"astc-10x8-unorm"`
+Astc10X8UnormSrgb | `"astc-10x8-unorm-srgb"`
+Astc10X10Unorm | `"astc-10x10-unorm"`
+Astc10X10UnormSrgb | `"astc-10x10-unorm-srgb"`
+Astc12X10Unorm | `"astc-12x10-unorm"`
+Astc12X10UnormSrgb | `"astc-12x10-unorm-srgb"`
+Astc12X12Unorm | `"astc-12x12-unorm"`
+Astc12X12UnormSrgb | `"astc-12x12-unorm-srgb"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat>
 
@@ -1422,11 +2760,11 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Float` | `"float"`
-`UnfilterableFloat` | `"unfilterable-float"`
-`Depth` | `"depth"`
-`Sint` | `"sint"`
-`Uint` | `"uint"`
+Float | `"float"`
+UnfilterableFloat | `"unfilterable-float"`
+Depth | `"depth"`
+Sint | `"sint"`
+Uint | `"uint"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gputexturesampletype>
 
@@ -1436,11 +2774,11 @@ Name | Value
 
 Name | Value
 ---- | -----
-`COPY_SRC` | `0x01`
-`COPY_DST` | `0x02`
-`TEXTURE_BINDING` | `0x04`
-`STORAGE_BINDING` | `0x08`
-`RENDER_ATTACHMENT` | `0x10`
+COPY_SRC | `0x01`
+COPY_DST | `0x02`
+TEXTURE_BINDING | `0x04`
+STORAGE_BINDING | `0x08`
+RENDER_ATTACHMENT | `0x10`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#namespacedef-gputextureusage>
 
@@ -1450,12 +2788,12 @@ Name | Value
 
 Name | Value
 ---- | -----
-`_1D` | `"1d"`
-`_2D` | `"2d"`
-`_2DArray` | `"2d-array"`
-`Cube` | `"cube"`
-`CubeArray` | `"cube-array"`
-`_3D` | `"3d"`
+_1D | `"1d"`
+_2D | `"2d"`
+_2DArray | `"2d-array"`
+Cube | `"cube"`
+CubeArray | `"cube-array"`
+_3D | `"3d"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gputextureviewdimension>
 
@@ -1465,36 +2803,36 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Uint8x2` | `"uint8x2"`
-`Uint8x4` | `"uint8x4"`
-`Sint8x2` | `"sint8x2"`
-`Sint8x4` | `"sint8x4"`
-`Unorm8x2` | `"unorm8x2"`
-`Unorm8x4` | `"unorm8x4"`
-`Snorm8x2` | `"snorm8x2"`
-`Snorm8x4` | `"snorm8x4"`
-`Uint16x2` | `"uint16x2"`
-`Uint16x4` | `"uint16x4"`
-`Sint16x2` | `"sint16x2"`
-`Sint16x4` | `"sint16x4"`
-`Unorm16x2` | `"unorm16x2"`
-`Unorm16x4` | `"unorm16x4"`
-`Snorm16x2` | `"snorm16x2"`
-`Snorm16x4` | `"snorm16x4"`
-`Float16x2` | `"float16x2"`
-`Float16x4` | `"float16x4"`
-`Float32` | `"float32"`
-`Float32x2` | `"float32x2"`
-`Float32x3` | `"float32x3"`
-`Float32x4` | `"float32x4"`
-`Uint32` | `"uint32"`
-`Uint32x2` | `"uint32x2"`
-`Uint32x3` | `"uint32x3"`
-`Uint32x4` | `"uint32x4"`
-`Sint32` | `"sint32"`
-`Sint32x2` | `"sint32x2"`
-`Sint32x3` | `"sint32x3"`
-`Sint32x4` | `"sint32x4"`
+Uint8x2 | `"uint8x2"`
+Uint8x4 | `"uint8x4"`
+Sint8x2 | `"sint8x2"`
+Sint8x4 | `"sint8x4"`
+Unorm8x2 | `"unorm8x2"`
+Unorm8x4 | `"unorm8x4"`
+Snorm8x2 | `"snorm8x2"`
+Snorm8x4 | `"snorm8x4"`
+Uint16x2 | `"uint16x2"`
+Uint16x4 | `"uint16x4"`
+Sint16x2 | `"sint16x2"`
+Sint16x4 | `"sint16x4"`
+Unorm16x2 | `"unorm16x2"`
+Unorm16x4 | `"unorm16x4"`
+Snorm16x2 | `"snorm16x2"`
+Snorm16x4 | `"snorm16x4"`
+Float16x2 | `"float16x2"`
+Float16x4 | `"float16x4"`
+Float32 | `"float32"`
+Float32x2 | `"float32x2"`
+Float32x3 | `"float32x3"`
+Float32x4 | `"float32x4"`
+Uint32 | `"uint32"`
+Uint32x2 | `"uint32x2"`
+Uint32x3 | `"uint32x3"`
+Uint32x4 | `"uint32x4"`
+Sint32 | `"sint32"`
+Sint32x2 | `"sint32x2"`
+Sint32x3 | `"sint32x3"`
+Sint32x4 | `"sint32x4"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuvertexformat>
 
@@ -1504,7 +2842,7 @@ Name | Value
 
 Name | Value
 ---- | -----
-`Vertex` | `"vertex"`
-`Instance` | `"instance"`
+Vertex | `"vertex"`
+Instance | `"instance"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpuvertexstepmode>
