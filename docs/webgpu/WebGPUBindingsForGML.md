@@ -196,7 +196,7 @@ A struct that serves as an entry point to WebGPU functions. Counterpart to JavaS
 
 #### GPU.getCurrentTextureView
 
-A static method of struct [GPU](#gpu). Counterpart to JavaScript's `canvas.getCurrentTexture().createView()`.
+A static method of struct [GPU](#gpu). Counterpart to JavaScript's `canvas.getCurrentTexture().createView()`. Retrieves a [GPUTextureView](#gputextureview) for the current back buffer.
 
 **Syntax:**
 
@@ -324,7 +324,9 @@ A method of struct [GPUAdapter](#gpuadapter). Returns a [GPUDevice](#gpudevice),
 
 **Syntax:**
 
-`requestDevice([descriptor])`
+```gml
+requestDevice([descriptor])
+```
 
 **Params:**
 
@@ -372,7 +374,7 @@ A method of struct [GPUBuffer](#gpubuffer). Destroys the buffer. You should alwa
 
 **Syntax:**
 
-```syntax
+```gml
 destroy()
 ```
 
@@ -399,7 +401,7 @@ size | `Real` | ✅ | The portion of the mapped buffer to retrieve a mapped rang
 
 **Returns:** [GPUMappedRange](#gpumappedrange)
 
-**Links:**
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/getMappedRange>
 
 #### GPUBuffer.mapAsync
 
@@ -726,22 +728,27 @@ groupLabel | `String` | ❌ | The label of the debug group.
 
 #### GPUCommandEncoder.resolveQuerySet
 
-A method of struct [GPUCommandEncoder](#gpucommandencoder).
+A method of struct [GPUCommandEncoder](#gpucommandencoder). Resolves a query set, copying the results into a specified [GPUBuffer](#gpubuffer).
 
 **Syntax:**
 
 ```gml
-resolveQuerySet()
+resolveQuerySet(querySet, firstQuery, queryCount, destination, destinationOffset)
 ```
 
 **Params:**
 
 Name | Type | Optional | Description
 ---- | ---- | -------- | -----------
+querySet | [GPUQuerySet](#gpuqueryset) | ❌ | The query set to be resolved.
+firstQuery | `Real` | ❌ | The index of the first query value to be copied to the buffer.
+queryCount | `Real` | ❌ | Number of queries to be copied to the buffer.
+destination | [GPUBuffer](#gpubuffer) | ❌ | The buffer to copy to query values to.
+destinationOffset | `Real` | ❌ | The offset from the beginning of the buffer to start writing the query values to, in bytes.
 
 **Returns:** N/A
 
-**Links:**
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/resolveQuerySet>
 
 ### GPUComputePassDescriptor
 
@@ -757,7 +764,7 @@ A struct used in [GPUDevice.createCommandEncoder](#gpudevicecreatecommandencoder
 
 ### GPUComputePassEncoder
 
-A struct that creates compute pass GPU commands. Created with [GPUCommandEncoder.beginComputePass].
+A struct that creates compute pass GPU commands. Created with [GPUCommandEncoder.beginComputePass](#gpucommandencoderbegincomputepass).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder>
 
@@ -926,7 +933,7 @@ A struct that defines a compute pipeline stage, used in [GPUComputePassEncoder.s
 
 A method of struct [GPUComputePipeline](#gpucomputepipeline). Returns the pipeline's bind group layout at given index. Useful when given pipeline is created with `layout: "auto"`.
 
-`**Syntax:**
+**Syntax:**
 
 ```gml
 getBindGroupLayout(index)
@@ -980,7 +987,9 @@ A method of struct [GPUDevice](#gpudevice). Creates and returns a new [GPUBindGr
 
 **Syntax:**
 
-`createBindGroupLayout(descriptor)`
+```gml
+createBindGroupLayout(descriptor)
+```
 
 **Params:**
 
@@ -1393,7 +1402,11 @@ device.queue.onSubmittedWorkDone(function () {
 
 A method of struct [GPUQueue](#gpuqueue). Submits an array of [GPUCommandBuffer](#gpucommandbuffer)s to the GPU.
 
-`submit(commandBuffers)`
+**Syntax:**
+
+```gml
+submit(commandBuffers)
+```
 
 **Params:**
 
@@ -1737,7 +1750,7 @@ A struct used in [GPUCommandEncoder.beginRenderPass](#gpucommandencoderbeginrend
 
 ### GPURenderPassEncoder
 
-A struct that creates render pass GPU commands. Created with [GPUCommandEncoder.beginRenderPass].
+A struct that creates render pass GPU commands. Created with [GPUCommandEncoder.beginRenderPass](#gpucommandencoderbeginrenderpass).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder>
 
@@ -2134,7 +2147,7 @@ A struct that defines vertex and fragment stages of a render pipeline, used in [
 
 A method of struct [GPURenderPipeline](#gpurenderpipeline). Returns the pipeline's bind group layout at given index. Useful when given pipeline is created with `layout: "auto"`.
 
-`**Syntax:**
+**Syntax:**
 
 ```gml
 getBindGroupLayout(index)
@@ -2273,7 +2286,7 @@ A method of struct [GPUTexture](#gputexture). Destroys the texture. You should a
 
 **Syntax:**
 
-```syntax
+```gml
 destroy()
 ```
 
