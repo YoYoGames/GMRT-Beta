@@ -5,7 +5,7 @@ Here you will find public tracking for known issues with the new "GMRT" runtime,
 
 ## Bugs
 
-Please see [the Issues tab](/issues) above and you will find all known issues and public-facing tasks there.
+Please see [the Issues tab](https://github.com/GMExternal/NewRuntimeBeta/issues) above and you will find all known issues and public-facing tasks there.
 
 You can also report new issues ("bugs") there directly, via the green New Issues button and using one of the premade templates.
 
@@ -16,4 +16,4 @@ Alternatively, you can use the bug-reporter on the Help menu inside GameMaker an
 
 If you need to get set up for GMRT inside GameMaker, you can find all the instructions and known information on "gotchas" here:
 
-[GMRT-beta-intro-and-setup-instructions.md](https://github.com/GMExternal/NewRuntimeBeta/blob/main/docs/introduction/GMRT-beta-intro-and-setup-instructions.md)
+[GMRT-beta-intro-and-setup-instructions.md](/docs/introduction/GMRT-beta-intro-and-setup-instructions.md)
