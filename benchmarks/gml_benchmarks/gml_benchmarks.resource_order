@@ -1,0 +1,14 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_benchmark_button","order":2,"path":"objects/obj_benchmark_button/obj_benchmark_button.yy",},
+    {"name":"obj_benchmark_runner","order":1,"path":"objects/obj_benchmark_runner/obj_benchmark_runner.yy",},
+    {"name":"StartupRoom","order":3,"path":"rooms/StartupRoom/StartupRoom.yy",},
+    {"name":"nbody","order":1,"path":"scripts/nbody/nbody.yy",},
+    {"name":"simpleget","order":5,"path":"scripts/simpleget/simpleget.yy",},
+    {"name":"simpleloop","order":4,"path":"scripts/simpleloop/simpleloop.yy",},
+    {"name":"simpleprimes","order":3,"path":"scripts/simpleprimes/simpleprimes.yy",},
+    {"name":"spectralnorm","order":2,"path":"scripts/spectralnorm/spectralnorm.yy",},
+    {"name":"white","order":15,"path":"sprites/white/white.yy",},
+  ],
+}
