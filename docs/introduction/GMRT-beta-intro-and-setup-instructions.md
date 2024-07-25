@@ -81,13 +81,9 @@ Please always fill out as much information as you can within these reports, as t
 
 <br>
 
-# Discussing GMRT Elsewhere
+# Discussing GMRT
 
-While you are free to add information to or discuss issues via adding comments onto them directly, we have also worked with the admins on the [GameMaker Discord Server](https://discord.gg/gamemaker) to set up a place for open discussion about anything related to the New GameMaker Runtime.
-
-Feel free to discuss anything related to GMRT in either the [#new-runtime-beta](https://discord.com/channels/262834612932182025/1082693121776820254) channel or by creating a post in the [#new-runtime-beta-forum](https://discord.com/channels/262834612932182025/1082693536803209289) channel.
-
-The only thing that we ask for now is that you keep your discussions of the GMRT to these channels and do not discuss details of GMRT with users who have not yet received an invite to the beta.
+Feel free to discuss anything related to GMRT in the [#gmrt](https://discord.com/channels/262834612932182025/1265942967525572648) channel.
 
 **Note that all bug reports need to be filed properly using the information in the section above - Discord is not a bug-reporting service!**
 
@@ -101,6 +97,12 @@ You can download the current Beta installer off [the release notes site](https:/
 We highly recommend keeping your Beta IDE and runtime installation up-to-date as we may change things in the new runtimes and require the latest IDE.
 
 **Note**: If you already had the Beta IDE installed and you were signed-in you may have to use the Update Licence button in the account panel before the new "GMRT" target appears in Target Manager and Preferences.
+
+<br>
+
+# dotnet 8.0 requirement
+
+As of right now, GMRT requires that you have the [dotnet 8 runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed
 
 <br>
 
