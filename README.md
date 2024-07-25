@@ -5,7 +5,7 @@ Here you will find public tracking for known issues with the new "GMRT" runtime,
 
 ## Bugs
 
-Please see [the Issues tab](https://github.com/GMExternal/NewRuntimeBeta/issues) above and you will find all known issues and public-facing tasks there.
+Please see [the Issues tab](https://github.com/YoYoGames/GMRT-Beta/issues) above and you will find all known issues and public-facing tasks there.
 
 You can also report new issues ("bugs") there directly, via the green New Issues button and using one of the premade templates.
 
