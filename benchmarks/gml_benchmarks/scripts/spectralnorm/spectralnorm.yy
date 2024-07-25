@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"spectralnorm",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spectralnorm",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
