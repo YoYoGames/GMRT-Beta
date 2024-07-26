@@ -192,7 +192,7 @@ The Default Source URL shown here is for our current package registry used for G
 All very similar to VM/YYC, but be aware the build times will be much longer.
 
 - Change target to Windows > "GMRT VM"
-- alternatively, select "GMRT" to perform a Native GMRT build which will compile your scripts rather than running them in the GMRT interpreter
+  - Alternatively, select "GMRT" to perform a Native GMRT build which will compile your scripts rather than running them in the GMRT interpreter
 - Run
 
 ![](10.png)
