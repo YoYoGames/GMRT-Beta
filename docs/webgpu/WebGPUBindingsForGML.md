@@ -13,19 +13,30 @@
     * [GPU.requestAnimationFrame](#gpurequestanimationframe)
     * [GPU.wgslLanguageFeatures](#gpuwgsllanguagefeatures)
   * [GPUAdapter](#gpuadapter)
+    * [GPUAdapter.features](#gpuadapterfeatures)
+    * [GPUAdapter.info](#gpuadapterinfo)
+    * [GPUAdapter.isFallbackAdapter](#gpuadapterisfallbackadapter)
+    * [GPUAdapter.limits](#gpuadapterlimits)
     * [GPUAdapter.requestDevice](#gpuadapterrequestdevice)
   * [GPUBindGroup](#gpubindgroup)
+    * [GPUBindGroup.label](#gpubindgrouplabel)
   * [GPUBindGroupDescriptor](#gpubindgroupdescriptor)
   * [GPUBindGroupLayout](#gpubindgrouplayout)
+    * [GPUBindGroupLayout.label](#gpubindgrouplayoutlabel)
   * [GPUBindGroupLayoutDescriptor](#gpubindgrouplayoutdescriptor)
   * [GPUBuffer](#gpubuffer)
     * [GPUBuffer.destroy](#gpubufferdestroy)
+    * [GPUBuffer.label](#gpubufferlabel)
     * [GPUBuffer.getMappedRange](#gpubuffergetmappedrange)
     * [GPUBuffer.mapAsync](#gpubuffermapasync)
+    * [GPUBuffer.mapState](#gpubuffermapstate)
+    * [GPUBuffer.size](#gpubuffersize)
     * [GPUBuffer.unmap](#gpubufferunmap)
+    * [GPUBuffer.usage](#gpubufferusage)
   * [GPUBufferDescriptor](#gpubufferdescriptor)
   * [GPUColor](#gpucolor)
   * [GPUCommandBuffer](#gpucommandbuffer)
+    * [GPUCommandBuffer.label](#gpucommandbufferlabel)
   * [GPUCommandBufferDescriptor](#gpucommandbufferdescriptor)
   * [GPUCommandEncoder](#gpucommandencoder)
     * [GPUCommandEncoder.beginComputePass](#gpucommandencoderbegincomputepass)
@@ -37,6 +48,7 @@
     * [GPUCommandEncoder.copyTextureToTexture](#gpucommandencodercopytexturetotexture)
     * [GPUCommandEncoder.finish](#gpucommandencoderfinish)
     * [GPUCommandEncoder.insertDebugMarker](#gpucommandencoderinsertdebugmarker)
+    * [GPUCommandEncoder.label](#gpucommandencoderlabel)
     * [GPUCommandEncoder.popDebugGroup](#gpucommandencoderpopdebuggroup)
     * [GPUCommandEncoder.pushDebugGroup](#gpucommandencoderpushdebuggroup)
     * [GPUCommandEncoder.resolveQuerySet](#gpucommandencoderresolvequeryset)
@@ -47,12 +59,14 @@
     * [GPUComputePassEncoder.dispatchWorkgroupsIndirect](#gpucomputepassencoderdispatchworkgroupsindirect)
     * [GPUComputePassEncoder.end_](#gpucomputepassencoderend_)
     * [GPUComputePassEncoder.insertDebugMarker](#gpucomputepassencoderinsertdebugmarker)
+    * [GPUComputePassEncoder.label](#gpucomputepassencoderlabel)
     * [GPUComputePassEncoder.popDebugGroup](#gpucomputepassencoderpopdebuggroup)
     * [GPUComputePassEncoder.pushDebugGroup](#gpucomputepassencoderpushdebuggroup)
     * [GPUComputePassEncoder.setBindGroup](#gpucomputepassencodersetbindgroup)
     * [GPUComputePassEncoder.setPipeline](#gpucomputepassencodersetpipeline)
   * [GPUComputePipeline](#gpucomputepipeline)
     * [GPUComputePipeline.getBindGroupLayout](#gpucomputepipelinegetbindgrouplayout)
+    * [GPUComputePipeline.label](#gpucomputepipelinelabel)
   * [GPUComputePipelineDescriptor](#gpucomputepipelinedescriptor)
   * [GPUDevice](#gpudevice)
     * [GPUDevice.createBindGroup](#gpudevicecreatebindgroup)
@@ -78,16 +92,22 @@
     * [GPUMappedRange.set](#gpumappedrangeset)
     * [GPUMappedRange.toBuffer](#gpumappedrangetobuffer)
   * [GPUPipelineLayout](#gpupipelinelayout)
+    * [GPUPipelineLayout.label](#gpupipelinelayoutlabel)
   * [GPUPipelineLayoutDescriptor](#gpupipelinelayoutdescriptor)
   * [GPUQuerySet](#gpuqueryset)
+    * [GPUQuerySet.count](#gpuquerysetcount)
     * [GPUQuerySet.destroy](#gpuquerysetdestroy)
+    * [GPUQuerySet.label](#gpuquerysetlabel)
+    * [GPUQuerySet.type](#gpuquerysettype)
   * [GPUQuerySetDescriptor](#gpuquerysetdescriptor)
   * [GPUQueue](#gpuqueue)
+    * [GPUQueue.label](#gpuqueuelabel)
     * [GPUQueue.onSubmittedWorkDone](#gpuqueueonsubmittedworkdone)
     * [GPUQueue.submit](#gpuqueuesubmit)
     * [GPUQueue.writeBuffer](#gpuqueuewritebuffer)
     * [GPUQueue.writeTexture](#gpuqueuewritetexture)
   * [GPURenderBundle](#gpurenderbundle)
+    * [GPURenderBundle.label](#gpurenderbundlelabel)
   * [GPURenderBundleDescriptor](#gpurenderbundledescriptor)
   * [GPURenderBundleEncoder](#gpurenderbundleencoder)
     * [GPURenderBundleEncoder.draw](#gpurenderbundleencoderdraw)
@@ -96,6 +116,7 @@
     * [GPURenderBundleEncoder.drawIndirect](#gpurenderbundleencoderdrawindirect)
     * [GPURenderBundleEncoder.finish](#gpurenderbundleencoderfinish)
     * [GPURenderBundleEncoder.insertDebugMarker](#gpurenderbundleencoderinsertdebugmarker)
+    * [GPURenderBundleEncoder.label](#gpurenderbundleencoderlabel)
     * [GPURenderBundleEncoder.popDebugGroup](#gpurenderbundleencoderpopdebuggroup)
     * [GPURenderBundleEncoder.pushDebugGroup](#gpurenderbundleencoderpushdebuggroup)
     * [GPURenderBundleEncoder.setBindGroup](#gpurenderbundleencodersetbindgroup)
@@ -114,6 +135,7 @@
     * [GPURenderPassEncoder.endOcclusionQuery](#gpurenderpassencoderendocclusionquery)
     * [GPURenderPassEncoder.executeBundles](#gpurenderpassencoderexecutebundles)
     * [GPURenderPassEncoder.insertDebugMarker](#gpurenderpassencoderinsertdebugmarker)
+    * [GPURenderPassEncoder.label](#gpurenderpassencoderlabel)
     * [GPURenderPassEncoder.popDebugGroup](#gpurenderpassencoderpopdebuggroup)
     * [GPURenderPassEncoder.pushDebugGroup](#gpurenderpassencoderpushdebuggroup)
     * [GPURenderPassEncoder.setBindGroup](#gpurenderpassencodersetbindgroup)
@@ -126,19 +148,32 @@
     * [GPURenderPassEncoder.setViewport](#gpurenderpassencodersetviewport)
   * [GPURenderPipeline](#gpurenderpipeline)
     * [GPURenderPipeline.getBindGroupLayout](#gpurenderpipelinegetbindgrouplayout)
+    * [GPURenderPipeline.label](#gpurenderpipelinelabel)
   * [GPURenderPipelineDescriptor](#gpurenderpipelinedescriptor)
   * [GPURequestAdapterOptions](#gpurequestadapteroptions)
   * [GPUSampler](#gpusampler)
+    * [GPUSampler.label](#gpusamplerlabel)
   * [GPUSamplerDescriptor](#gpusamplerdescriptor)
   * [GPUShaderModule](#gpushadermodule)
     * [GPUShaderModule.getCompilationInfo](#gpushadermodulegetcompilationinfo)
+    * [GPUShaderModule.label](#gpushadermodulelabel)
   * [GPUShaderModuleDescriptor](#gpushadermoduledescriptor)
   * [GPUTexture](#gputexture)
     * [GPUTexture.createView](#gputexturecreateview)
+    * [GPUTexture.depthOrArrayLayers](#gputexturedepthorarraylayers)
     * [GPUTexture.destroy](#gputexturedestroy)
+    * [GPUTexture.dimension](#gputexturedimension)
+    * [GPUTexture.format](#gputextureformat)
+    * [GPUTexture.height](#gputextureheight)
+    * [GPUTexture.label](#gputexturelabel)
+    * [GPUTexture.mipLevelCount](#gputexturemiplevelcount)
+    * [GPUTexture.sampleCount](#gputexturesamplecount)
+    * [GPUTexture.usage](#gputextureusage)
+    * [GPUTexture.width](#gputexturewidth)
   * [GPUTextureDataLayout](#gputexturedatalayout)
   * [GPUTextureDescriptor](#gputexturedescriptor)
   * [GPUTextureView](#gputextureview)
+    * [GPUTextureView.label](#gputextureviewlabel)
   * [GPUTextureViewDescriptor](#gputextureviewdescriptor)
 * [Enums](#enums)
   * [GPUAddressMode](#gpuaddressmode)
@@ -308,7 +343,9 @@ Unlike in JS, you should never call `requestAnimationFrame` inside of the callba
 
 #### GPU.wgslLanguageFeatures
 
-A static read-only property of [GPU](#gpu). Contains an array of available [WGSL language features](https://gpuweb.github.io/gpuweb/wgsl/#language-extension) (strings).
+A static read-only property of struct [GPU](#gpu). Contains an array of available [WGSL language features](https://gpuweb.github.io/gpuweb/wgsl/#language-extension).
+
+**Type:** `Array<String>`
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPU/wgslLanguageFeatures>
 
@@ -317,6 +354,84 @@ A static read-only property of [GPU](#gpu). Contains an array of available [WGSL
 A struct used mainly to retrieve a [GPUDevice](#gpudevice), which can be further used to create command encoders, GPU resources and retrieve a [GPUQueue](#gpuqueue). Retrieved with [GPU.requestAdapter](#gpurequestadapter).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter>
+
+#### GPUAdapter.features
+
+A read-only property of struct [GPUAdapter](#gpuadapter). Contains an array of features supported by the adapter.
+
+**Type:** `Array<String>`
+
+**Links:** <https://gpuweb.github.io/gpuweb/#feature-index>
+
+#### GPUAdapter.info
+
+A read-only property of struct [GPUAdapter](#gpuadapter). Contains a struct with info about the adapter.
+
+**Type:** `Struct`
+
+**Adapter info struct:**
+
+Key | Type | Description
+--- | ---- | -----------
+`architecture` | `String` | The name of the family or class of GPUs the adapter belongs to, if available. Empty string otherwise.
+`description` | `String` | A human readable string describing the adapter as reported by the driver, if available. Empty string otherwise.
+`device` | `String` | A vendor-specific identifier for the adapter, if available. Empty string otherwise.
+`vendor` | `String` | The name of the vendor of the adapter, if available. Empty string otherwise.
+
+**Links:** <https://www.w3.org/TR/webgpu/#gpuadapterinfo>
+
+#### GPUAdapter.isFallbackAdapter
+
+A read-only property of struct [GPUAdapter](#gpuadapter). Equals `true` if the adapter is a fallback adapter.
+
+**Type:** `Bool`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/isFallbackAdapter>
+
+#### GPUAdapter.limits
+
+A read-only property of struct [GPUAdapter](#gpuadapter). Contains a struct that describes limits supported by the adapter.
+
+**Type:** `Struct`
+
+**Limits struct:**
+
+Key | Type | Description
+--- | ---- | -----------
+`maxBindGroups` | `Real` | The maximum number of [GPUBindGroupLayout](#gpubindgrouplayout)s allowed in `bindGroupLayouts` when creating a [GPUPipelineLayout](#gpupipelinelayout).
+`maxBindGroupsPlusVertexBuffers` | `Real` | The maximum number of bind group and vertex buffer slots used simultaneously, counting any empty slots below the highest index. Validated in [createRenderPipeline()](#gpudevicecreaterenderpipeline) and in draw calls.
+`maxBindingsPerBindGroup` | `Real` | The number of binding indices available when creating a [GPUBindGroupLayout](#gpubindgrouplayout).
+`maxBufferSize` | `Real` | The maximum size of `size` when creating a [GPUBuffer](#gpubuffer).
+`maxColorAttachmentBytesPerSample` | `Real` | The maximum number of bytes necessary to hold one sample (pixel or subpixel) of render pipeline output data, across all color attachments.
+`maxColorAttachments` | `Real` | The maximum allowed number of color attachments in [GPURenderPipelineDescriptor](#gpurenderpipelinedescriptor)`.fragment.targets`, [GPURenderPassDescriptor](#gpurenderpassdescriptor)`.colorAttachments`, and `GPURenderPassLayout.colorFormats`.
+`maxComputeInvocationsPerWorkgroup` | `Real` | The maximum value of the product of the `workgroup_size` dimensions for a compute stage [GPUShaderModule](#gpushadermodule) entry-point.
+`maxComputeWorkgroupSizeX` | `Real` | The maximum value of the `workgroup_size` X dimension for a compute stage [GPUShaderModule](#gpushadermodule) entry-point.
+`maxComputeWorkgroupSizeY` | `Real` | The maximum value of the `workgroup_size` Y dimensions for a compute stage [GPUShaderModule](#gpushadermodule) entry-point.
+`maxComputeWorkgroupSizeZ` | `Real` | The maximum value of the `workgroup_size` Z dimensions for a compute stage [GPUShaderModule](#gpushadermodule) entry-point.
+`maxComputeWorkgroupsPerDimension` | `Real` | The maximum value for the arguments of [dispatchWorkgroups(workgroupCountX, workgroupCountY, workgroupCountZ)](#gpucomputepassencoderdispatchworkgroups).
+`maxComputeWorkgroupStorageSize` | `Real` | The maximum number of bytes of workgroup storage used for a compute stage [GPUShaderModule](#gpushadermodule) entry-point.
+`maxDynamicStorageBuffersPerPipelineLayout` | `Real` | The maximum number of `GPUBindGroupLayoutEntry` entries across a [GPUPipelineLayout](#gpupipelinelayout) which are storage buffers with dynamic offsets. See Exceeds the binding slot limits.
+`maxDynamicUniformBuffersPerPipelineLayout` | `Real` | The maximum number of `GPUBindGroupLayoutEntry` entries across a [GPUPipelineLayout](#gpupipelinelayout) which are uniform buffers with dynamic offsets. See Exceeds the binding slot limits.
+`maxInterStageShaderComponents` | `Real` | The maximum allowed number of components of input or output variables for inter-stage communication (like vertex outputs or fragment inputs).
+`maxInterStageShaderVariables` | `Real` | The maximum allowed number of input or output variables for inter-stage communication (like vertex outputs or fragment inputs).
+`maxSampledTexturesPerShaderStage` | `Real` | For each possible [GPUShaderStage](#gpushaderstage) stage, the maximum number of `GPUBindGroupLayoutEntry` entries across a [GPUPipelineLayout](#gpupipelinelayout) which are sampled textures. See Exceeds the binding slot limits.
+`maxSamplersPerShaderStage` | `Real` | For each possible [GPUShaderStage](#gpushaderstage) stage, the maximum number of `GPUBindGroupLayoutEntry` entries across a [GPUPipelineLayout](#gpupipelinelayout) which are samplers. See Exceeds the binding slot limits.
+`maxStorageBufferBindingSize` | `Real` | The maximum `GPUBufferBinding.size` for bindings with a `GPUBindGroupLayoutEntry` entry for which `entry.buffer?.type` is ["storage"](#gpubufferbindingtype) or ["read-only-storage"](#gpubufferbindingtype).
+`maxStorageBuffersPerShaderStage` | `Real` | For each possible [GPUShaderStage](#gpushaderstage) stage, the maximum number of `GPUBindGroupLayoutEntry` entries across a [GPUPipelineLayout](#gpupipelinelayout) which are storage buffers. See Exceeds the binding slot limits.
+`maxStorageTexturesPerShaderStage` | `Real` | For each possible [GPUShaderStage](#gpushaderstage) stage, the maximum number of `GPUBindGroupLayoutEntry` entries across a [GPUPipelineLayout](#gpupipelinelayout) which are storage textures. See Exceeds the binding slot limits.
+`maxTextureArrayLayers` | `Real` | The maximum allowed value for the `size.depthOrArrayLayers` of a texture created with dimension ["2d"](#gputexturedimension).
+`maxTextureDimension1D` | `Real` | The maximum allowed value for the `size.width` of a texture created with dimension ["1d"](#gputexturedimension).
+`maxTextureDimension2D` | `Real` | The maximum allowed value for the `size.width` and `size.height` of a texture created with dimension ["2d"](#gputexturedimension).
+`maxTextureDimension3D` | `Real` | The maximum allowed value for the `size.width`, `size.height` and `size.depthOrArrayLayers` of a texture created with dimension ["3d"](#gputexturedimension).
+`maxUniformBufferBindingSize` | `Real` | The maximum `GPUBufferBinding.size` for bindings with a `GPUBindGroupLayoutEntry` entry for which `entry.buffer?.type` is ["uniform"](#gpubufferbindingtype).
+`maxUniformBuffersPerShaderStage` | `Real` | For each possible [GPUShaderStage](#gpushaderstage) stage, the maximum number of `GPUBindGroupLayoutEntry` entries across a [GPUPipelineLayout](#gpupipelinelayout) which are uniform buffers. See Exceeds the binding slot limits.
+`maxVertexAttributes` | `Real` | The maximum number of attributes in total across buffers when creating a [GPURenderPipeline](#gpurenderpipeline).
+`maxVertexBufferArrayStride` | `Real` | The maximum allowed `arrayStride` when creating a [GPURenderPipeline](#gpurenderpipeline).
+`maxVertexBuffers` | `Real` | The maximum number of buffers when creating a [GPURenderPipeline](#gpurenderpipeline).
+`minStorageBufferOffsetAlignment` | `Real` | The required alignment for `GPUBufferBinding.offset` and the dynamic offsets provided in [setBindGroup()](#gpurenderpassencodersetbindgroup), for bindings with a `GPUBindGroupLayoutEntry` entry for which `entry.buffer?.type` is ["storage"](#gpubufferbindingtype) or ["read-only-storage"](#gpubufferbindingtype).
+`minUniformBufferOffsetAlignment` | `Real` | The required alignment for `GPUBufferBinding.offset` and the dynamic offsets provided in [setBindGroup()](#gpurenderpassencodersetbindgroup), for bindings with a `GPUBindGroupLayoutEntry` entry for which `entry.buffer?.type` is ["uniform"](#gpubufferbindingtype).
+
+**Links:** <https://gpuweb.github.io/gpuweb/#limits>
 
 #### GPUAdapter.requestDevice
 
@@ -344,6 +459,14 @@ A struct containing shader bindings, laid out based on a [GPUBindGroupLayout](#g
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroup>
 
+#### GPUBindGroup.label
+
+A write-only property of struct [GPUBindGroup](#gpubindgroup), useful for identifying the bind group in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroup/label>
+
 ### GPUBindGroupDescriptor
 
 A struct used in [GPUDevice.createBindGroup](#gpudevicecreatebindgroup) to create a new [GPUBindGroup](#gpubindgroup).
@@ -355,6 +478,14 @@ A struct used in [GPUDevice.createBindGroup](#gpudevicecreatebindgroup) to creat
 A struct that defines layout and usage of shader resources in [GPUBindGroup](#gpubindgroup)s. Created with [GPUDevice.createBindGroupLayout](#gpudevicecreatebindgrouplayout).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroupLayout>
+
+#### GPUBindGroupLayout.label
+
+A write-only property of struct [GPUBindGroupLayout](#gpubindgrouplayout), useful for identifying the bind group layout in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroupLayout/label>
 
 ### GPUBindGroupLayoutDescriptor
 
@@ -381,6 +512,14 @@ destroy()
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/destroy>
+
+#### GPUBuffer.label
+
+A write-only property of struct [GPUBuffer](#gpubuffer), useful for identifying the buffer in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/label>
 
 #### GPUBuffer.getMappedRange
 
@@ -441,6 +580,22 @@ buffer.mapAsync(GPUMapMode.WRITE, function (state, buffer) {
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/mapAsync>
 
+#### GPUBuffer.mapState
+
+A read-only property of struct [GPUBuffer](#gpubuffer). Represents the mapped state of the buffer.
+
+**Type:** [GPUBufferMapState](#gpubuffermapstate)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/mapState>
+
+#### GPUBuffer.size
+
+A read-only property of struct [GPUBuffer](#gpubuffer). Represents the size of the buffer in bytes.
+
+**Type:** `Real`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/size>
+
 #### GPUBuffer.unmap
 
 A method of struct [GPUBuffer](#gpubuffer). Unmaps a buffer mapped with [GPUBuffer.mapAsync], committing changes done (if any).
@@ -454,6 +609,14 @@ unmap()
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/unmap>
+
+#### GPUBuffer.usage
+
+A read-only property of struct [GPUBuffer](#gpubuffer). Represents the allowed usages of the buffer.
+
+**Type:** [GPUBufferUsage](#gpubufferusage)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/usage>
 
 ### GPUBufferDescriptor
 
@@ -487,6 +650,14 @@ var colorArray = [1, 0, 0, 1];
 A struct containing GPU commands, ready to be submitted with [GPUQueue.submit](#gpuqueuesubmit). Created with [GPUCommandEncoder.finish](#gpucommandencoderfinish).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer>
+
+#### GPUCommandBuffer.label
+
+A write-only property of struct [GPUCommandBuffer](#gpucommandbuffer), useful for identifying the command buffer in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer/label>
 
 ### GPUCommandBufferDescriptor
 
@@ -692,6 +863,14 @@ markerLabel | `String` | ❌ | The label of the debug marker.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/insertDebugMarker>
 
+#### GPUCommandEncoder.label
+
+A write-only property of struct [GPUCommandEncoder](#gpucommandencoder), useful for identifying the command encoder in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/label>
+
 #### GPUCommandEncoder.popDebugGroup
 
 A method of struct [GPUCommandEncoder](#gpucommandencoder). Ends a debug group started with [GPUCommandEncoder.pushDebugGroup](#gpucommandencoderpushdebuggroup).
@@ -845,6 +1024,14 @@ markerLabel | `String` | ❌ | The label of the debug marker.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/insertDebugMarker>
 
+#### GPUComputePassEncoder.label
+
+A write-only property of struct [GPUComputePassEncoder](#gpucomputepassencoder), useful for identifying the compute pass encoder in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/label>
+
 #### GPUComputePassEncoder.popDebugGroup
 
 A method of struct [GPUComputePassEncoder](#gpucomputepassencoder). Ends a debug group started with [GPUComputePassEncoder.pushDebugGroup](#gpucomputepassencoderpushdebuggroup).
@@ -948,6 +1135,14 @@ index | `Real` | ❌ | The index of the bind group layout.
 **Returns:** [GPUBindGroupLayout](#gpubindgrouplayout)
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline/getBindGroupLayout>
+
+#### GPUComputePipeline.label
+
+A write-only property of struct [GPUComputePipeline](#gpucomputepipeline), useful for identifying the compute pipeline in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline/label>
 
 ### GPUComputePipelineDescriptor
 
@@ -1205,6 +1400,8 @@ descriptor | [GPUTextureDescriptor](#gputexturedescriptor) | ✅ | The descripti
 
 A static read-only property of struct [GPUDevice](#gpudevice) containing [GPUQueue](#gpuqueue), which can be used to issue commands to the GPU.
 
+**Type:** [GPUQueue](#gpuqueue)
+
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/queue>
 
 ### GPUDeviceDescriptor
@@ -1326,6 +1523,14 @@ A struct that defines [GPUBindGroupLayout](#gpubindgrouplayout)s used by a pipel
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout>
 
+#### GPUPipelineLayout.label
+
+A write-only property of struct [GPUPipelineLayout](#gpupipelinelayout), useful for identifying the pipeline layout in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout/label>
+
 ### GPUPipelineLayoutDescriptor
 
 A struct used in [GPUDevice.createPipelineLayout](#gpudevicecreatepipelinelayout) to create a new [GPUPipelineLayout](#gpupipelinelayout).
@@ -1337,6 +1542,14 @@ A struct used in [GPUDevice.createPipelineLayout](#gpudevicecreatepipelinelayout
 A struct used to record results of queries on passes, such as occlusion or timestamp queries.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet>
+
+#### GPUQuerySet.count
+
+A read-only property of struct [GPUQuerySet](#gpuqueryset). Represents the number of queries managed by the query set.
+
+**Type:** `Real`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/count>
 
 #### GPUQuerySet.destroy
 
@@ -1352,6 +1565,22 @@ destroy()
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/destroy>
 
+#### GPUQuerySet.label
+
+A write-only property of struct [GPUQuerySet](#gpuqueryset), useful for identifying the query set in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/label>
+
+#### GPUQuerySet.type
+
+A read-only property of struct [GPUQuerySet](#gpuqueryset). Represents the type of queries managed by the query set.
+
+**Type:** [GPUQueryType](#gpuquerytype)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/type>
+
 ### GPUQuerySetDescriptor
 
 A struct used in [GPUDevice.createQuerySet](#gpudevicecreatequeryset) to create a new [GPUQuerySet](#gpuqueryset).
@@ -1363,6 +1592,14 @@ A struct used in [GPUDevice.createQuerySet](#gpudevicecreatequeryset) to create 
 A struct used to issue commands to the GPU. Retrieved with [GPUDevice.queue](#gpudevicequeue).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue>
+
+#### GPUQueue.label
+
+A write-only property of struct [GPUQueue](#gpuqueue), useful for identifying the queue in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/label>
 
 #### GPUQueue.onSubmittedWorkDone
 
@@ -1470,6 +1707,14 @@ size | [GPUExtent3D](#gpuextent3d) | ❌ | A struct defining the width, height a
 A struct containing encoded render pass commands, ready to be executed with [GPURenderPassEncoder.executeBundles](#gpurenderpassencoderexecutebundles). Created with [GPURenderBundleEncoder.finish](#gpurenderbundleencoderfinish).
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundle>
+
+#### GPURenderBundle.label
+
+A write-only property of struct [GPURenderBundle](#gpurenderbundle), useful for identifying the render bundle in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundle/label>
 
 ### GPURenderBundleDescriptor
 
@@ -1611,6 +1856,14 @@ markerLabel | `String` | ❌ | The label of the debug marker.
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/insertDebugMarker>
+
+#### GPURenderBundleEncoder.label
+
+A write-only property of struct [GPURenderBundleEncoder](#gpurenderbundleencoder), useful for identifying the render bundle encoder in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/label>
 
 #### GPURenderBundleEncoder.popDebugGroup
 
@@ -1925,6 +2178,14 @@ markerLabel | `String` | ❌ | The label of the debug marker.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/insertDebugMarker>
 
+#### GPURenderPassEncoder.label
+
+A write-only property of struct [GPURenderPassEncoder](#gpurenderpassencoder), useful for identifying the render pass encoder in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/label>
+
 #### GPURenderPassEncoder.popDebugGroup
 
 A method of struct [GPURenderPassEncoder](#gpurenderpassencoder). Ends a debug group started with [GPURenderPassEncoder.pushDebugGroup](#gpurenderpassencoderpushdebuggroup).
@@ -2163,6 +2424,14 @@ index | `Real` | ❌ | The index of the bind group layout.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPipeline/getBindGroupLayout>
 
+#### GPURenderPipeline.label
+
+A write-only property of struct [GPURenderPipeline](#gpurenderpipeline), useful for identifying the render pipeline in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPipeline/label>
+
 ### GPURenderPipelineDescriptor
 
 A struct used in [GPUDevice.createRenderPipeline](#gpudevicecreaterenderpipeline) to create a new [GPURenderPipeline](#gpurenderpipeline).
@@ -2180,6 +2449,14 @@ Currently unused, as the [GPU.requestAdapter](#gpurequestadapter) method always 
 A struct that defines how are textures sampled in a shader. Created with [GPUDevice.createSampler](#gpudevicecreatesampler). Used in [GPUBindGroup](#gpubindgroup)s.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUSampler>
+
+#### GPUSampler.label
+
+A write-only property of struct [GPUSampler](#gpusampler), useful for identifying the sampler in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUSampler/label>
 
 ### GPUSamplerDescriptor
 
@@ -2248,6 +2525,14 @@ shader.getCompilationInfo(function (compilationInfo) {
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/getCompilationInfo>
 
+#### GPUShaderModule.label
+
+A write-only property of struct [GPUShaderModule](#gpushadermodule), useful for identifying the shader module in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/label>
+
 ### GPUShaderModuleDescriptor
 
 A struct used in [GPUDevice.createShaderModule](#gpudevicecreateshadermodule) to create a new [GPUShaderModule](#gpushadermodule).
@@ -2280,6 +2565,14 @@ descriptor | [GPUTextureViewDescriptor](#gputextureviewdescriptor) | ✅ | The d
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/createView>
 
+#### GPUTexture.depthOrArrayLayers
+
+A read-only property of struct [GPUTexture](#gputexture). Represents the depth or layer count of the texture.
+
+**Type:** `Real`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/depthOrArrayLayers>
+
 #### GPUTexture.destroy
 
 A method of struct [GPUTexture](#gputexture). Destroys the texture. You should always use this function when the texture is no longer needed to avoid memory leaks!
@@ -2293,6 +2586,70 @@ destroy()
 **Returns:** N/A
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/destroy>
+
+#### GPUTexture.dimension
+
+A read-only property of struct [GPUTexture](#gputexture).
+
+**Type:** [GPUTextureDimension](#gputexturedimension)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/dimension>
+
+#### GPUTexture.format
+
+A read-only property of struct [GPUTexture](#gputexture). Represents the format of the texture.
+
+**Type:** [GPUTextureFormat](#gputextureformat)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/format>
+
+#### GPUTexture.height
+
+A read-only property of struct [GPUTexture](#gputexture). Represents the height of the texture.
+
+**Type:** `Real`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/height>
+
+#### GPUTexture.label
+
+A write-only property of struct [GPUTexture](#gputexture), useful for identifying the texture in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/label>
+
+#### GPUTexture.mipLevelCount
+
+A read-only property of struct [GPUTexture](#gputexture). Represents the number of mip levels of the texture.
+
+**Type:** `Real`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/mipLevelCount>
+
+#### GPUTexture.sampleCount
+
+A read-only property of struct [GPUTexture](#gputexture). Represents the sample count of the texture.
+
+**Type:** `Real`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/sampleCount>
+
+#### GPUTexture.usage
+
+A read-only property of struct [GPUTexture](#gputexture). Represents the allowed usages of the texture.
+
+**Type:** [GPUTextureUsage](#gputextureusage)
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/usage>
+
+#### GPUTexture.width
+
+A read-only property of struct [GPUTexture](#gputexture). Represents the width of the texture.
+
+**Type:** `Real`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/width>
 
 ### GPUTextureDataLayout
 
@@ -2311,6 +2668,14 @@ A struct used in [GPUDevice.createTexture](#gpudevicecreatetexture) to create a 
 A struct that represents a view into a subset of a [GPUTexture](#gputexture). Created with [GPUTexture.createView](#gputexturecreateview). Used for example in [GPUBindGroup](#gpubindgroup)s for sampling of textures in shaders.
 
 **Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTextureView>
+
+#### GPUTextureView.label
+
+A write-only property of struct [GPUTextureView](#gputextureview), useful for identifying the texture view in error messages or debugging tools.
+
+**Type:** `String`
+
+**Links:** <https://developer.mozilla.org/en-US/docs/Web/API/GPUTextureView/label>
 
 ### GPUTextureViewDescriptor
 
