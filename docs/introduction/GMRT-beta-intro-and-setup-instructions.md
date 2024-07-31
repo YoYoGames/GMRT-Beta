@@ -81,13 +81,9 @@ Please always fill out as much information as you can within these reports, as t
 
 <br>
 
-# Discussing GMRT Elsewhere
+# Discussing GMRT
 
-While you are free to add information to or discuss issues via adding comments onto them directly, we have also worked with the admins on the [GameMaker Discord Server](https://discord.gg/gamemaker) to set up a place for open discussion about anything related to the New GameMaker Runtime.
-
-Feel free to discuss anything related to GMRT in either the [#new-runtime-beta](https://discord.com/channels/262834612932182025/1082693121776820254) channel or by creating a post in the [#new-runtime-beta-forum](https://discord.com/channels/262834612932182025/1082693536803209289) channel.
-
-The only thing that we ask for now is that you keep your discussions of the GMRT to these channels and do not discuss details of GMRT with users who have not yet received an invite to the beta.
+Feel free to discuss anything related to GMRT in the [#gmrt](https://discord.com/channels/262834612932182025/1265942967525572648) channel.
 
 **Note that all bug reports need to be filed properly using the information in the section above - Discord is not a bug-reporting service!**
 
@@ -101,6 +97,12 @@ You can download the current Beta installer off [the release notes site](https:/
 We highly recommend keeping your Beta IDE and runtime installation up-to-date as we may change things in the new runtimes and require the latest IDE.
 
 **Note**: If you already had the Beta IDE installed and you were signed-in you may have to use the Update Licence button in the account panel before the new "GMRT" target appears in Target Manager and Preferences.
+
+<br>
+
+# dotnet 8.0 requirement
+
+As of right now, GMRT requires that you have the [dotnet 8 runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed
 
 <br>
 
@@ -189,7 +191,8 @@ The Default Source URL shown here is for our current package registry used for G
 
 All very similar to VM/YYC, but be aware the build times will be much longer.
 
-- Change target to Windows > "GMRT"
+- Change target to Windows > "GMRT VM"
+  - Alternatively, select "GMRT" to perform a Native GMRT build which will compile your scripts rather than running them in the GMRT interpreter
 - Run
 
 ![](10.png)
@@ -290,3 +293,117 @@ If building from the IDE fails when using the Visual Studio generator there is a
 
   2. Copy and paste the command which appears in the gamemaker “Output” Window when you try to run as described above. it should look similar to this but using your directory name and project name:\
      _"C:\\.gmpm\Release\bin\yypcd.exe" "C:\Users\\\<username>\Documents\GameMakerStudio2\\\<project name>\\\<project name>.yyp" -o "C:\Users\\\<username>\Documents\GameMakerStudio2\\\<project name>\Build" -t "C:\\.gmpm\Release\bin\cmake-project-template" -toolchain="C:\\.gmpm" -v -target-triple=x86\_64-pc-windows-msvc -asset-compiler=C:\\.gmpm\Debug\bin\AssetCompiler.exe -asset-compiler-args=--nowad --headless --noloop_![](19.png)
+
+
+<br>
+
+# Changes to GML
+
+GMRT contains a new GML compiler, and with it we've made a few changes to the way the language works. A number of these changes are intended to simplify GML and prevent developers from using functionality that is unintended with the language and could therefore break or be removed in the future. Additionally, some changes right now are simply due to the compiler being a work in progress and so some of the more esoteric features are not yet in place.
+Below is a list of these changes. Please be aware of these to avoid issues when compiling your code with GMRT:
+
+## typeof(self) when in instance
+
+When inside an instance `self` represents it's underlying struct.
+There is although some odd behavior around this special struct.
+
+```gml
+_self_type = typeof(self); // struct
+_is_struct = is_struct(self); // false
+```
+
+This behavior is misleading and contradicts itself, we might as well be fixing this by making `is_struct(self)` return `true` and instead add a new complementary function to check if it is an instance (ie.: `is_instance(self)` which would also return `true` addressing the *instance specific self* situation).
+
+## "self" ambiguity in struct literals
+
+As the current runner stands there is some ambiguity surrounding the `self` constant, specially when defining struct literals
+
+**[CREATE EVENT]**
+```gml
+__a__ = 12;
+__b__ = 22;
+
+result = { context: self, a: self.__a__ };
+```
+
+These are both possible and both represen different things, the first `self` (simple expression) points to the struct literal itself while the later is evaluated differently (complex expression) and represents the actual context outside the struct literal.
+
+Another example of this promotion from simple to complex expression is by using a *passthrough* function.
+
+**[GLOBAL SCOPE]**
+```gml
+function passthrough(_val) {
+    return _val;
+}
+```
+
+**[CREATE EVENT]**
+```gml
+__a__ = 12;
+__b__ = 22;
+
+result = { context: passthrough(self) };
+```
+
+in the example above `context` will point correctly to the scope outside the struct literal. This is the desired behavior as it happens with all other varibales. The values in the struct literal **\[key : value\]** pairs always refer to the outside scope.
+
+**[CREATE EVENT]**
+```gml
+__a__ = 12;
+__b__ = 22;
+var _t = "Hello"
+
+result = { __a__ : __a__, __b__ : __b__, _t : _t };
+                // ^^             ^^          ^^
+                // all of the values refer to outside values
+```
+
+## instance `id` vs `self`
+
+The `id` and `self` even though they mostly reflect the same thing.
+
+```gml
+with (id) == with (self)
+id.speed == self.speed
+instance_destroy(self) == instance_destroy(id);
+```
+
+They present differences in current runner and GMRT.
+
+**[CURRENT RUNNER]**
+```gml
+typeof(id) // ref
+typeof(self) // struct
+```
+
+**[CURRENT RUNNER]**
+```gml
+typeof(id) // struct
+typeof(self) // struct
+```
+
+## constructor function tags
+
+As of 07/07/2024 assetcompiler baked in tags were introduced to mark constructor functions. These work in the following way:
+
+```gml
+function A() constructor {
+}
+
+tags = asset_get_tags(A, asset_script);
+show_debug_message(tags); // ["@@constructor"]
+
+function B() : A() constructor {
+}
+
+tags = asset_get_tags(B, asset_script);
+show_debug_message(tags); // ["@@constructor", "@@parent=A"]
+```
+
+## index properties require an index
+
+In current gml its possible to access an index property, such as `view_camera` without an index. In GMRT this is not possible, and indexed properties must provide an index. e.g. `view_camera[0]`
+
+## asset ids as numeric values
+
+Using asset ids as indices is always been something that we have discouraged in GML because small changes to the internal ordering of assets could change at any time. An example of this is `MyObject + 1` where the GML code is assuming that MyObject is a numeric type. The current runtime is migrating to references which GMRT has also adopted. In GMRT usages like this will throw a runtime exception
