@@ -181,6 +181,7 @@
   * [GPUBlendFactor](#gpublendfactor)
   * [GPUBlendOperation](#gpublendoperation)
   * [GPUBufferBindingType](#gpubufferbindingtype)
+  * [GPUBufferMapAsyncStatus](#gpubuffermapasyncstatus)
   * [GPUBufferMapState](#gpubuffermapstate)
   * [GPUBufferUsage](#gpubufferusage)
   * [GPUCanvasAlphaMode](#gpucanvasalphamode)
@@ -560,7 +561,7 @@ Name | Type | Optional | Description
 mode | [GPUMapMode](#gpumapmode) | ❌ | Whether to map the buffer for reading or writing.
 offset | `Real` | ✅ | The offset from the start of the buffer to map from, in bytes. Defaults to 0.
 size | `Real` | ✅ | The portion of the buffer to map, in bytes. Defaults to the size of the whole buffer minus offset.
-callback | `Function` | ✅ | A function that receives [GPUBufferMapState](#gpubuffermapstate) as the first argument and the buffer as the second argument.
+callback | `Function` | ✅ | A function that receives [GPUBufferMapAsyncStatus](#gpubuffermapasyncstatus) as the first argument and the buffer as the second argument.
 
 **Returns:** N/A
 
@@ -569,8 +570,8 @@ callback | `Function` | ✅ | A function that receives [GPUBufferMapState](#gpub
 The following example maps a buffer for writing, checks whether the mapping was successful and writes floats 1, 2, 3 into it, then unmaps the buffer, commiting the changes. Please note that the buffer must have been previously created with [GPUBufferUsage.MAP_WRITE](#gpubufferusage), otherwise it could not be mapped for writing.
 
 ```gml
-buffer.mapAsync(GPUMapMode.WRITE, function (state, buffer) {
-  if (state == GPUBufferMapState.Mapped) {
+buffer.mapAsync(GPUMapMode.WRITE, function (status, buffer) {
+  if (status == GPUBufferMapAsyncStatus.SUCCESS) {
     var mappedRange = buffer.getMappedRange();
     mappedRange.set([1, 2, 3]);
     buffer.unmap();
@@ -2754,6 +2755,25 @@ Storage | `"storage"`
 ReadOnlyStorage | `"read-only-storage"`
 
 **Links:** <https://gpuweb.github.io/gpuweb/#enumdef-gpubufferbindingtype>
+
+### GPUBufferMapAsyncStatus
+
+An enumeration **specific to GameMaker** used in callback of [GPUBuffer.mapAsync](#gpubuffermapasync) to tell whether mapping of given buffer was successfull or not.
+
+**Members:**
+
+Name | Value
+---- | -----
+SUCCESS | `0x00000001`
+INSTANCE_DROPPED | `0x00000002`
+VALIDATION_ERROR | `0x00000003`
+UNKNOWN | `0x00000004`
+DEVICE_LOST | `0x00000005`
+DESTROYED_BEFORE_CALLBACK | `0x00000006`
+UNMAPPED_BEFORE_CALLBACK | `0x00000007`
+MAPPING_ALREADY_PENDING | `0x00000008`
+OFFSET_OUT_OF_RANGE | `0x00000009`
+SIZE_OUT_OF_RANGE | `0x0000000A`
 
 ### GPUBufferMapState
 
