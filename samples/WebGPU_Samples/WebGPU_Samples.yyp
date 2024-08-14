@@ -18,11 +18,12 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.800.0.597",
   },
   "name":"WebGPU_Samples",
   "resources":[
     {"id":{"name":"objComputeBoids","path":"objects/objComputeBoids/objComputeBoids.yy",},},
+    {"id":{"name":"objComputeBoidsBuiltInRenderPipeline","path":"objects/objComputeBoidsBuiltInRenderPipeline/objComputeBoidsBuiltInRenderPipeline.yy",},},
     {"id":{"name":"objCubemap","path":"objects/objCubemap/objCubemap.yy",},},
     {"id":{"name":"objFractalCube","path":"objects/objFractalCube/objFractalCube.yy",},},
     {"id":{"name":"objHelloTriangle","path":"objects/objHelloTriangle/objHelloTriangle.yy",},},
@@ -35,6 +36,7 @@
     {"id":{"name":"objTwoCubes","path":"objects/objTwoCubes/objTwoCubes.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"vector3","path":"scripts/vector3/vector3.yy",},},
+    {"id":{"name":"shBoids","path":"shaders/shBoids/shBoids.yy",},},
     {"id":{"name":"sprDi3d","path":"sprites/sprDi3d/sprDi3d.yy",},},
     {"id":{"name":"sprNegX","path":"sprites/sprNegX/sprNegX.yy",},},
     {"id":{"name":"sprNegY","path":"sprites/sprNegY/sprNegY.yy",},},

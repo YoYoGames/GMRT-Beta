@@ -5,6 +5,7 @@
     {"name":"Sprites","order":3,"path":"folders/Sprites.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"objComputeBoids","order":1,"path":"objects/objComputeBoids/objComputeBoids.yy",},
     {"name":"objCubemap","order":4,"path":"objects/objCubemap/objCubemap.yy",},
     {"name":"objFractalCube","order":5,"path":"objects/objFractalCube/objFractalCube.yy",},
     {"name":"objHelloTriangle","order":6,"path":"objects/objHelloTriangle/objHelloTriangle.yy",},
@@ -15,6 +16,7 @@
     {"name":"objTexturedCube","order":2,"path":"objects/objTexturedCube/objTexturedCube.yy",},
     {"name":"objTwoCubes","order":3,"path":"objects/objTwoCubes/objTwoCubes.yy",},
     {"name":"vector3","order":8,"path":"scripts/vector3/vector3.yy",},
+    {"name":"shBoids","order":3,"path":"shaders/shBoids/shBoids.yy",},
     {"name":"sprNegX","order":2,"path":"sprites/sprNegX/sprNegX.yy",},
     {"name":"sprNegY","order":3,"path":"sprites/sprNegY/sprNegY.yy",},
     {"name":"sprNegZ","order":4,"path":"sprites/sprNegZ/sprNegZ.yy",},

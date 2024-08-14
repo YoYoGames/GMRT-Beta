@@ -1,39 +1,5 @@
 // Source: https://webgpu.github.io/webgpu-samples/?sample=computeBoids
 
-var spriteWGSL = @"
-  struct VertexOutput {
-    @builtin(position) position : vec4f,
-    @location(4) color : vec4f,
-  }
-
-  @vertex
-  fn vert_main(
-    @location(0) a_particlePos : vec2f,
-    @location(1) a_particleVel : vec2f,
-    @location(2) a_pos : vec2f
-  ) -> VertexOutput {
-    let angle = -atan2(a_particleVel.x, a_particleVel.y);
-    let pos = vec2(
-      (a_pos.x * cos(angle)) - (a_pos.y * sin(angle)),
-      (a_pos.x * sin(angle)) + (a_pos.y * cos(angle))
-    );
-  
-    var output : VertexOutput;
-    output.position = vec4(pos + a_particlePos, 0.0, 1.0);
-    output.color = vec4(
-      1.0 - sin(angle + 1.0) - a_particleVel.y,
-      pos.x * 100.0 - a_particleVel.y + 0.1,
-      a_particleVel.x + cos(angle + 0.5),
-      1.0);
-    return output;
-  }
-
-  @fragment
-  fn frag_main(@location(4) color : vec4f) -> @location(0) vec4f {
-    return color;
-  }
-";
-
 var updateSpritesWGSL = @"
   struct Particle {
     pos : vec2f,
@@ -120,62 +86,8 @@ var updateSpritesWGSL = @"
   }
 ";
 
-adapter = GPU.requestAdapter();
+var adapter = GPU.requestAdapter();
 device = adapter.requestDevice();
-var presentationFormat = GPU.getPreferredCanvasFormat();
-
-spriteShaderModule = device.createShaderModule({ code: spriteWGSL });
-renderPipeline = device.createRenderPipeline({
-  layout: "auto",
-  vertex: {
-    module: spriteShaderModule,
-    buffers: [
-      {
-        // instanced particles buffer
-        arrayStride: 4 * 4,
-        stepMode: "instance",
-        attributes: [
-          {
-            // instance position
-            shaderLocation: 0,
-            offset: 0,
-            format: "float32x2",
-          },
-          {
-            // instance velocity
-            shaderLocation: 1,
-            offset: 2 * 4,
-            format: "float32x2",
-          },
-        ],
-      },
-      {
-        // vertex buffer
-        arrayStride: 2 * 4,
-        stepMode: "vertex",
-        attributes: [
-          {
-            // vertex positions
-            shaderLocation: 2,
-            offset: 0,
-            format: "float32x2",
-          },
-        ],
-      },
-    ],
-  },
-  fragment: {
-    module: spriteShaderModule,
-    targets: [
-      {
-        format: presentationFormat,
-      },
-    ],
-  },
-  primitive: {
-    topology: "triangle-list",
-  },
-});
 
 computePipeline = device.createComputePipeline({
   layout: "auto",
@@ -186,31 +98,25 @@ computePipeline = device.createComputePipeline({
   },
 });
 
-renderPassDescriptor = {
-  colorAttachments: [
-    {
-      view: undefined, // Assigned later
-      clearValue: [0, 0, 0, 1],
-      loadOp: "clear",
-      storeOp: "store",
-    },
-  ],
-};
+numParticles = 1500;
 
-computePassDescriptor = {};
+vertex_format_begin();
+vertex_format_add_position();
+vertex_format_add_custom(vertex_type_float1, vertex_usage_texcoord);
+vertexFormat = vertex_format_end();
 
-vertexBufferData = [
-  -0.01, -0.02, 0.01,
-  -0.02, 0.0, 0.02,
-];
-
-spriteVertexBuffer = device.createBuffer({
-  size: 4 * array_length(vertexBufferData),
-  usage: GPUBufferUsage.VERTEX,
-  mappedAtCreation: true,
-});
-spriteVertexBuffer.getMappedRange().set(vertexBufferData);
-spriteVertexBuffer.unmap();
+vertexBuffer = vertex_create_buffer();
+vertex_begin(vertexBuffer, vertexFormat);
+for (var i = 0; i < numParticles; ++i) {
+  vertex_position(vertexBuffer, -0.01, -0.02);
+  vertex_float1(vertexBuffer, i);
+  vertex_position(vertexBuffer, 0.01, -0.02);
+  vertex_float1(vertexBuffer, i);
+  vertex_position(vertexBuffer, 0.0, 0.02);
+  vertex_float1(vertexBuffer, i);
+}
+vertex_end(vertexBuffer);
+vertex_freeze(vertexBuffer);
 
 simParams = {
   deltaT: 0.04,
@@ -224,6 +130,7 @@ simParams = {
 
 simParamBufferSize = 7 * 4;
 simParamBuffer = device.createBuffer({
+  label: "paramsBuffer",
   size: simParamBufferSize,
   usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
 });
@@ -246,7 +153,6 @@ function updateSimParams() {
 
 updateSimParams();
 
-numParticles = 1500;
 initialParticleData = array_create(numParticles * 4);
 for (var i = 0; i < numParticles; ++i) {
   initialParticleData[4 * i + 0] = 2 * (random(1) - 0.5);
@@ -259,8 +165,9 @@ particleBuffers = array_create(2);
 particleBindGroups = array_create(2);
 for (var i = 0; i < 2; ++i) {
   particleBuffers[i] = device.createBuffer({
+    label: $"particleBuffer{i}",
     size: 4 * array_length(initialParticleData),
-    usage: GPUBufferUsage.VERTEX | GPUBufferUsage.STORAGE,
+    usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_SRC,
     mappedAtCreation: true,
   });
   particleBuffers[i].getMappedRange().set(
@@ -301,27 +208,17 @@ for (var i = 0; i < 2; ++i) {
 
 t = 0;
 
-frame = function () {
-  renderPassDescriptor.colorAttachments[0].view = GPU.getCurrentTextureView();
+// Since the STORAGE usage cannot be mixed with MAP_READ, we need to make a
+// separate buffer which we can copy the data into and then map for reading on
+// the CPU side
+mapBuffer = device.createBuffer({
+  label: "mapBuffer",
+  size: 4 * array_length(initialParticleData),
+  usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST,
+});
 
-  commandEncoder = device.createCommandEncoder();
-  {
-    passEncoder = commandEncoder.beginComputePass(computePassDescriptor);
-    passEncoder.setPipeline(computePipeline);
-    passEncoder.setBindGroup(0, particleBindGroups[t % 2]);
-    passEncoder.dispatchWorkgroups(ceil(numParticles / 64));
-    passEncoder.end_();
-  }
-  {
-    passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
-    passEncoder.setPipeline(renderPipeline);
-    passEncoder.setVertexBuffer(0, particleBuffers[(t + 1) % 2]);
-    passEncoder.setVertexBuffer(1, spriteVertexBuffer);
-    passEncoder.draw(3, numParticles, 0, 0);
-    passEncoder.end_();
-  }
+// We will copy data from mapBuffer into this and then send it to our shader to
+// draw boids
+uniformBuffer = buffer_create(4 * array_length(initialParticleData), buffer_fixed, 1);
 
-  device.queue.submit([commandEncoder.finish()]);
-
-  ++t;
-};
+destroyed = false;
