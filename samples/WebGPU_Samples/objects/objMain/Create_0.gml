@@ -19,6 +19,13 @@ sections = [
       objComputeBoidsBuiltInRenderPipeline,
     ],
   },
+  {
+    title: "GML Demos",
+    samples: [
+      objGMLComputeBuffers,
+      objGMLComputeWriteSurface,
+    ],
+  }
 ];
 
 createSample = function (sample) {

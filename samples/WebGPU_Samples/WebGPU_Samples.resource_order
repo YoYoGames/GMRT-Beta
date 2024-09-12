@@ -2,12 +2,14 @@
   "FolderOrderSettings":[
     {"name":"BasicGraphics","order":2,"path":"folders/BasicGraphics.yy",},
     {"name":"GPGPUDemos","order":9,"path":"folders/GPGPUDemos.yy",},
+    {"name":"GMLDemos","order":10,"path":"folders/GMLDemos.yy",},
     {"name":"Sprites","order":3,"path":"folders/Sprites.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"objComputeBoids","order":1,"path":"objects/objComputeBoids/objComputeBoids.yy",},
     {"name":"objCubemap","order":4,"path":"objects/objCubemap/objCubemap.yy",},
     {"name":"objFractalCube","order":5,"path":"objects/objFractalCube/objFractalCube.yy",},
+    {"name":"objGMLComputeBuffers","order":1,"path":"objects/objGMLComputeBuffers/objGMLComputeBuffers.yy",},
     {"name":"objHelloTriangle","order":6,"path":"objects/objHelloTriangle/objHelloTriangle.yy",},
     {"name":"objHelloTriangleMSAA","order":7,"path":"objects/objHelloTriangleMSAA/objHelloTriangleMSAA.yy",},
     {"name":"objInstancedCube","order":8,"path":"objects/objInstancedCube/objInstancedCube.yy",},
