@@ -1,4 +1,5 @@
-GMRT (Beta)/GMPM Setup Instructions 
+
+GMRT (Beta)/GMPM Setup Instructions 
 
 
 # Overview
@@ -8,7 +9,7 @@ GameMaker's GMRT (codename “Cronus” - which you may see some references to) 
 It aims to deconstruct the monolithic architecture of the current toolchain and runtime, providing more ways in which the GameMaker team and GameMaker users can expand and use the tools and runtime. In addition, the goal of GMRT is to leverage the power of tools such as CMake, LLVM and the Clang compiler to improve the overall performance of games, allow better support for third party libraries and tools, and make expanding the runtime easier for everyone.\
 While we are still only in the early stages of development, we invite you to help us test and evaluate the new toolchain and runtime to help us focus on what's most important to you as a developer.
 
-*For the initial stage, we are focusing on only a very limited number of targets: _Windows_  and _GX.games._ As we progress we will add support for other targets such as mobile and consoles.*
+*For the initial stage, we are focusing on only a very limited number of targets: _Windows_  and _GX.games._ As we progress we will add support for other targets such as mobile and consoles.*
 
 <br>
 
@@ -133,19 +134,12 @@ __![](6.png)__
 
   - Meta Packages - These are often empty packages which will trigger the install of other packages as their dependencies. This simplifies what you need to install and ensures that you get everything needed for GMRT
 
-- Within the package manager you will see a lot of packages. You can install all the necessary packages using the GMRT metapackage and the third party packages. These are the 5 packages you should install (Underlines in the screenshots above in **red**).
+- Within the package manager you will see a lot of packages. It's recommended for first time use to install the GMRT metapackage for your platform. This package will include all tools for the platform (including third party tools), as well as the runtime libraries to compile games that run on that platform.
+There are a few different types of packages, but the main ones for GMRT are these:
 
-  - **gmrt** - _This meta package will install all other packages except for the third party tools packages. You will notice after installing this package that many other packages are also installed._
+  - **GMRT - \<Platform\>** - _This meta package will install all other packages including the third party tools packages and the runtime for the specified platform. You will notice after installing this package that other packages are also installed._
 
-  - **clang**
-
-  - **cmake**
-
-  - **ninja**
-
-  - **visualstudio-sysroot**
-
-- You can install these packages by simply clicking on each package and clicking the “Install” button.
+- You can install this packages by simply clicking on the package and clicking the “Install” button.
 
 - From the right-hand panel you can also select different versions of the packages but it's recommended to install the latest version for the initial setup unless instructed otherwise. (The latest version should be selected by default.)
 
@@ -158,12 +152,23 @@ __![](6.png)__
 - After dismissing the confirmation popup, you should see that the “installed version” of all the new packages is now set:\
   ![](9.png)\
   This indicates that the package has been installed successfully and that the IDE is able to read from it.
-- Repeat this for **all 4 packages** mentioned above.
 - Once done, you should be ready to build using GMRT****
 
 If you notice a package failed to install, check the output log to see why it failed. You may need to check your antivirus/OS permissions and, if necessary, delete the gmpm folder when GameMaker is closed and then reinstall if you run into repeated issues.
 
 <br>
+
+## Additional Runtimes
+
+Additional runtime packages can also be installed from the Package Manager.
+
+After installing the **GMRT - \<Platform\>** package for your platform You will notice that the corresponding **GMRT Runtime - \<Target\>**  package is also installed automatically. This provides the runtime libraries for that platform, allowing you to compile games for that target.
+
+To compile for different targets, you will need a different runtime.
+
+Within the Package Manager you should see a set of **GMRT Runtime - \<Target\>** packages, each one corresponding to a different target platform.
+
+For example, installing the **GMRT Runtime - wasm32-emscripten** package will provide you access to the WebAssembly package, allowing you to compile games to run on WebAssembly compatible browsers.
 
 ## New Preferences Sections Inside GameMaker
 
