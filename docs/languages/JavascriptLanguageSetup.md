@@ -13,6 +13,19 @@ However, there are some features missing that will require more development, suc
 
 Currently, Javascript is restricted to being used within Scripts, and cannot be used for GM Object Events. This is a restriction while we focus on interop but we will be working on integrating Javascript into GM Object Events at a later date.
 
+## Missing features and WIP
+
+Below are a list of features currently missing that we hope to implement soon
+
+* Current JS is not yet compatible with the interpreted script execuation mode, only native script execution
+* Currently the IDE debugger does not yet support debugging javasript. This is due to the lack of an interpreted execution mode described above
+* The JS WebAPI is not part of the Javascript language. However, it is a such a commonly used API that we have included some very basic functionality in GMRT. We may eventually remove these as they are not part of the core JS language. 
+  * `console.log` - mirrors `show_debug_message`
+  * `window.alert`/`alert` mirrors `show_message`
+* The JS Language Server which drives the IDE intellisense has a number of known issues:
+  * Code colouring for single comments is currently missing
+  * Our limited implementation of WebAPI is not identified by code completion in the editor
+
 ## Setup
 
 To be able to use javascript as an alternative scripting language you will need to install the javascript language package from the package manager. This will provide intellisense and additional language support for javascript within GameMaker.
