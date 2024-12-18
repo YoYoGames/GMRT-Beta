@@ -6,6 +6,8 @@ This allows GMRT's build process to be configured by users to make changes or to
 ## BuildGraph
 
 The build graphs are xml files which define a set of jobs, steps, and actions to be performed.
+You can find the build graph located in the `GMRT` install directory, under the `Release/bin/targets` subdirectory. The build graph script used by default will be the `buildgraph-<platform>-prod.xml` build graph script.
+A different build graph script can be used by setting the `Custom Build Graph Path` field in the GMRT preferences.
 
 Below is a list of elements which can be defined within a build graph
 
