@@ -268,11 +268,15 @@ It is already possible to compile and debug your game using Visual Studio, albei
   - **_Make sure you install the build tools for C++\
     **_![](15.png)_**_**
 
+- In the GMRT preferences window, check the "Build CMake Project". This will ensure that the CMake build job is executed for the selected build target.
+  For more information on build jobs, see the [Build Graph](Build-Graph.md) documentation
+
 - In the GMRT preferences window, enter “Visual Studio 17” as the generator in the “CMake Generator” input box\
   ![](16.png)\
-  This will tell GMRT to build your application using visual studio as opposed to the default.
+  This will tell GMRT to build your application using visual studio as opposed to the default
+  This can be set to any valid cmake generator. In some cases you may need to point CMake to the generator using the "Path to CMake Generator" property field 
 
-- Ensure you have Script Execution set to "Native"
+- You can build for CMake wither either GMRT or GMRT VM options, but GMRT is recommended if you want to debug you gml code within an external editor such as Visual Studio
 
 - Inside your project directory you will find a _"Build"_ folder has been added after building from within GameMaker
 
