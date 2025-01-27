@@ -3,7 +3,7 @@
 ## Overview
 
 This document goes over the setup steps for the win-x64 platform of GMRT and its targets and assumes you're already familiar with the basics of GMRT and packages
-For information on GMRT, installing packages, and the purposes of the `GMRT - <Platform>` and `GMRT Runtime - <Target>` packages, please see the [Introduction to GMRT](../../GMRT-beta-intro-and-setup-instructions.md) documentation
+For information on GMRT, installing packages, and the purposes of the `GMRT - <Platform>` and `GMRT Runtime - <Target>` packages, please see the [Introduction to GMRT](../../introduction/GMRT-beta-intro-and-setup-instructions.md) documentation
 
 ## GMRT - win-x64
 
@@ -39,7 +39,7 @@ It is already possible to compile and debug your game using Visual Studio, albei
     **_![](2.png)_**_**
 
 - In the GMRT preferences window, check the "Build CMake Project". This will ensure that the CMake build job is executed for the selected build target.
-  For more information on build jobs, see the [Build Graph](../../gmrt/toolchain/Build-Graph.md) documentation
+  For more information on build jobs, see the [Build Graph](../../toolchain/buildgraph/Build-Graph.md) documentation
 
 - In the GMRT preferences window, enter “Visual Studio 17” as the generator in the “CMake Generator” input box\
   ![](3.png)\
@@ -113,4 +113,4 @@ GMRT in win x64 also provides support for executing on (Windows Subsystem for Li
           2.0.20+dfsg-2build1 500
              500 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
       ```
-      If this version does not match, you may need to specify the SDL version or change the SDL version used in the `Run` action as part of the GMRT prod build graph. See the [Build Graph](../../gmrt/toolchain/Build-Graph.md) documentation for more information
+      If this version does not match, you may need to specify the SDL version or change the SDL version used in the `Run` action as part of the GMRT prod build graph. See the [Build Graph](../../toolchain/buildgraph/Build-Graph.md) documentation for more information
