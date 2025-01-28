@@ -19,8 +19,6 @@ While we believe the changes we are making will give us a better base to provide
 
 The current runtime consists of one monolithic library which is linked with the project at compile time in order to provide all GML functionality, script execution, windowing, etc. GMRT breaks this monolithic structure, meaning that you have the option to include only the libraries that your project needs, potentially vastly reducing your game’s executable size at the cost of increased linking time when linking with all the runtime libraries. Currently there is no IDE support for this but it can be achieved by only pulling the required library packages. A list of these packages will be provided for those wishing to experiment with limited libraries.
 
-Currently GMRT is compiled-only, meaning it operates in much the same way as the YYC target does in the current runtime. VM execution will be implemented at a later stage.
-
 The toolchain has undergone a similar transformation. WAD-generation functionality has been moved to the runtime. Our hope for the future is that this allows WADs to be created by GML projects at runtime and used within the running application or exported. This functionality is at the very early stages. The result of this is that an asset compiler can be a GML project itself! And indeed, that is what our packaged asset compiler tool is while we develop the WAD runtime library. The downside of this process right now is that there is only limited caching currently being done of generated assets, meaning that each time the project is run, this process will be invoked and some assets will be unnecessarily regenerated. This is something that we will be addressing soon.
 
 Our Windowing, IO, and Rendering pipelines have been completely rewritten, leveraging Google’s “Dawn” project and SDL2. We’re working closely with Google to hopefully provide a very extensible and fast rendering solution which will allow us to target new graphics APIs and systems much quicker than previously.
@@ -202,6 +200,10 @@ All very similar to VM/YYC, but be aware the build times will be much longer.
 
 ![](10.png)
 
+## Further information
+
+For more information on setting up and building for particular targets and systems, see the [Setup](../setup/Setup.md) documentation
+
 <br>
 <hr>
 
@@ -249,56 +251,6 @@ By default, GMRT will attempt to search the \`GMPM\` install directory for the t
 - **CMake Generator** : If Visual Studio 2022 is installed, setting this to "**Visual Studio 17**" will use visual studio as the generator. This will create a valid VS 2022 solution which can be used to debug and run the build executable once generated
 
 ![](13.png)
-
-<br>
-<hr>
-
-# Debugging Using Visual Studio
-
-Compiling and running from within other IDEs is a core feature of the new toolchain. More tools for this will be made available in the coming months. We’re aiming to provide a fully-functional LSP server with the same functionality already present within the GameMaker IDE.
-
-It is already possible to compile and debug your game using Visual Studio, albeit without the error messages, syntax highlighting, and code completion that the GameMaker IDE provides. This is a work in progress but any feedback is appreciated. Down the line, we’re planning on providing access to the source for the runtime modules. Our hope is that this not only helps developers debugging but also aids in development of the runtime. We will go into this in more detail in the coming months.
-
-- Download and install **Visual Studio Pro/Community** **_v17.5_**
-
-  - **_Note that it must be v17.5 or that the 17.5 tools are included. You can find this in the visual studio installer by searching for 17.5\
-    **_![](14.png)_**\
-    Latest versions of VS may be supported but this is the latest tested version. Feel free to try with a newer version and let us know the result._**
-
-  - **_Make sure you install the build tools for C++\
-    **_![](15.png)_**_**
-
-- In the GMRT preferences window, enter “Visual Studio 17” as the generator in the “CMake Generator” input box\
-  ![](16.png)\
-  This will tell GMRT to build your application using visual studio as opposed to the default.
-
-- Ensure you have Script Execution set to "Native"
-
-- Inside your project directory you will find a _"Build"_ folder has been added after building from within GameMaker
-
-- Inside this folder is another _"build"_ folder containing the generated VS project
-
-- Open this project\
-  ![](17.png)
-
-- You can run and rebuild the project inside Visual Studio **(note that you need to select "Build/Rebuild Solution" to rebuild correctly when scripts have been changed)**
-
-- **If you change an asset or add something to the project, the VS build won't trigger the asset compiler automatically so you will need to rebuild in GameMaker first - This will be fixed soon**
-
-<br>
-
-## Debugging Using Visual Studio - Troubleshooting
-
-If building from the IDE fails when using the Visual Studio generator there is another way that may work. This requires having Visual Studio 2022 installed and using the VS command prompt, as this prompt sets up the necessary environment variables used to build with VS.
-
-- If this step fails with an error similar to: `CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage` then you will need to try and build using the x64 native command line
-
-  1. search for `x64 Native tools command prompt for VS 2022` in the start bar, open that.\
-     ![](18.png)
-
-  2. Copy and paste the command which appears in the gamemaker “Output” Window when you try to run as described above. it should look similar to this but using your directory name and project name:\
-     _"C:\\.gmpm\Release\bin\yypcd.exe" "C:\Users\\\<username>\Documents\GameMakerStudio2\\\<project name>\\\<project name>.yyp" -o "C:\Users\\\<username>\Documents\GameMakerStudio2\\\<project name>\Build" -t "C:\\.gmpm\Release\bin\cmake-project-template" -toolchain="C:\\.gmpm" -v -target-triple=x86\_64-pc-windows-msvc -asset-compiler=C:\\.gmpm\Debug\bin\AssetCompiler.exe -asset-compiler-args=--nowad --headless --noloop_![](19.png)
-
 
 <br>
 
