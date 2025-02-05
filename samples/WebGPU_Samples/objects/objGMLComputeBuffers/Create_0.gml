@@ -3,7 +3,7 @@ var length = array_length(floats);
 var size = length * buffer_sizeof(buffer_f32);
 var bufferIn = new ComputeBuffer(size);
 bufferIn.fromFloatArray(floats);
-var bufferOut = new ComputeBuffer(size);
+var bufferOut = new ComputeBuffer(size, true);
 var computeShader = new ComputeShader(@"
   @group(0) @binding(0) var<uniform> value : f32;
   @group(0) @binding(1) var<storage, read> bufferIn : array<f32>;
