@@ -1673,8 +1673,8 @@ Name | Type | Optional | Description
 buffer | [GPUBuffer](#gpubuffer) | ❌ | The buffer to write the data into. Must be created with the `GPUBufferUsage.COPY_DST` usage!
 bufferOffset | `Real` | ❌ | The offset, in bytes, to start writing into the buffer at.
 data | `Array<Real>`, `Id.Buffer` | ❌ | An array of 32-bit floats or a buffer containing any of the supported data types.
-dataOffset | `Real` | ❌ | An offset (in array elements or bytes, depending on whether `data` is an array or a buffer) to start reading the data from. Defaults to 0.
-size | `Real` | ❌ | The size of the data to write (in array elements or bytes, depending on whether `data` is an array or a buffer). Defaults to the size of the array/buffer minus offset.
+dataOffset | `Real` | ✅ | An offset (in array elements or bytes, depending on whether `data` is an array or a buffer) to start reading the data from. Defaults to 0.
+size | `Real` | ✅ | The size of the data to write (in array elements or bytes, depending on whether `data` is an array or a buffer). Defaults to the size of the array/buffer minus offset.
 
 **Returns:** N/A
 
