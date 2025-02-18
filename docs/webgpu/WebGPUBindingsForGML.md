@@ -436,7 +436,7 @@ Key | Type | Description
 
 #### GPUAdapter.requestDevice
 
-A method of struct [GPUAdapter](#gpuadapter). Returns a [GPUDevice](#gpudevice), which can be further used to create command encoders, GPU resources and retrieve a [GPUQueue](#gpuqueue). The `descriptor` argument is currently ignored and the function always returns the device used internally by GameMaker!
+A method of struct [GPUAdapter](#gpuadapter). Returns a [GPUDevice](#gpudevice), which can be further used to create command encoders, GPU resources and retrieve a [GPUQueue](#gpuqueue). The `descriptor` argument is currently ignored and the function always returns the device used internally by GameMaker! Features enabled in this device (when available) are: ["timestamp-query"](https://www.w3.org/TR/webgpu/#timestamp-query), ["float32-filterable"](https://www.w3.org/TR/webgpu/#float32-filterable) and ["bgra8unorm-storage"](https://www.w3.org/TR/webgpu/#bgra8unorm-storage). Additionally, the [maxBufferSize](https://www.w3.org/TR/webgpu/#dom-supported-limits-maxbuffersize) limit is set to the maximum value supported by your GPU.
 
 **Syntax:**
 
