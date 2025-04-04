@@ -105,6 +105,16 @@ As of right now, GMRT requires that you have the [dotnet 8 runtime](https://dotn
 
 <br>
 
+# EMSDK 4.0.1 requirement
+
+As of right now, GMRT does not provide the emsdk package, similar to the current runner. You are required to install this yourself if you want to compile for the wasm32 target.
+See [Here](https://emscripten.org/docs/getting_started/downloads.html) for more instructions.
+You should install version 4.0.1 for GMRT.
+e.g.
+`emsdk.bat install 4.0.1`
+
+<br>
+
 # Beta IDE Setup
 
 ## GMPM/Package Manager
