@@ -1,0 +1,1 @@
+declare const spr_stop_leaf_effect: GMSprite

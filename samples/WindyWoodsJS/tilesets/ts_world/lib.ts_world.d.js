@@ -1,0 +1,1 @@
+declare const ts_world: GMTileSet

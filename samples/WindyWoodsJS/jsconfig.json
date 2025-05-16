@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "target": "ES2020",
+    "allowJs" : true,
+    "checkJs": true,
+    "lib": ["ES2020"]
+  },
+  "include": [
+    "**/*.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules"
+  ],
+  "files": [
+    "**/*.js",
+    "lib.gml.d.js"
+  ]
+}

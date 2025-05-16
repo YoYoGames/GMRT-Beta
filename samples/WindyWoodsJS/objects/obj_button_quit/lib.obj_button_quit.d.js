@@ -1,0 +1,1 @@
+declare const obj_button_quit: GMObject

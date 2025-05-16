@@ -1,0 +1,1 @@
+declare const obj_persistent_manager: GMObject

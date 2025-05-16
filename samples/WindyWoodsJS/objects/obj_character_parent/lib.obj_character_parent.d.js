@@ -1,0 +1,1 @@
+declare const obj_character_parent: GMObject

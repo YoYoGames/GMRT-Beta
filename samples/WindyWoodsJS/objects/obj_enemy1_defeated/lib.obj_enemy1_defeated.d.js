@@ -1,0 +1,1 @@
+declare const obj_enemy1_defeated: GMObject

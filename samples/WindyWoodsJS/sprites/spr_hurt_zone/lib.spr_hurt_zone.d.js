@@ -1,0 +1,1 @@
+declare const spr_hurt_zone: GMSprite

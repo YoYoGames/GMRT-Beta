@@ -1,0 +1,1 @@
+declare const spr_ground_side_leaves_left: GMSprite

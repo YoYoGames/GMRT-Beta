@@ -1,0 +1,1 @@
+declare const spr_part_brick_destroy: GMSprite

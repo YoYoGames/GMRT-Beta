@@ -1,0 +1,1 @@
+declare const snd_life_lost_01: GMSound
