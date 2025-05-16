@@ -1,0 +1,1 @@
+declare const obj_enemy1: GMObject

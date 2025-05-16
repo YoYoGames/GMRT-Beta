@@ -1,0 +1,1 @@
+declare const spr_message_frame: GMSprite

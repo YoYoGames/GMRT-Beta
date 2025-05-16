@@ -1,0 +1,1 @@
+declare const spr_tileset_world: GMSprite

@@ -1,0 +1,1 @@
+declare const spr_vines_3: GMSprite

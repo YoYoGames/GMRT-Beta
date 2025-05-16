@@ -1,0 +1,1 @@
+declare const obj_coin_collect_effect: GMObject

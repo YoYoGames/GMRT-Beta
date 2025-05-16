@@ -1,0 +1,1 @@
+declare const obj_pause_menu_background: GMObject

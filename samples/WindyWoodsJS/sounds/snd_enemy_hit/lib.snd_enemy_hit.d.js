@@ -1,0 +1,1 @@
+declare const snd_enemy_hit: GMSound

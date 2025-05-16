@@ -1,0 +1,1 @@
+declare const rm_level_1: GMRoom

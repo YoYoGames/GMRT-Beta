@@ -1,0 +1,1 @@
+declare const spr_end_gate_glow: GMSprite

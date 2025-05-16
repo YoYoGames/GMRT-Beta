@@ -1,0 +1,1 @@
+declare const seq_main_menu: GMSequence

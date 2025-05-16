@@ -1,0 +1,1 @@
+declare const spr_button_green: GMSprite

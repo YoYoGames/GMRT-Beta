@@ -1,0 +1,1 @@
+declare const spr_rock1: GMSprite

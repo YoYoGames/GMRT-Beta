@@ -1,0 +1,1 @@
+declare const snd_dirt_block_hit_01: GMSound

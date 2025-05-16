@@ -1,0 +1,1 @@
+declare const obj_placeholder_message: GMObject

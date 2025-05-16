@@ -1,0 +1,1 @@
+declare const snd_land_01: GMSound

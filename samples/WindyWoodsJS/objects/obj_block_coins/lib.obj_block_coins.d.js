@@ -1,0 +1,1 @@
+declare const obj_block_coins: GMObject

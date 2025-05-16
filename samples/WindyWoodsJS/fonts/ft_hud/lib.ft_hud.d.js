@@ -1,0 +1,1 @@
+declare const ft_hud: GMFont
