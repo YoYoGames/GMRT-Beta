@@ -1,0 +1,1 @@
+declare const seq_touch_controls: GMSequence

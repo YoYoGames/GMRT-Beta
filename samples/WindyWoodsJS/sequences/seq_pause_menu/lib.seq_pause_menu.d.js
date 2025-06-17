@@ -1,0 +1,1 @@
+declare const seq_pause_menu: GMSequence

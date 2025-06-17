@@ -1,0 +1,1 @@
+declare const spr_hanging_group_2: GMSprite

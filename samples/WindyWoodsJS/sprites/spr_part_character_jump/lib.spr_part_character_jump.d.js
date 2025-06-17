@@ -1,0 +1,1 @@
+declare const spr_part_character_jump: GMSprite

@@ -1,0 +1,1 @@
+declare const snd_music_lose: GMSound

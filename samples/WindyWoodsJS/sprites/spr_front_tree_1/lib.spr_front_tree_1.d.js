@@ -1,0 +1,1 @@
+declare const spr_front_tree_1: GMSprite

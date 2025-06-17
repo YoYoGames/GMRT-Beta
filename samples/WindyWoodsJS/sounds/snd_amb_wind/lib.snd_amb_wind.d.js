@@ -1,0 +1,1 @@
+declare const snd_amb_wind: GMSound

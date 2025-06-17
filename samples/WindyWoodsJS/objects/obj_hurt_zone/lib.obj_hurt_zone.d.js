@@ -1,0 +1,1 @@
+declare const obj_hurt_zone: GMObject

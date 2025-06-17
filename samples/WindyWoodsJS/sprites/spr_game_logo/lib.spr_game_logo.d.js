@@ -1,0 +1,1 @@
+declare const spr_game_logo: GMSprite

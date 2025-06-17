@@ -1,0 +1,1 @@
+declare const obj_game_manager: GMObject

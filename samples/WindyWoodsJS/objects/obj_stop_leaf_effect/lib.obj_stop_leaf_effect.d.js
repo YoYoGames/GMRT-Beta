@@ -1,0 +1,1 @@
+declare const obj_stop_leaf_effect: GMObject

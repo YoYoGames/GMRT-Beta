@@ -1,0 +1,1 @@
+declare const spr_dust_effect: GMSprite

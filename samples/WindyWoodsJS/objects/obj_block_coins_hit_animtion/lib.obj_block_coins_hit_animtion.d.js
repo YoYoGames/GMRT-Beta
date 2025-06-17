@@ -1,0 +1,1 @@
+declare const obj_block_coins_hit_animtion: GMObject

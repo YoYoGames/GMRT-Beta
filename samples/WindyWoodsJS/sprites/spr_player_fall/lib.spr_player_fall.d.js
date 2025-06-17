@@ -1,0 +1,1 @@
+declare const spr_player_fall: GMSprite

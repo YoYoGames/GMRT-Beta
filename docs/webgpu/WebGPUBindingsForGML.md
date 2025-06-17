@@ -436,7 +436,7 @@ Key | Type | Description
 
 #### GPUAdapter.requestDevice
 
-A method of struct [GPUAdapter](#gpuadapter). Returns a [GPUDevice](#gpudevice), which can be further used to create command encoders, GPU resources and retrieve a [GPUQueue](#gpuqueue). The `descriptor` argument is currently ignored and the function always returns the device used internally by GameMaker!
+A method of struct [GPUAdapter](#gpuadapter). Returns a [GPUDevice](#gpudevice), which can be further used to create command encoders, GPU resources and retrieve a [GPUQueue](#gpuqueue). The `descriptor` argument is currently ignored and the function always returns the device used internally by GameMaker! Features enabled in this device (when available) are: ["timestamp-query"](https://www.w3.org/TR/webgpu/#timestamp-query), ["float32-filterable"](https://www.w3.org/TR/webgpu/#float32-filterable) and ["bgra8unorm-storage"](https://www.w3.org/TR/webgpu/#bgra8unorm-storage). Additionally, the [maxBufferSize](https://www.w3.org/TR/webgpu/#dom-supported-limits-maxbuffersize) limit is set to the maximum value supported by your GPU.
 
 **Syntax:**
 
@@ -1673,8 +1673,8 @@ Name | Type | Optional | Description
 buffer | [GPUBuffer](#gpubuffer) | ❌ | The buffer to write the data into. Must be created with the `GPUBufferUsage.COPY_DST` usage!
 bufferOffset | `Real` | ❌ | The offset, in bytes, to start writing into the buffer at.
 data | `Array<Real>`, `Id.Buffer` | ❌ | An array of 32-bit floats or a buffer containing any of the supported data types.
-dataOffset | `Real` | ❌ | An offset (in array elements or bytes, depending on whether `data` is an array or a buffer) to start reading the data from. Defaults to 0.
-size | `Real` | ❌ | The size of the data to write (in array elements or bytes, depending on whether `data` is an array or a buffer). Defaults to the size of the array/buffer minus offset.
+dataOffset | `Real` | ✅ | An offset (in array elements or bytes, depending on whether `data` is an array or a buffer) to start reading the data from. Defaults to 0.
+size | `Real` | ✅ | The size of the data to write (in array elements or bytes, depending on whether `data` is an array or a buffer). Defaults to the size of the array/buffer minus offset.
 
 **Returns:** N/A
 

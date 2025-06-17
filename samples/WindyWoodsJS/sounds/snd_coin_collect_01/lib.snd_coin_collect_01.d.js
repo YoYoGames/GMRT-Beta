@@ -1,0 +1,1 @@
+declare const snd_coin_collect_01: GMSound

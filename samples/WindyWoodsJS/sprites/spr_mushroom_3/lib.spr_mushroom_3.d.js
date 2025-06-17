@@ -1,0 +1,1 @@
+declare const spr_mushroom_3: GMSprite

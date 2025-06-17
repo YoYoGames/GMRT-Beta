@@ -1,0 +1,1 @@
+declare const spr_hud_background: GMSprite

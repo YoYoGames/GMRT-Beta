@@ -1,0 +1,138 @@
+This note is high-level documentation for the core parts of this template project.
+All events in this project are commented, so you can open any event and read the comments to understand what it does, and how it works.
+
+The following are sub-groups present in the Objects group:
+
+# CHARACTERS
+
+obj_character_parent is the parent object of all characters (including the player and any enemies).
+Here are descriptions for its events:
+
+	Create			Initialises properties for all characters.
+	Begin Step		Checks if the character is grounded, and stores that position. Applies friction to the character's velocity.
+	Step			Handles movement and collision checking for the character.
+	End Step		Flips the character's sprite horizontally based on its X velocity. Handles what happens when the character's health is depleted. Also handles invincibility frames.
+
+
+obj_player is the main player object and a child of obj_character_parent.
+
+	Create			Initialises properties for the player.
+	Begin Step		(Inherited from parent, unchanged.)
+	Step			Sets audio listener position.
+	End Step		Handles transitions to other sprites based on the currently assigned sprite and conditions.
+	Alarm 0			Stops Knockback.
+	Key Down Left	Moves the player left.
+	Key Down Right	Moves the player right.
+	Key Down A		Runs the Key Down Left event (mimics its behaviour), for WASD input.
+	Key Down D		Runs the Key Down Right event (mimics its behaviour), for WASD input.
+	Key Press Space	Makes the player jump.
+	-><- obj_coin			Handles collision with coins, collecting them.
+	-><- obj_end_gate		Handles collision with the end gate, which takes you to the next level.
+	-><- obj_enemy_parent	Handles collision with enemy. Defeats the enemy if the player jumped on it, otherwise hurts the player.
+	-><- obj_hurt_zone		Handles collision with hurt zones.
+	Outside Room	Handles respawning when the player is outside the room.
+	Animation End	Stops certain animations (e.g. jump and fall) when their animations end.
+	Broadcast Message		Receives broadcast messages from the spr_player_walk sprite for the footstep effects and sound.
+
+obj_player_defeated appears in place of obj_player when the player is defeated. It jumps up and restarts the room when it exits the screen.
+
+obj_player_end_level appears when the player reaches the end gate. It fades away and then the level ends.
+
+
+
+# ENEMY SYSTEM
+
+obj_enemy_parent is a child of obj_character_parent and the parent of all enemies.
+
+	Create			Initialises properties for all enemies.
+	End Step		Turns the enemy to the other direction if it finds a wall or ledge in front of it.
+
+obj_enemy1 is the first (and only) enemy in the template.
+
+	Create			Changes properties for this particular enemy.
+
+obj_enemy1_defeated appears in place of obj_enemy1 when it's defeated. It plays its animation once and then destroys itself.
+
+
+
+# MANAGERS
+
+The "Managers" group contains objects that manage things in the background. So they are not visible or interactive, but listen silently in the background
+and perform their actions.
+
+	obj_game_manager: This creates the HUD sequence, and manages pausing.
+	obj_gamepad_input: This manages gamepads and allows the player to be controlled using a gamepad. It's a persistent object that's created in the first room (rm_menu) and lasts throughout the whole game.
+	obj_parallax: This is placed in game levels for parallax bacgrounds.
+	obj_persistent_manager: This is another persistent manager object created in rm_menu. It creates a particle system that is used through the game for any particles.
+
+
+
+# ENVIRONMENT
+
+	obj_collision: This is the parent of all objects that can collide with characters (e.g. blocks). If you want to make a platform or any other object that characters can stand on, use this as a parent.
+				   The check_collision function (in scr_collisions) checks for collisions with this object (along with tiles).
+	
+	Blocks: This folder contains blocks that the player can hit with its head.
+	Editor: This contains placeable objects that aren't visible in-game but still interact with the player in some way.
+	Interactive: This contains environment objects that are interactive but don't fall into any other category.
+	Items: This contains collectible items, like coins.
+
+
+
+# HUD
+
+This group contains objects that are used in the HUD sequence (seq_game_hud). They appear on the GUI layer (using the Draw GUI event) and show the player's stats.
+
+
+
+# UI
+
+This group contains buttons and other UI-related objects.
+
+
+
+# VFX
+
+This contains objects that are purely visual, like the dust VFX. They play their animation once and then get destroyed.
+
+obj_player_defeat_animation is an exception, which handles the pixelate transition that appears when the player is defeated.
+This object is Persistent so it's not destroyed when the room is restarted. Instead it's manually destroyed when its transition is complete.
+
+
+
+
+
+# SEQUENCES
+
+There are five Sequences in this project:
+
+	seq_game_hud: This is created when a level starts and initialises the objects that display HUD information.
+				  Using this Sequence you can organise your HUD and set where certain elements appear.
+	
+	seq_game_over: This is placed in the rm_end room and appears when the game is over.
+	
+	seq_main_menu: This is placed in rm_menu and appears when the game begins.
+	
+	seq_pause_menu: This appears when the game is paused using the Escape key.
+	
+	seq_touch_controls: This contains the layout of the touch controls.
+						If you want to disable touch controls on Opera GX, remove the appropriate condition from the Create event in obj_game_manager.
+	
+
+
+# SCRIPTS
+
+Collisions
+
+	This script contains one function called check_collision, which checks for a collision at the given delta coordinates.
+	It checks against the Tile Layer "CollisionTiles" and the parent object obj_collision.
+
+
+
+# ROOMS
+
+	rm_menu is the main menu room and opens first.
+	rm_end is the last room.
+	All other rooms are in-game levels.
+
+

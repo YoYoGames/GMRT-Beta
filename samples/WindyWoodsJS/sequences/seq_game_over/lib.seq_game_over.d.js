@@ -1,0 +1,1 @@
+declare const seq_game_over: GMSequence

@@ -1,0 +1,1 @@
+declare const snd_box_hit: GMSound

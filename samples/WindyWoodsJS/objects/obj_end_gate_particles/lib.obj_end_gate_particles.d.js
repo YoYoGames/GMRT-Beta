@@ -1,0 +1,1 @@
+declare const obj_end_gate_particles: GMObject

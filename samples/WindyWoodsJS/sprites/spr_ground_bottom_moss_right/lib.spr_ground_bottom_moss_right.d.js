@@ -1,0 +1,1 @@
+declare const spr_ground_bottom_moss_right: GMSprite

@@ -1,0 +1,1 @@
+declare const spr_cloud_big: GMSprite

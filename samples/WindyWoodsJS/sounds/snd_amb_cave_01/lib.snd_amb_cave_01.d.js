@@ -1,0 +1,1 @@
+declare const snd_amb_cave_01: GMSound

@@ -1,0 +1,1 @@
+declare const spr_cave_entry_lit: GMSprite

@@ -1,0 +1,1 @@
+declare const spr_touch_jump: GMSprite

@@ -1,0 +1,1 @@
+declare const snd_button_press_01: GMSound
