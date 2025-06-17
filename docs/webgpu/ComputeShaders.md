@@ -21,6 +21,7 @@
     * [ComputeShader.dispatchAsync](#computeshaderdispatchasync)
     * [ComputeShader.dispatchIndirect](#computeshaderdispatchindirect)
     * [ComputeShader.dispatchIndirectAsync](#computeshaderdispatchindirectasync)
+    * [ComputeShader.getCompilationInfo](#computeshadergetcompilationinfo)
     * [ComputeShader.getUniform](#computeshadergetuniform)
     * [ComputeShader.isCompiled](#computeshaderiscompiled)
     * [ComputeShader.setBuffer](#computeshadersetbuffer)
@@ -503,6 +504,25 @@ callback | `Function`                      | ✅       | The function to execute
 
 **Returns:** N/A
 
+#### ComputeShader.getCompilationInfo
+
+A method of the [ComputeShader](#computeshader) struct that retrieves an array of info, warning and error messages generated during the shader's compilation.
+
+**Syntax:**
+
+```gml
+getCompilationInfo()
+```
+
+**Returns:** `Array`
+
+Each entry of the returned array is struct with the following keys:
+
+* `type` - The type of message. Possible values are "info", "warning", or "error".
+* `message` - The message text.
+* `lineNumber` - The line in the shader's source code that the message refers.
+* `linePosition` - The position on the line that the message refers to.
+
 #### ComputeShader.getUniform
 
 A method of the [ComputeShader](#computeshader) struct that retrieves a [ShaderUniform](#shaderuniform) by its name. The returned uniform can then be used in `ComputeShader.set*` methods to modify its value.
@@ -523,7 +543,7 @@ name | `String` | ❌       | The name of the uniform.
 
 #### ComputeShader.isCompiled
 
-A read-only property of the [ComputeShader](#computeshader) struct that tells whether the shader was successfully compiled (`true`) or not (`false`). **Note: This is currently not implemented and always equals true!**
+A read-only property of the [ComputeShader](#computeshader) struct that tells whether the shader was successfully compiled (`true`) or not (`false`).
 
 **Type:** `Bool`
 
