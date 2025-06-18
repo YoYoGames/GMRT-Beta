@@ -14,14 +14,23 @@ var computeShader = new ComputeShader(@"
     bufferOut[id.x] = bufferIn[id.x] + value;
   }
 ");
-computeShader.__addUniform({ name: "value", type: ShaderUniformType.FLOAT32, group: 0, binding: 0, size: buffer_sizeof(buffer_f32) });
-computeShader.__addUniform({ name: "bufferIn", type: ShaderUniformType.BUFFER, group: 0, binding: 1 });
-computeShader.__addUniform({ name: "bufferOut", type: ShaderUniformType.BUFFER, group: 0, binding: 2 });
-computeShader.setFloat(computeShader.getUniform("value"), 10);
-computeShader.setBuffer(computeShader.getUniform("bufferIn"), bufferIn);
-computeShader.setBuffer(computeShader.getUniform("bufferOut"), bufferOut);
-computeShader.dispatch(length);
+if (computeShader.isCompiled) {
+  computeShader.__addUniform({ name: "value", type: ShaderUniformType.FLOAT32, group: 0, binding: 0, size: buffer_sizeof(buffer_f32) });
+  computeShader.__addUniform({ name: "bufferIn", type: ShaderUniformType.BUFFER, group: 0, binding: 1 });
+  computeShader.__addUniform({ name: "bufferOut", type: ShaderUniformType.BUFFER, group: 0, binding: 2 });
+  computeShader.setFloat(computeShader.getUniform("value"), 10);
+  computeShader.setBuffer(computeShader.getUniform("bufferIn"), bufferIn);
+  computeShader.setBuffer(computeShader.getUniform("bufferOut"), bufferOut);
+  computeShader.dispatch(length);
+  result = bufferOut.toFloatArray();
+} else {
+  result = "";
+  var info = computeShader.getCompilationInfo();
+  for (var i = 0; i < array_length(info); ++i) {
+    var message = info[i];
+    result += $"{message.type} on line {message.lineNumber}, pos. {message.linePosition}: {message.message}\n";
+  }
+}
 computeShader.destroy();
-result = bufferOut.toFloatArray();
 bufferIn.destroy()
 bufferOut.destroy();

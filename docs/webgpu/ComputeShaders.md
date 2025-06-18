@@ -31,7 +31,12 @@
     * [ComputeShader.setInt](#computeshadersetint)
     * [ComputeShader.setIntArray](#computeshadersetintarray)
     * [ComputeShader.setIntBuffer](#computeshadersetintbuffer)
+    * [ComputeShader.setMatrix](#computeshadersetmatrix)
+    * [ComputeShader.setMatrixArray](#computeshadersetmatrixarray)
     * [ComputeShader.setTexture](#computeshadersettexture)
+    * [ComputeShader.workgroupSizeX](#computeshaderworkgroupsizex)
+    * [ComputeShader.workgroupSizeY](#computeshaderworkgroupsizey)
+    * [ComputeShader.workgroupSizeZ](#computeshaderworkgroupsizez)
   * [ShaderUniform](#shaderuniform)
     * [ShaderUniform.binding](#shaderuniformbinding)
     * [ShaderUniform.group](#shaderuniformgroup)
@@ -596,7 +601,7 @@ A method of the [ComputeShader](#computeshader) struct that sets an array of flo
 **Syntax:**
 
 ```gml
-setFloatArray(uniform, array)
+setFloatArray(uniform, array, [offset], [count])
 ```
 
 **Params:**
@@ -605,6 +610,8 @@ Name    | Type                            | Optional | Description
 --------|---------------------------------|----------|------------
 uniform | [ShaderUniform](#shaderuniform) | ❌       | The shader uniform to be updated with the new array of values.
 array   | `Array<Real>`                   | ❌       | The new array of floating-point values to assign to the uniform.
+offset  | `Real`                          | ✅       | The offset within the array indicating where to start reading values. Defaults to 0 if not specified.
+count   | `Real`                          | ✅       | The number of values to read from the array. Defaults to the length of the array minus offset if not specified.
 
 **Returns:** N/A
 
@@ -661,7 +668,7 @@ A method of the [ComputeShader](#computeshader) struct that sets an array of int
 **Syntax:**
 
 ```gml
-setIntArray(uniform, array)
+setIntArray(uniform, array, [offset], [count])
 ```
 
 **Params:**
@@ -670,6 +677,8 @@ Name    | Type                            | Optional | Description
 --------|---------------------------------|----------|------------
 uniform | [ShaderUniform](#shaderuniform) | ❌       | The shader uniform to be updated with the new array of values.
 array   | `Array<Real>`                   | ❌       | The new array of integer values to assign to the uniform.
+offset  | `Real`                          | ✅       | The offset within the array indicating where to start reading values. Defaults to 0 if not specified.
+count   | `Real`                          | ✅       | The number of values to read from the array. Defaults to the length of the array minus offset if not specified.
 
 **Returns:** N/A
 
@@ -698,6 +707,47 @@ count   | `Real`                          | ❌       | The number of integer va
 
 **See also:** [ComputeShader.getUniform](#computeshadergetuniform)
 
+#### ComputeShader.setMatrix
+
+A method of the [ComputeShader](#computeshader) struct that updates specified [ShaderUniform](#shaderuniform) with the current transform matrix.
+
+**Syntax:**
+
+```gml
+setMatrix(uniform)
+```
+
+**Params:**
+
+Name    | Type                            | Optional | Description
+--------|---------------------------------|----------|------------
+uniform | [ShaderUniform](#shaderuniform) | ❌       | The shader uniform to be updated with the matrix.
+
+**Returns:** N/A
+
+**See also:** [ComputeShader.getUniform](#computeshadergetuniform)
+
+#### ComputeShader.setMatrixArray
+
+A method of the [ComputeShader](#computeshader) struct that updates specified [ShaderUniform](#shaderuniform) with given matrix.
+
+**Syntax:**
+
+```gml
+setMatrixArray(uniform, matrix)
+```
+
+**Params:**
+
+Name    | Type                            | Optional | Description
+--------|---------------------------------|----------|------------
+uniform | [ShaderUniform](#shaderuniform) | ❌       | The shader uniform to be updated with the matrix.
+matrix  | `Array<Real>`                   | ❌       | The matrix to update the uniform with. Must be an array of 16 numbers!
+
+**Returns:** N/A
+
+**See also:** [ComputeShader.getUniform](#computeshadergetuniform)
+
 #### ComputeShader.setTexture
 
 A method of the [ComputeShader](#computeshader) struct that binds a texture to the specified [ShaderUniform](#shaderuniform). This updates the uniform with the provided texture, allowing it to be accessed during compute shader execution.
@@ -718,6 +768,24 @@ texture | `Pointer.Texture`               | ❌       | The texture to bind to t
 **Returns:** N/A
 
 **See also:** [ComputeShader.getUniform](#computeshadergetuniform)
+
+#### ComputeShader.workgroupSizeX
+
+A read-only property of the [ComputeShader](#computeshader) struct that represents the size of the workgroup along the X axis, as defined in the shader's source code. **Note: This is not currently implemented and always equals 1!**
+
+**Type:** `Real`
+
+#### ComputeShader.workgroupSizeY
+
+A read-only property of the [ComputeShader](#computeshader) struct that represents the size of the workgroup along the Y axis, as defined in the shader's source code. **Note: This is not currently implemented and always equals 1!**
+
+**Type:** `Real`
+
+#### ComputeShader.workgroupSizeZ
+
+A read-only property of the [ComputeShader](#computeshader) struct that represents the size of the workgroup along the Z axis, as defined in the shader's source code. **Note: This is not currently implemented and always equals 1!**
+
+**Type:** `Real`
 
 ### ShaderUniform
 
@@ -776,5 +844,6 @@ NONE    | 1     | Type not specified. Can only be used in [ShaderUniform.subtype
 INT32   | 2     | Represents a 32-bit signed integer.
 FLOAT32 | 3     | Represents a 32-bit floating-point value.
 ARRAY   | 4     | An array of values, with the type defined by [ShaderUniform.subtype](#shaderuniformsubtype).
-TEXTURE | 5     | Represents a texture.
-BUFFER  | 6     | Represents a [compute buffer](#computebuffer).
+MAT4    | 5     | Represents a 4x4 matrix of 32-bit floating-point values.
+TEXTURE | 6     | Represents a texture.
+BUFFER  | 7     | Represents a [compute buffer](#computebuffer).
