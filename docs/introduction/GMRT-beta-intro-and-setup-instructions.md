@@ -343,7 +343,7 @@ typeof(id) // ref
 typeof(self) // struct
 ```
 
-**[CURRENT RUNNER]**
+**[GMRT]**
 ```gml
 typeof(id) // struct
 typeof(self) // struct
