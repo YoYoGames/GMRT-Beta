@@ -16,4 +16,4 @@ Alternatively, you can use the bug-reporter on the Help menu inside GameMaker an
 
 If you need to get set up for GMRT inside GameMaker, you can find all the instructions and known information on "gotchas" here:
 
-[GMRT-beta-intro-and-setup-instructions.md](/docs/introduction/GMRT-beta-intro-and-setup-instructions.md)
+[GMRT-intro-and-setup-instructions.md](/docs/introduction/GMRT-intro-and-setup-instructions.md)
