@@ -3,7 +3,7 @@
 ## Overview
 
 This document goes over the setup steps for the win-x64 platform of GMRT and its targets and assumes you're already familiar with the basics of GMRT and packages
-For information on GMRT, installing packages, and the purposes of the `GMRT - <Platform>` and `GMRT Runtime - <Target>` packages, please see the [Introduction to GMRT](../../introduction/GMRT-beta-intro-and-setup-instructions.md) documentation
+For information on GMRT, installing packages, and the purposes of the `GMRT - <Platform>` and `GMRT Runtime - <Target>` packages, please see the [Introduction to GMRT](../../introduction/GMRT-intro-and-setup-instructions.md) documentation
 
 ## GMRT - win-x64
 

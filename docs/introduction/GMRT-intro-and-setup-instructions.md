@@ -1,6 +1,21 @@
 
-GMRT (Beta)/GMPM Setup Instructions 
+GMRT/GMPM Setup Instructions
 
+
+# Quick Setup
+
+Everything you need to get GMRT running, in order:
+
+1. **[Download GameMaker](#download-gamemaker)** — Install the GameMaker IDE
+2. **[Install dotnet 8.0](#dotnet-80-requirement)** — Required runtime dependency
+3. **[Open the Package Manager](#gmpmpackage-manager)** — Open any project in GameMaker, then go to _Tools > Package Manager_
+4. **[Install the GMRT package](#gmpmpackage-manager)** — Find the **GMRT - \<Platform\>** metapackage for your platform and click Install
+5. **[Build with GMRT](#building-with-gmrt)** — Change your target to **Windows > GMRT VM** (or **GMRT** for native compilation) and run
+
+> **Targeting WebAssembly?** You'll also need to [install EMSDK 5.0.4](#emsdk-504-requirement) before building for the wasm32 target.
+
+<br>
+<hr>
 
 # Overview
 
@@ -9,7 +24,7 @@ GameMaker's GMRT (codename “Cronus” - which you may see some references to) 
 It aims to deconstruct the monolithic architecture of the current toolchain and runtime, providing more ways in which the GameMaker team and GameMaker users can expand and use the tools and runtime. In addition, the goal of GMRT is to leverage the power of tools such as CMake, LLVM and the Clang compiler to improve the overall performance of games, allow better support for third party libraries and tools, and make expanding the runtime easier for everyone.\
 While we are still only in the early stages of development, we invite you to help us test and evaluate the new toolchain and runtime to help us focus on what's most important to you as a developer.
 
-*For the initial stage, we are focusing on only a very limited number of targets: _Windows_  and _GX.games._ As we progress we will add support for other targets such as mobile and consoles.*
+*For the initial stage, we're rolling out targets gradually: As we progress we will add support for other targets such as ios and other consoles.*
 
 <br>
 
@@ -40,11 +55,11 @@ Here are some major features we're hoping that the new toolchain will bring us i
 
 Obviously, nowadays the known issues are here in the repository on the Issues tab at the top of this page [https://github.com/GMExternal/NewRuntimeBeta/issues](https://github.com/GMExternal/NewRuntimeBeta/issues)
 
-However, closed beta participants will know we historically have provided a separate document that we still update as progress is made and which outlines the features that are missing or already known to be broken: [Known Issues - Closed Beta](https://docs.google.com/document/d/e/2PACX-1vSQbWWqxT5eZtP1huG2WqASmMm8_gdAYMsZzxcDVxpVmogG4zpbKHSLfX718OTTSb2a6jyV-wPj_KiL/pub)
+However, early access participants will know we historically have provided a separate document that we still update as progress is made and which outlines the features that are missing or already known to be broken: [Known Issues - Closed Beta](https://docs.google.com/document/d/e/2PACX-1vSQbWWqxT5eZtP1huG2WqASmMm8_gdAYMsZzxcDVxpVmogG4zpbKHSLfX718OTTSb2a6jyV-wPj_KiL/pub)
 
 - Currently, integration within the IDE’s debugger is not fully functional - there is only basic breakpoints and some "step ..." functionality
 - While mostly functional, the rendering pipeline is currently unoptimised and will result in some additional latency brought on by unnecessary draw calls and copying of buffers.
-- A large portion of the work on GMRT has been implementing a compatibility layer between the current runtime and the new one. Currently, around 75% of the GML runtime functions, properties and constants have been ported (excluding platform-specific ones), with a reliance on automated testing and limited QA human testing to this point. As such, we anticipate many games *will* fail due to missing or broken functionality within this compatibility layer.
+- A large portion of the work on GMRT has been implementing a compatibility layer between the current runtime and the new one. Currently, around 99.5% of the GML runtime functions, properties and constants have been ported (excluding some platform-specific ones and more recent GMS2 features), with a reliance on automated testing and limited QA testing to this point. As such, we anticipate a lot of games *will* fail due to missing or broken functionality within this compatibility layer.
 
 _Please feel free to provide feedback on Discord for anything already reported here on GitHub or in the linked document above. Even though these issues are known and being addressed already we would like to identify which areas most affect our users._
 
@@ -52,7 +67,7 @@ _Please feel free to provide feedback on Discord for anything already reported h
 
 # Areas We Would Like Feedback On
 
-Any issues relating to runtime features or the tools are greatly appreciated and we would urge you to file bug reports for, but for this beta there are some specific areas we would like to see your focus concentrated on:
+Any issues relating to runtime features or the tools are greatly appreciated and we would urge you to file bug reports for, but for GMRT there are some specific areas we would like to see your focus concentrated on:
 
 - Broken or misbehaving GML functions (Likely to be a large number of issues)
 - Event ordering issues (Event invocation has changed which may lead to issues for projects which relied on undocumented event orders in the current runtime)
@@ -72,7 +87,7 @@ Any issues relating to runtime features or the tools are greatly appreciated and
 
 Once you have received and accepted the invite to the GMExternal/NewRuntimeBeta GitHub repo you can submit issues either inside GameMaker using the bug reporter on the Help menu or here on this GitHub website by using one of the available [Issue templates](https://github.com/GMExternal/NewRuntimeBeta/issues/new/choose).
 
-**If using the IDE**, it's most likely the report category you need is "New Runtime Beta", although there may be reasons to submit Build Failure or IDE issues as well if they _only_ occur when compiling your games using GMRT.
+**If using the IDE**, it's most likely the report category you need is "In-Game (GMRT)" or "Project Fails to Build (GMRT)", although there may be reasons to submit Build Failure or IDE issues as well if they _only_ occur when compiling your games using GMRT.
 
 **If using the website**, it's most likely the issue type you need is the [In-Game Bug Report](https://github.com/GMExternal/NewRuntimeBeta/issues/new?assignees=\&labels=runner-bug\&projects=\&template=in_game_bug_report.yml) as this GitHub repository is specifically for issues regarding the new GMRT runtimes (nothing to do with VM/YYC or HTML5!) - although, again, there may be reasons to submit Build Failure or IDE issues as well if they _only_ occur when compiling your games using GMRT.
 
@@ -89,13 +104,13 @@ Feel free to discuss anything related to GMRT in the [#gmrt](https://discord.com
 <br>
 <hr>
 
-# Download the Beta IDE of GameMaker
+# Download GameMaker
 
-You can download the current Beta installer off [the release notes site](https://releases.gamemaker.io). Look towards the bottom of that page for the Beta version and there you can read its release notes and click the headings at the top to download it for your OS of choice - however, be aware that only the Windows IDE currently is supported by GMRT.
+You can download the current GameMaker installer from [the release notes site](https://releases.gamemaker.io). You no longer need to be on the Beta version of the IDE to use GMRT — the standard release is fully supported. Windows and Mac IDEs are all supported by GMRT.
 
-We highly recommend keeping your Beta IDE and runtime installation up-to-date as we may change things in the new runtimes and require the latest IDE.
+We highly recommend keeping your GameMaker IDE and runtime installation up-to-date as we may change things in the new runtimes and require the latest IDE.
 
-**Note**: If you already had the Beta IDE installed and you were signed-in you may have to use the Update Licence button in the account panel before the new "GMRT" target appears in Target Manager and Preferences.
+**Note**: If you already had GameMaker installed and you were signed-in you may have to use the Update Licence button in the account panel before the new "GMRT" target appears in Target Manager and Preferences.
 
 <br>
 
@@ -105,17 +120,17 @@ As of right now, GMRT requires that you have the [dotnet 8 runtime](https://dotn
 
 <br>
 
-# EMSDK 4.0.1 requirement
+# EMSDK 5.0.4 requirement
 
 As of right now, GMRT does not provide the emsdk package, similar to the current runner. You are required to install this yourself if you want to compile for the wasm32 target.
 See [Here](https://emscripten.org/docs/getting_started/downloads.html) for more instructions.
-You should install version 4.0.1 for GMRT.
+You should install version 5.0.4 for GMRT.
 e.g.
-`emsdk.bat install 4.0.1`
+`emsdk.bat install 5.0.4`
 
 <br>
 
-# Beta IDE Setup
+# IDE Setup
 
 ## GMPM/Package Manager
 
@@ -219,7 +234,7 @@ For more information on setting up and building for particular targets and syste
 
 # Troubleshooting
 
-This is a beta after all, and that means there **are** going to be some issues. Below are some potential issues that may arise and some potential solutions to resolving these issues.
+GMRT is still in active development, and that means there **are** going to be some issues. Below are some potential issues that may arise and some potential solutions to resolving these issues.
 
 A general good rule to try if first encountering an issue after the initial setup is to try and **build an empty project** with just a single room. If this succeeds but fails to build your specific project then the issue is likely a bug in our system. Please submit a bug report to the GMRT team.
 
@@ -233,7 +248,7 @@ Additionally, it's recommended when encountering any issues to enable verbose GM
 
 - **Network Issues:** One of the more common issues relating to packages are network issues, since GMPM can take a while to pull down the required components. GMPM should output information in the GameMaker IDE “Output” window. From this you should be able to see progress as packages are being installed - but on particularly slow connections this may take some time to complete.
 
-- **Backend Issues:** GMPM could simply be down or busy. While in beta we’re using quite a small backend server, but we will be increasing this at a later point. If you believe this to be the issue please inform the GMRT team via Discord and we will look into it as soon as possible.
+- **Backend Issues:** GMPM could simply be down or busy. While in early release we’re using quite a small backend server, but we will be increasing this at a later point. If you believe this to be the issue please inform the GMRT team via Discord and we will look into it as soon as possible.
 
 <br>
 
@@ -267,6 +282,9 @@ By default, GMRT will attempt to search the \`GMPM\` install directory for the t
 # Changes to GML
 
 GMRT contains a new GML compiler, and with it we've made a few changes to the way the language works. A number of these changes are intended to simplify GML and prevent developers from using functionality that is unintended with the language and could therefore break or be removed in the future. Additionally, some changes right now are simply due to the compiler being a work in progress and so some of the more esoteric features are not yet in place.
+
+Any functions marked as deprecated in GMS2 are also not present in GMRT, even in the compatibility libraries.
+
 Below is a list of these changes. Please be aware of these to avoid issues when compiling your code with GMRT:
 
 ## typeof(self) when in instance
